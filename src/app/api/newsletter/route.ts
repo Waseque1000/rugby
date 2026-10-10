@@ -12,20 +12,25 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Connect your newsletter marketing provider here!
-    // Examples:
-    // - Resend (https://resend.com/docs/api-reference/audiences/create-contact)
-    // - ConvertKit / Kit API (https://developers.kit.com)
-    // - Mailchimp (https://mailchimp.com/developer/marketing/api/list-members)
-    // - SendGrid Marketing Campaigns
-    //
-    // Example pseudo-code:
-    // await resend.contacts.create({
-    //   email: email.toLowerCase().trim(),
-    //   audienceId: process.env.RESEND_AUDIENCE_ID,
-    // });
+    const cleanEmail = email.toLowerCase().trim();
 
-    console.log(`[Newsletter Subscription] New subscriber email: ${email.toLowerCase().trim()}`);
+    // Store in PostgreSQL database if connected
+    try {
+      const { prisma, isDatabaseConnected } = await import("@/lib/db");
+      const connected = await isDatabaseConnected();
+      if (connected) {
+        await prisma.subscriber.upsert({
+          where: { email: cleanEmail },
+          update: {},
+          create: { email: cleanEmail },
+        });
+        console.log(`[PostgreSQL] Saved subscriber to database: ${cleanEmail}`);
+      }
+    } catch (dbErr) {
+      console.warn("[PostgreSQL] Optional DB write skipped:", dbErr);
+    }
+
+    console.log(`[Newsletter Subscription] New subscriber email: ${cleanEmail}`);
 
     return NextResponse.json(
       {
