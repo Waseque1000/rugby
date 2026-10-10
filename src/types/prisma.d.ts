@@ -1,26 +1,27 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare module "@prisma/client" {
   export class PrismaClient {
     constructor(options?: unknown);
     player: {
-      findMany(args?: unknown): Promise<any[]>;
-      findUnique(args?: unknown): Promise<any | null>;
-      create(args?: unknown): Promise<any>;
-      upsert(args?: unknown): Promise<any>;
-      deleteMany(args?: unknown): Promise<any>;
+      findMany(args?: Record<string, unknown>): Promise<any[]>;
+      findUnique(args?: Record<string, unknown>): Promise<any | null>;
+      create(args?: Record<string, unknown>): Promise<any>;
+      upsert(args?: Record<string, unknown>): Promise<any>;
+      deleteMany(args?: Record<string, unknown>): Promise<any>;
     };
     source: {
-      findMany(args?: unknown): Promise<any[]>;
-      create(args?: unknown): Promise<any>;
-      deleteMany(args?: unknown): Promise<any>;
+      findMany(args?: Record<string, unknown>): Promise<any[]>;
+      create(args?: Record<string, unknown>): Promise<any>;
+      deleteMany(args?: Record<string, unknown>): Promise<any>;
     };
     subscriber: {
-      create(args?: unknown): Promise<any>;
-      upsert(args?: unknown): Promise<any>;
+      create(args?: Record<string, unknown>): Promise<any>;
+      upsert(args?: Record<string, unknown>): Promise<any>;
     };
     contactSubmission: {
-      create(args?: unknown): Promise<any>;
+      create(args?: Record<string, unknown>): Promise<any>;
     };
-    $queryRaw(query: any, ...values: any[]): Promise<any>;
+    $queryRaw(query: unknown, ...values: unknown[]): Promise<unknown>;
     $disconnect(): Promise<void>;
   }
 }
