@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 const emptySubscribe = () => () => {};
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   // Safe client-side mount detection without cascading render effect
   const mounted = React.useSyncExternalStore(
     emptySubscribe,
@@ -21,7 +21,7 @@ export function ThemeToggle() {
     );
   }
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
