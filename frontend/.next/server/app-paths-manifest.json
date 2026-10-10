@@ -1,0 +1,23 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/activities/page": "app/activities/page.js",
+  "/api/newsletter/route": "app/api/newsletter/route.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/icon/route": "app/icon/route.js",
+  "/lists/[slug]/page": "app/lists/[slug]/page.js",
+  "/lists/page": "app/lists/page.js",
+  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
+  "/page": "app/page.js",
+  "/players/[slug]/page": "app/players/[slug]/page.js",
+  "/players/page": "app/players/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/sources/page": "app/sources/page.js",
+  "/terms/page": "app/terms/page.js"
+}

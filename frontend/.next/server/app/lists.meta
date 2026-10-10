@@ -1,0 +1,37 @@
+{
+  "status": 200,
+  "headers": {
+    "link": "</_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/lists/layout,_N_T_/lists/page,_N_T_/lists"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/_index",
+    "/lists/__PAGE__"
+  ],
+  "prefetchHints": {
+    "hints": 49152,
+    "slots": {
+      "children": {
+        "hints": 49216,
+        "slots": {
+          "children": {
+            "hints": 49312,
+            "slots": null
+          }
+        }
+      }
+    }
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/7262445c5c2f8a13768569870c9b788c6cbbc26b501c9cba18848c0ed840fb22/$/lists",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/lists/page"
+    },
+    "isFallback": false
+  }
+}
