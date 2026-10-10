@@ -1,0 +1,23 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/activities/page": "/activities",
+  "/api/newsletter/route": "/api/newsletter",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
+  "/contact/page": "/contact",
+  "/favicon.ico/route": "/favicon.ico",
+  "/icon/route": "/icon",
+  "/lists/[slug]/page": "/lists/[slug]",
+  "/lists/page": "/lists",
+  "/manifest.webmanifest/route": "/manifest.webmanifest",
+  "/page": "/",
+  "/players/[slug]/page": "/players/[slug]",
+  "/players/page": "/players",
+  "/privacy/page": "/privacy",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/sources/page": "/sources",
+  "/terms/page": "/terms"
+}

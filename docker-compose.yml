@@ -44,7 +44,7 @@ services:
   # 3. Next.js Frontend Web Application
   frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
     container_name: rugby_frontend
     restart: unless-stopped
