@@ -26,6 +26,8 @@ export interface Player {
   worldCupSevens: string | null;
   achievements: string | null;
   biography: string | null;
+  imageUrl?: string | null;
+  imageAlt?: string | null;
   sourceUrl: string | null;
   sourceNotes: string | null;
   dataStatus: string | null;

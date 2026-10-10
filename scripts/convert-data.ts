@@ -63,6 +63,8 @@ export interface Player {
   worldCupSevens: string | null;
   achievements: string | null;
   biography: string | null;
+  imageUrl?: string | null;
+  imageAlt?: string | null;
   sourceUrl: string | null;
   sourceNotes: string | null;
   dataStatus: string | null;
@@ -74,6 +76,12 @@ export interface SourceItem {
   source: string;
   url: string | null;
   notes: string | null;
+}
+
+function generateBingImageUrl(name: string, team: string | null): string {
+  const isWomen = team?.toLowerCase().includes("women");
+  const query = encodeURIComponent(`${name} USA ${isWomen ? "Womens" : "Mens"} Rugby Sevens`);
+  return `https://tse1.mm.bing.net/th?q=${query}&w=600&h=600&c=7&rs=1&p=0`;
 }
 
 function cleanValue<T>(val: T): T | null {
@@ -152,6 +160,7 @@ function convertDatabase() {
     const debut = cleanValue(row["National Sevens Debut"]) as string | null;
     const olympicsField = cleanValue(row["Olympic Games"]) as string | null;
     const achievements = cleanValue(row["Major Achievements"]) as string | null;
+    const team = cleanValue(row["Team"]) as string | null;
 
     const { isOlympian, editions } = extractOlympics(debut, olympicsField, achievements);
 
@@ -161,7 +170,7 @@ function convertDatabase() {
       name: name,
       age: parseNumber(row["Age (as of 2026-10-10)"]),
       dob: cleanValue(row["Date of Birth"]) as string | null,
-      team: cleanValue(row["Team"]) as string | null,
+      team: team,
       format: cleanValue(row["Format"]) as string | null,
       position: cleanValue(row["Playing Position"]) as string | null,
       hometown: hometown,
@@ -183,6 +192,8 @@ function convertDatabase() {
       worldCupSevens: cleanValue(row["Rugby World Cup Sevens"]) as string | null,
       achievements: achievements,
       biography: cleanValue(row["Career Timeline / Biography"]) as string | null,
+      imageUrl: generateBingImageUrl(name, team),
+      imageAlt: `${name} - USA Rugby Sevens Player`,
       sourceUrl: cleanValue(row["Source URL"]) as string | null,
       sourceNotes: cleanValue(row["Primary Source / Notes"]) as string | null,
       dataStatus: cleanValue(row["Data Status"]) as string | null,

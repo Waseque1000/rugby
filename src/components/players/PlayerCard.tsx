@@ -24,6 +24,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
           <PlayerAvatar
             name={player.name}
             team={player.team}
+            imageUrl={player.imageUrl}
             size="md"
             isOlympian={player.isOlympian}
           />

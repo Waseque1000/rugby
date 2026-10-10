@@ -106,6 +106,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
         }
       : undefined,
     nationality: player.nationality || "United States",
+    image: player.imageUrl || undefined,
     description: player.biography || undefined,
     url: player.sourceUrl || undefined,
   };
@@ -133,13 +134,14 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
 
         <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-7">
-            {/* Monogram Photo Placeholder */}
+            {/* Player Photo Avatar */}
             <PlayerAvatar
               name={player.name}
               team={player.team}
+              imageUrl={player.imageUrl}
               size="xl"
               isOlympian={player.isOlympian}
-              className="flex-shrink-0"
+              className="flex-shrink-0 shadow-lg"
             />
 
             <div className="space-y-2">
