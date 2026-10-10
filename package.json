@@ -16,10 +16,10 @@
     "db:up": "docker compose up -d postgres",
     "db:down": "docker compose down",
     "db:logs": "docker compose logs -f postgres",
-    "db:push": "npx prisma db push",
-    "db:seed": "tsx scripts/seed.ts",
-    "db:studio": "npx prisma studio",
-    "db:generate": "npx prisma generate"
+    "db:push": "npm --prefix frontend run db:push",
+    "db:seed": "npm --prefix frontend run db:seed",
+    "db:studio": "npm --prefix frontend run db:studio",
+    "db:generate": "npm --prefix frontend run db:generate"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",

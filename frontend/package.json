@@ -6,8 +6,11 @@
     "dev": "next dev",
     "build": "npm run convert-data && next build",
     "start": "next start",
-    "lint": "eslint",
-    "convert-data": "tsx scripts/convert-data.ts"
+    "convert-data": "tsx scripts/convert-data.ts",
+    "db:push": "npx prisma db push",
+    "db:seed": "tsx scripts/seed.ts",
+    "db:studio": "npx prisma studio",
+    "db:generate": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",

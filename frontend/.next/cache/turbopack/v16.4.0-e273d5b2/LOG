@@ -67,3 +67,9 @@ FAM | META SEQ | SST SEQ         | RANGE
     |          | 00000016 00000025 META DELETED
     |          | 00000017 00000026 META DELETED
     |          | 00000018 00000024 META DELETED
+Time 2026-10-10T16:51:19.408369Z
+Commit 00000042 961 keys in 37ms 370µs
+FAM | META SEQ | SST SEQ         | RANGE
+  0 | 00000040 | 00000039 SST    |                                                                             O                        | c44bdff4074eecdb-c44bdff4074eecdb (0 MiB, fresh, 38 bytes, 1 entries, 0 tombstones)
+  1 | 00000041 | 00000037 SST    | [==================================================================================================] | 00eb684ced39864b-fff7886cb587d8d8 (0 MiB, fresh, 507620 bytes, 928 entries, 0 tombstones)
+  2 | 00000042 | 00000038 SST    |    [=============================================================================================]   | 07ba30f23ab5e3e7-f9d0d5223ed7aaef (0 MiB, fresh, 19104 bytes, 32 entries, 0 tombstones)
