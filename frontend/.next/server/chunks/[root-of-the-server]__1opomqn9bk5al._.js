@@ -1,3 +1,0 @@
-module.exports=[86487,(e,r,a)=>{r.exports=e.x("@prisma/client-9e332e109af8093c",()=>require("@prisma/client-9e332e109af8093c"))},79603,e=>{"use strict";var r=e.i(86487);let a=globalThis.prisma??new r.PrismaClient({log:["error"]});async function t(){if(!process.env.DATABASE_URL)return!1;try{return await a.$queryRaw`SELECT 1`,!0}catch{return!1}}e.s(["isDatabaseConnected",0,t,"prisma",0,a])}];
-
-//# sourceMappingURL=%5Broot-of-the-server%5D__1opomqn9bk5al._.js.map
