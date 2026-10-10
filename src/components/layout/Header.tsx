@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Shield, Menu, X, Users, ListFilter, BookOpen, Database, Info, Trophy } from "lucide-react";
+import { Shield, Menu, X, Users, BookOpen, Calendar, Layers, Database, Trophy } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_LINKS = [
-  { href: "/players", label: "Players Directory", icon: Users },
-  { href: "/lists", label: "Curated Lists", icon: ListFilter },
-  { href: "/blog", label: "Articles & Analysis", icon: BookOpen },
-  { href: "/sources", label: "Data Sources", icon: Database },
-  { href: "/about", label: "About", icon: Info },
+  { href: "/blog", label: "Blog & Editorial", icon: BookOpen },
+  { href: "/activities", label: "Activities & Tournaments", icon: Calendar },
+  { href: "/players", label: "Player Profiles", icon: Users },
+  { href: "/lists", label: "Curated Rosters", icon: Layers },
+  { href: "/sources", label: "Sources", icon: Database },
 ];
 
 export function Header() {
@@ -29,10 +29,10 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-base sm:text-lg tracking-tight leading-none text-foreground flex items-center gap-1.5">
-                USA Sevens <span className="text-emerald-700 dark:text-emerald-400">Stats</span>
+                USA Sevens <span className="text-emerald-700 dark:text-emerald-400">Journal & Stats</span>
               </span>
               <span className="text-[10px] uppercase font-bold tracking-widest text-muted-foreground mt-0.5">
-                Eagles Sevens Hub
+                The American Sevens Dispatch
               </span>
             </div>
           </Link>
@@ -40,7 +40,9 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href));
               const Icon = link.icon;
               return (
                 <Link
@@ -87,7 +89,9 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-xl px-4 pt-3 pb-5 space-y-2 animate-in slide-in-from-top-2 duration-200">
           {NAV_LINKS.map((link) => {
-            const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
             const Icon = link.icon;
             return (
               <Link

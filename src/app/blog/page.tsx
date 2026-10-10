@@ -1,93 +1,163 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, getAllCategories } from "@/lib/blog";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
-import { BookOpen, Calendar, ArrowRight, Tag } from "lucide-react";
+import { AffiliateBox } from "@/components/monetization/AffiliateBox";
+import { BookOpen, Calendar, Clock, ArrowRight, Flame } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "USA Rugby Sevens Articles, History & Analysis",
+  title: "USA Rugby Sevens Blog & Journal | Stories, Strategy & Analysis",
   description:
-    "In-depth analysis, player retrospectives, and tournament coverage for USA Rugby Men's and Women's National Sevens teams.",
+    "The premier independent publication covering USA Men's and Women's Rugby Sevens: tournament debriefs, Olympic qualification, athlete interviews, and collegiate pathways.",
   openGraph: {
-    title: "USA Rugby Sevens Blog & Analysis",
+    title: "USA Rugby Sevens Blog & Journal",
     description:
-      "Deep-dive retrospectives, Olympic journeys, and tactician insights into USA Rugby Sevens.",
+      "Deep tactical debriefs, player features, and Olympic coverage of USA Rugby Sevens.",
   },
 };
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
+  const categories = getAllCategories();
+  const featured = posts[0];
+  const remaining = posts.slice(1);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
-      <Breadcrumbs items={[{ label: "Articles & Analysis" }]} />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+      <Breadcrumbs items={[{ label: "Blog & Editorial" }]} />
 
-      <div className="space-y-3">
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
+      {/* Hero Header */}
+      <div className="space-y-4 max-w-3xl">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-900/10 text-emerald-800 dark:bg-emerald-600/20 dark:text-emerald-300 border border-emerald-900/20 dark:border-emerald-500/30">
           <BookOpen className="w-3.5 h-3.5" />
-          <span>Rugby Sevens Editorial</span>
+          <span>The American Sevens Dispatch</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight">
-          USA Rugby Sevens Analysis & Articles
+        <h1 className="text-3xl sm:text-5xl font-black text-foreground tracking-tight">
+          Rugby Sevens Editorial & Analysis
         </h1>
-        <p className="text-sm sm:text-base text-muted-foreground max-w-3xl leading-relaxed">
-          Historical features, player spotlights, Olympic debriefs, and strategic breakdowns from the USA Sevens Stats editorial archive.
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+          From technical restart breakdowns and physiological analysis to Olympic squad journeys and collegiate scouting reports.
         </p>
       </div>
 
-      <AdSlot id="blog-index-top" format="horizontal" label="Editorial Sponsor" />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <article
-            key={post.slug}
-            className="flex flex-col justify-between rounded-2xl border border-border bg-card p-6 sm:p-7 hover:border-emerald-600/60 hover:shadow-lg transition-all group"
-          >
-            <div>
-              <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
-                <Calendar className="w-3.5 h-3.5" />
-                <time dateTime={post.date}>{post.date}</time>
-                <span>•</span>
-                <span>{post.readingTime}</span>
-              </div>
-
-              <h2 className="text-xl font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
-                <Link href={`/blog/${post.slug}`} className="hover:underline">
-                  {post.title}
-                </Link>
-              </h2>
-
-              <p className="text-xs sm:text-sm text-muted-foreground mt-3 line-clamp-3 leading-relaxed">
-                {post.description}
-              </p>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs">
-              <div className="flex flex-wrap gap-1.5">
-                {post.tags.slice(0, 2).map((t) => (
-                  <span
-                    key={t}
-                    className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-secondary text-[10px] font-medium text-secondary-foreground"
-                  >
-                    <Tag className="w-2.5 h-2.5" />
-                    <span>{t}</span>
-                  </span>
-                ))}
-              </div>
-
-              <Link
-                href={`/blog/${post.slug}`}
-                className="font-semibold text-emerald-800 dark:text-emerald-400 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
-              >
-                <span>Read Article</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </article>
-        ))}
+      {/* Category Pills Bar */}
+      <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-border">
+        <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground mr-2">
+          Categories:
+        </span>
+        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-800 text-white dark:bg-emerald-600">
+          All Stories ({posts.length})
+        </span>
+        {categories.map((cat) => {
+          const count = posts.filter((p) => p.category === cat).length;
+          return (
+            <span
+              key={cat}
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-secondary text-secondary-foreground hover:bg-accent transition-colors"
+            >
+              {cat} ({count})
+            </span>
+          );
+        })}
       </div>
+
+      {/* Lead Feature Story */}
+      {featured && (
+        <article className="rounded-3xl border border-border bg-gradient-to-br from-emerald-950/20 via-card to-card p-6 sm:p-10 shadow-md hover:border-emerald-600/50 transition-all group">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground mb-3">
+            <span className="font-extrabold text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
+              {featured.category}
+            </span>
+            <span className="inline-flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400">
+              <Flame className="w-3.5 h-3.5" /> Cover Story
+            </span>
+            <span>•</span>
+            <div className="flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5" />
+              <time dateTime={featured.date}>{featured.date}</time>
+            </div>
+            <span>•</span>
+            <div className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5" />
+              <span>{featured.readingTime}</span>
+            </div>
+          </div>
+
+          <h2 className="text-2xl sm:text-4xl font-black text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight mb-4">
+            <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
+          </h2>
+
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-4xl mb-6">
+            {featured.description}
+          </p>
+
+          <div className="pt-4 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="text-xs text-muted-foreground">
+              Written by <strong className="text-foreground">{featured.author.name}</strong> • {featured.author.role}
+            </div>
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 dark:text-emerald-400 group-hover:translate-x-1 transition-transform"
+            >
+              <span>Read Full Article</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </article>
+      )}
+
+      <AdSlot id="blog-index-mid" format="horizontal" label="Editorial Sponsor" />
+
+      {/* Grid of Remaining Articles */}
+      <div className="space-y-4">
+        <h3 className="text-xl font-bold text-foreground">All Articles</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {remaining.map((post) => (
+            <article
+              key={post.slug}
+              className="flex flex-col justify-between rounded-2xl border border-border bg-card p-6 hover:border-emerald-600/60 hover:shadow-lg transition-all group"
+            >
+              <div>
+                <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                  <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[11px]">
+                    {post.category}
+                  </span>
+                  <span>{post.readingTime}</span>
+                </div>
+
+                <h4 className="text-lg font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
+                  <Link href={`/blog/${post.slug}`} className="hover:underline">
+                    {post.title}
+                  </Link>
+                </h4>
+
+                <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-3 leading-relaxed">
+                  {post.description}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs">
+                <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                  <Calendar className="w-3 h-3" />
+                  <time dateTime={post.date}>{post.date}</time>
+                </div>
+
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="font-bold text-emerald-800 dark:text-emerald-400 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                >
+                  <span>Read</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <AffiliateBox />
     </div>
   );
 }

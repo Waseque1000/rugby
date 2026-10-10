@@ -3,11 +3,21 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getPlayerBySlug } from "@/lib/players";
+import { PlayerCard } from "@/components/players/PlayerCard";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { AffiliateBox } from "@/components/monetization/AffiliateBox";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
-import { Calendar, Clock, Tag, ArrowLeft } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  Tag,
+  ArrowLeft,
+  User,
+  Sparkles,
+  BookOpen,
+} from "lucide-react";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -33,15 +43,17 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${post.title} | USA Sevens Stats`,
+    title: `${post.title} | USA Sevens Journal`,
     description: post.description,
+    keywords: [...post.tags, "USA Rugby Sevens", "World Rugby", "Eagles"],
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      authors: ["USA Sevens Stats Editorial"],
+      authors: [post.author.name],
       url: `/blog/${post.slug}`,
+      siteName: "USA Sevens Stats & Journal",
     },
     twitter: {
       card: "summary_large_image",
@@ -59,31 +71,47 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  // Schema.org Article JSON-LD
-  const articleJsonLd = {
+  // Cross-linked players mentioned in this article
+  const mentionedPlayers = (post.relatedPlayerSlugs || [])
+    .map((s) => getPlayerBySlug(s))
+    .filter(Boolean);
+
+  // Other related posts
+  const otherPosts = getAllPosts()
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 2);
+
+  // Schema.org BlogPosting JSON-LD
+  const blogPostingJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://usa-sevens-stats.vercel.app/blog/${post.slug}`,
+    },
     author: {
-      "@type": "Organization",
-      name: "USA Sevens Stats Editorial",
-      url: "https://usa-sevens-stats.vercel.app",
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
     },
     publisher: {
       "@type": "Organization",
       name: "USA Sevens Stats",
+      url: "https://usa-sevens-stats.vercel.app",
       logo: {
         "@type": "ImageObject",
-        url: "https://usa-sevens-stats.vercel.app/icon.png",
+        url: "https://usa-sevens-stats.vercel.app/icon",
       },
     },
     keywords: post.tags.join(", "),
+    articleSection: post.category,
   };
 
-  // Convert simple markdown headings and lines to clean styled elements
+  // Convert markdown content to styled semantic HTML elements
   const renderMarkdownContent = (raw: string) => {
     const lines = raw.split("\n");
     const elements: React.ReactNode[] = [];
@@ -95,7 +123,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       if (trimmed.startsWith("# ")) {
         if (inList) {
-          elements.push(<ul key={`ul-${idx}`} className="list-disc list-inside space-y-1.5 my-4 text-muted-foreground">{listItems}</ul>);
+          elements.push(
+            <ul key={`ul-${idx}`} className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+              {listItems}
+            </ul>
+          );
           inList = false;
           listItems = [];
         }
@@ -106,34 +138,46 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         );
       } else if (trimmed.startsWith("## ")) {
         if (inList) {
-          elements.push(<ul key={`ul-${idx}`} className="list-disc list-inside space-y-1.5 my-4 text-muted-foreground">{listItems}</ul>);
+          elements.push(
+            <ul key={`ul-${idx}`} className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+              {listItems}
+            </ul>
+          );
           inList = false;
           listItems = [];
         }
         elements.push(
-          <h2 key={idx} className="text-xl sm:text-2xl font-bold text-foreground mt-7 mb-3 tracking-tight">
+          <h2 key={idx} className="text-xl sm:text-2xl font-bold text-foreground mt-8 mb-3 tracking-tight border-b border-border/50 pb-2">
             {trimmed.replace("## ", "")}
           </h2>
         );
       } else if (trimmed.startsWith("### ")) {
         if (inList) {
-          elements.push(<ul key={`ul-${idx}`} className="list-disc list-inside space-y-1.5 my-4 text-muted-foreground">{listItems}</ul>);
+          elements.push(
+            <ul key={`ul-${idx}`} className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+              {listItems}
+            </ul>
+          );
           inList = false;
           listItems = [];
         }
         elements.push(
-          <h3 key={idx} className="text-lg font-bold text-foreground mt-5 mb-2">
+          <h3 key={idx} className="text-lg font-bold text-foreground mt-6 mb-2">
             {trimmed.replace("### ", "")}
           </h3>
         );
       } else if (trimmed.startsWith("> ")) {
         if (inList) {
-          elements.push(<ul key={`ul-${idx}`} className="list-disc list-inside space-y-1.5 my-4 text-muted-foreground">{listItems}</ul>);
+          elements.push(
+            <ul key={`ul-${idx}`} className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+              {listItems}
+            </ul>
+          );
           inList = false;
           listItems = [];
         }
         elements.push(
-          <blockquote key={idx} className="border-l-4 border-emerald-600 pl-4 py-2 italic my-6 text-foreground/90 bg-emerald-950/10 dark:bg-emerald-900/20 rounded-r-xl">
+          <blockquote key={idx} className="border-l-4 border-emerald-600 pl-4 py-2 italic my-6 text-foreground/95 bg-emerald-950/10 dark:bg-emerald-900/20 rounded-r-xl leading-relaxed">
             {trimmed.replace("> ", "")}
           </blockquote>
         );
@@ -147,12 +191,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         );
       } else if (trimmed.length > 0) {
         if (inList) {
-          elements.push(<ul key={`ul-${idx}`} className="list-disc list-inside space-y-1.5 my-4 text-muted-foreground">{listItems}</ul>);
+          elements.push(
+            <ul key={`ul-${idx}`} className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+              {listItems}
+            </ul>
+          );
           inList = false;
           listItems = [];
         }
         elements.push(
-          <p key={idx} className="text-sm sm:text-base text-muted-foreground leading-relaxed my-3">
+          <p key={idx} className="text-base sm:text-lg text-muted-foreground leading-relaxed my-4">
             {trimmed}
           </p>
         );
@@ -160,7 +208,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     });
 
     if (inList && listItems.length > 0) {
-      elements.push(<ul key="ul-last" className="list-disc list-inside space-y-1.5 my-4 text-muted-foreground">{listItems}</ul>);
+      elements.push(
+        <ul key="ul-last" className="list-disc list-inside space-y-2 my-4 text-muted-foreground">
+          {listItems}
+        </ul>
+      );
     }
 
     return elements;
@@ -171,12 +223,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Article Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
       />
 
       <Breadcrumbs
         items={[
-          { label: "Articles", href: "/blog" },
+          { label: "Blog", href: "/blog" },
           { label: post.title },
         ]}
       />
@@ -184,10 +236,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Header */}
       <header className="space-y-4">
         <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
+            {post.category}
+          </span>
           {post.tags.map((t) => (
             <span
               key={t}
-              className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground"
+              className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-secondary text-secondary-foreground"
             >
               <Tag className="w-2.5 h-2.5" />
               <span>{t}</span>
@@ -195,15 +250,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           ))}
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.15]">
           {post.title}
         </h1>
 
-        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+        <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">
           {post.description}
         </p>
 
-        <div className="flex items-center justify-between pt-4 border-t border-border text-xs text-muted-foreground">
+        {/* Byline & Meta */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-border text-xs text-muted-foreground">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 font-black text-sm flex items-center justify-center">
+              {post.author.name.slice(0, 2).toUpperCase()}
+            </div>
+            <div>
+              <div className="font-bold text-sm text-foreground">
+                {post.author.name}
+              </div>
+              <div className="text-[11px] text-muted-foreground">
+                {post.author.role}
+              </div>
+            </div>
+          </div>
+
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-emerald-600" />
@@ -215,47 +285,114 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span>{post.readingTime}</span>
             </span>
           </div>
-          <span className="font-semibold text-foreground">
-            By USA Sevens Editorial
-          </span>
         </div>
       </header>
 
       {/* Top Ad Slot */}
       <AdSlot id="article-top-ad" format="horizontal" label="Article Partner" />
 
-      {/* Post Content */}
-      <div className="bg-card border border-border rounded-3xl p-6 sm:p-10 shadow-xs prose dark:prose-invert max-w-none">
+      {/* Main Post Content */}
+      <article className="bg-card border border-border rounded-3xl p-6 sm:p-12 shadow-xs prose dark:prose-invert max-w-none">
         {renderMarkdownContent(post.content)}
-      </div>
+      </article>
 
-      {/* Middle Ad slot */}
+      {/* In-content Mid Ad slot */}
       <AdSlot id="article-mid-ad" format="in-feed" label="Sponsored Resource" />
 
-      {/* Affiliate Box */}
-      <AffiliateBox title="Recommended Rugby Training Equipment" />
+      {/* Cross-Linked Player Dossiers (if article references specific players) */}
+      {mentionedPlayers.length > 0 && (
+        <section className="space-y-4 rounded-3xl border border-emerald-900/30 bg-emerald-950/5 dark:bg-emerald-900/10 p-6 sm:p-8">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-amber-500" />
+            <h3 className="font-extrabold text-lg text-foreground">
+              Players Spotlighted in this Article
+            </h3>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Explore their verified caps, collegiate records, and Olympic milestones from our database:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            {mentionedPlayers.map((p) => (
+              p && <PlayerCard key={p.id} player={p} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* Newsletter callout */}
-      <div className="p-8 rounded-2xl bg-gradient-to-br from-emerald-950/20 via-card to-card border border-border text-center space-y-3">
+      {/* Author Bio Card */}
+      <div className="p-6 rounded-2xl bg-secondary/70 border border-border flex items-start gap-4">
+        <div className="w-12 h-12 rounded-2xl bg-emerald-800 text-white dark:bg-emerald-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
+          <User className="w-6 h-6" />
+        </div>
+        <div className="space-y-1">
+          <h4 className="font-bold text-sm text-foreground">
+            About {post.author.name}
+          </h4>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {post.author.bio ||
+              `${post.author.name} is a specialist contributor for USA Sevens Stats, covering World Rugby SVNS tournaments, athlete development pathways, and Olympic preparation.`}
+          </p>
+        </div>
+      </div>
+
+      {/* Gear Recommendations */}
+      <AffiliateBox title="Recommended Training & Match Gear" />
+
+      {/* Newsletter Signup */}
+      <div className="p-8 rounded-3xl bg-gradient-to-br from-emerald-950/20 via-card to-card border border-border text-center space-y-3">
         <h3 className="font-bold text-lg text-foreground">
-          Enjoyed this rugby sevens analysis?
+          Enjoyed this analysis? Join The Sevens Dispatch
         </h3>
         <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
-          Subscribe for tactical features, Olympic team retrospectives, and tournament rosters.
+          Weekly tactical debriefs, tournament schedules, and athlete interviews delivered to your inbox.
         </p>
         <div className="max-w-md mx-auto pt-2">
           <NewsletterForm />
         </div>
       </div>
 
-      {/* Back button */}
-      <div className="pt-4 border-t border-border">
+      {/* More Articles */}
+      {otherPosts.length > 0 && (
+        <section className="space-y-4 pt-4 border-t border-border">
+          <h3 className="font-bold text-lg text-foreground flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-emerald-600" />
+            <span>Continue Reading</span>
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {otherPosts.map((other) => (
+              <Link
+                key={other.slug}
+                href={`/blog/${other.slug}`}
+                className="p-5 rounded-2xl border border-border bg-card hover:border-emerald-600/50 hover:shadow-md transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-bold uppercase text-emerald-700 dark:text-emerald-400">
+                    {other.category}
+                  </span>
+                  <h4 className="font-bold text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 mt-1 line-clamp-2">
+                    {other.title}
+                  </h4>
+                </div>
+                <div className="text-[11px] text-muted-foreground mt-3 flex items-center justify-between">
+                  <span>{other.readingTime}</span>
+                  <span className="font-semibold text-emerald-800 dark:text-emerald-400">
+                    Read &rarr;
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Back to Blog */}
+      <div>
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-800 dark:text-emerald-400 hover:underline"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to all articles</span>
+          <span>Back to All Articles</span>
         </Link>
       </div>
     </div>
