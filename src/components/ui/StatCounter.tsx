@@ -55,13 +55,13 @@ export function StatCounter({ stats }: StatCounterProps) {
   const getIcon = (type: StatItem["icon"]) => {
     switch (type) {
       case "users":
-        return <Users className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />;
+        return <Users className="w-5 h-5 text-blue-700 dark:text-blue-400" />;
       case "trophy":
         return <Trophy className="w-5 h-5 text-amber-500" />;
       case "men":
-        return <Shield className="w-5 h-5 text-emerald-800 dark:text-emerald-300" />;
+        return <Shield className="w-5 h-5 text-blue-800 dark:text-blue-300" />;
       case "women":
-        return <Shield className="w-5 h-5 text-teal-700 dark:text-teal-300" />;
+        return <Shield className="w-5 h-5 text-rose-700 dark:text-rose-300" />;
       case "college":
         return <GraduationCap className="w-5 h-5 text-amber-600 dark:text-amber-400" />;
     }
@@ -72,22 +72,25 @@ export function StatCounter({ stats }: StatCounterProps) {
       {items.map((item, idx) => (
         <div
           key={idx}
-          className={`flex flex-col justify-between p-4 sm:p-5 rounded-2xl border border-border bg-card shadow-xs transition-all hover:border-emerald-500/40 ${
-            idx === items.length - 1 ? "col-span-2 md:col-span-1" : ""
+          className={`flex flex-col justify-between p-4 sm:p-5 rounded-2xl border border-border bg-card shadow-xs transition-all hover:border-blue-500/40 ${
+            idx === 4 ? "col-span-2 md:col-span-1" : ""
           }`}
         >
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="flex items-center justify-between gap-2 mb-3">
+            <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider line-clamp-1">
               {item.label}
             </span>
-            <div className="p-1.5 rounded-lg bg-secondary/80">{getIcon(item.icon)}</div>
+            <div className="p-1.5 rounded-xl bg-secondary/80 flex-shrink-0">
+              {getIcon(item.icon)}
+            </div>
           </div>
+
           <div>
-            <div className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
-              {item.value}
+            <div className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">
+              {typeof item.value === "number" ? item.value.toLocaleString() : item.value}
             </div>
             {item.description && (
-              <p className="text-[11px] text-muted-foreground mt-0.5 leading-snug">
+              <p className="text-[11px] text-muted-foreground mt-1 line-clamp-1">
                 {item.description}
               </p>
             )}

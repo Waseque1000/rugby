@@ -95,15 +95,15 @@ export function Header() {
               href="/"
               className="flex items-center gap-3 group shrink-0 select-none py-1"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-800 to-emerald-950 dark:from-emerald-600 dark:to-emerald-800 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-950 dark:from-blue-600 dark:via-blue-700 dark:to-indigo-900 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform">
                 <Shield className="w-5 h-5 text-amber-400 group-hover:rotate-6 transition-transform" />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-base sm:text-lg tracking-tight text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                  <span className="font-extrabold text-base sm:text-lg tracking-tight text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                     USA Sevens
                   </span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-emerald-800/10 text-emerald-800 dark:bg-emerald-400/15 dark:text-emerald-300 border border-emerald-800/20 dark:border-emerald-400/30 uppercase tracking-wider">
+                  <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-blue-600/10 text-blue-700 dark:bg-blue-400/15 dark:text-blue-300 border border-blue-600/20 dark:border-blue-400/30 uppercase tracking-wider">
                     Dispatch
                   </span>
                 </div>
@@ -126,7 +126,7 @@ export function Header() {
                     href={link.href}
                     className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                       isActive
-                        ? "bg-emerald-800 text-white dark:bg-emerald-600 dark:text-white font-bold shadow-xs"
+                        ? "bg-blue-700 text-white dark:bg-blue-600 dark:text-white font-bold shadow-xs"
                         : "text-foreground/80 hover:text-foreground hover:bg-muted"
                     }`}
                   >
@@ -134,8 +134,8 @@ export function Header() {
                     <span>{link.label}</span>
                     {link.hasDot && (
                       <span className="flex h-2 w-2 relative ml-0.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                       </span>
                     )}
                   </Link>
@@ -152,7 +152,7 @@ export function Header() {
                 className="flex items-center gap-2 h-9 px-3 rounded-xl border border-border bg-secondary/60 hover:bg-secondary text-muted-foreground hover:text-foreground text-xs font-medium transition-all cursor-pointer"
                 aria-label="Open search dialog"
               >
-                <Search className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
+                <Search className="w-4 h-4 text-blue-700 dark:text-blue-400" />
                 <span className="hidden sm:inline">Search...</span>
                 <kbd className="hidden md:inline-flex items-center text-[10px] font-mono px-1.5 py-0.5 rounded bg-card border border-border text-muted-foreground">
                   ⌘K
@@ -202,7 +202,7 @@ export function Header() {
                   onClick={() => setMobileOpen(false)}
                   className={`flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition-all ${
                     isActive
-                      ? "bg-emerald-800 text-white dark:bg-emerald-600 dark:text-white font-bold"
+                      ? "bg-blue-700 text-white dark:bg-blue-600 dark:text-white font-bold"
                       : "text-foreground hover:bg-muted"
                   }`}
                 >
@@ -211,7 +211,7 @@ export function Header() {
                     <span>{link.label}</span>
                   </div>
                   {link.hasDot ? (
-                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-emerald-500 text-white">
+                    <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-red-600 text-white">
                       Live Tour
                     </span>
                   ) : (
@@ -246,7 +246,7 @@ export function Header() {
           <div className="w-full max-w-xl rounded-2xl bg-card border border-border shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150">
             {/* Search Input Box */}
             <form onSubmit={handleSearchSubmit} className="relative flex items-center border-b border-border p-4">
-              <Search className="w-5 h-5 text-emerald-700 dark:text-emerald-400 mr-3 shrink-0" />
+              <Search className="w-5 h-5 text-blue-700 dark:text-blue-400 mr-3 shrink-0" />
               <input
                 ref={searchInputRef}
                 type="text"
@@ -284,7 +284,7 @@ export function Header() {
                     key={item.label}
                     href={item.href}
                     onClick={() => setSearchOpen(false)}
-                    className="px-3 py-1.5 rounded-xl text-xs font-medium bg-card border border-border hover:border-emerald-600/60 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors shadow-2xs"
+                    className="px-3 py-1.5 rounded-xl text-xs font-medium bg-card border border-border hover:border-blue-600/60 hover:text-blue-700 dark:hover:text-blue-400 transition-colors shadow-2xs"
                   >
                     {item.label}
                   </Link>

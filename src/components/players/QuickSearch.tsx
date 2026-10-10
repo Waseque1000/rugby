@@ -67,12 +67,12 @@ export function QuickSearch({ players }: QuickSearchProps) {
             }}
             onFocus={() => setIsOpen(true)}
             placeholder="Search USA Sevens players (e.g., Perry Baker, Alev Kelter, Cal, Wing)..."
-            className="w-full pl-12 pr-28 py-3.5 sm:py-4 rounded-2xl border-2 border-emerald-900/20 dark:border-emerald-600/30 bg-background/95 backdrop-blur-md text-foreground text-sm sm:text-base focus:outline-none focus:border-emerald-700 dark:focus:border-emerald-400 shadow-xl transition-all placeholder:text-muted-foreground"
+            className="w-full pl-12 pr-28 py-3.5 sm:py-4 rounded-2xl border-2 border-blue-900/20 dark:border-blue-600/30 bg-background/95 backdrop-blur-md text-foreground text-sm sm:text-base focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 shadow-xl transition-all placeholder:text-muted-foreground"
             aria-label="Search players by name, college, or position"
           />
           <button
             type="submit"
-            className="absolute right-2 px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm shadow-sm transition-all cursor-pointer"
+            className="absolute right-2 px-4 py-2 sm:py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm shadow-sm transition-all cursor-pointer"
           >
             Search
           </button>
@@ -90,11 +90,11 @@ export function QuickSearch({ players }: QuickSearchProps) {
                 className="w-full flex items-center justify-between p-3 text-left hover:bg-accent/80 rounded-xl transition-colors group cursor-pointer"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 font-bold text-xs flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-blue-900/15 text-blue-800 dark:text-blue-300 font-bold text-xs flex items-center justify-center">
                     {player.name.slice(0, 2).toUpperCase()}
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 flex items-center gap-2">
+                    <div className="font-bold text-sm text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 flex items-center gap-2">
                       <span>{player.name}</span>
                       {player.isOlympian && (
                         <Trophy className="w-3.5 h-3.5 text-amber-500 inline" />
@@ -117,7 +117,7 @@ export function QuickSearch({ players }: QuickSearchProps) {
                 setIsOpen(false);
                 router.push(`/players`);
               }}
-              className="font-semibold text-emerald-800 dark:text-emerald-400 hover:underline"
+              className="font-semibold text-blue-700 dark:text-blue-400 hover:underline"
             >
               Browse Full Directory &rarr;
             </button>

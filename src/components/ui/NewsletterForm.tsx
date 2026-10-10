@@ -47,8 +47,8 @@ export function NewsletterForm({ className = "", compact = false }: NewsletterFo
   return (
     <div className={`w-full ${className}`}>
       {status === "success" ? (
-        <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-950/20 border border-emerald-600/40 text-emerald-800 dark:text-emerald-300">
-          <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+        <div className="flex items-center gap-3 p-4 rounded-xl bg-blue-950/15 border border-blue-600/40 text-blue-800 dark:text-blue-300">
+          <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-blue-600 dark:text-blue-400" />
           <div className="text-sm font-medium">
             You&apos;re in! You&apos;ll receive squad updates, Olympic roster news, and tournament recap insights.
           </div>
@@ -64,14 +64,14 @@ export function NewsletterForm({ className = "", compact = false }: NewsletterFo
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 dark:focus:ring-emerald-500 transition-all placeholder:text-muted-foreground"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-500 transition-all placeholder:text-muted-foreground"
                 aria-label="Email address for rugby newsletter"
               />
             </div>
             <button
               type="submit"
               disabled={status === "loading"}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-medium text-sm transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-emerald-600 disabled:opacity-50 flex-shrink-0 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:opacity-50 flex-shrink-0 cursor-pointer"
             >
               {status === "loading" ? (
                 <>
@@ -91,8 +91,8 @@ export function NewsletterForm({ className = "", compact = false }: NewsletterFo
             </div>
           )}
 
-          <p className="text-[11px] text-muted-foreground">
-            Zero spam. Unsubscribe at any time. We respect your privacy.
+          <p className="text-[11px] text-muted-foreground text-center">
+            Zero spam. Unsubscribe anytime. Not affiliated with USA Rugby.
           </p>
         </form>
       )}

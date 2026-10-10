@@ -151,7 +151,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by player name, college, hometown, position..."
-              className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 transition-all placeholder:text-muted-foreground"
+              className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all placeholder:text-muted-foreground"
               aria-label="Search players"
             />
             {search && (
@@ -171,7 +171,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               onClick={() => setSelectedTeam("all")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTeam === "all"
-                  ? "bg-card text-foreground shadow-xs"
+                  ? "bg-card text-foreground shadow-xs font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -181,7 +181,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               onClick={() => setSelectedTeam("men")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTeam === "men"
-                  ? "bg-card text-emerald-800 dark:text-emerald-300 shadow-xs"
+                  ? "bg-card text-blue-800 dark:text-blue-300 shadow-xs font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -191,7 +191,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               onClick={() => setSelectedTeam("women")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTeam === "women"
-                  ? "bg-card text-teal-800 dark:text-teal-300 shadow-xs"
+                  ? "bg-card text-rose-800 dark:text-rose-300 shadow-xs font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -224,7 +224,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
                   setSortBy(field);
                   setSortOrder(order);
                 }}
-                className="bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-600 focus:outline-none cursor-pointer"
+                className="bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none cursor-pointer"
               >
                 <option value="name-asc">Name (A-Z)</option>
                 <option value="name-desc">Name (Z-A)</option>
@@ -247,7 +247,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedPosition}
                 onChange={(e) => setSelectedPosition(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-600 focus:outline-none"
+                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All Positions</option>
                 {filterOptions.positions.map((pos) => (
@@ -266,7 +266,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedOlympics}
                 onChange={(e) => setSelectedOlympics(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-600 focus:outline-none"
+                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All Athletes</option>
                 <option value="any">Any Olympic Selection</option>
@@ -286,7 +286,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedCollege}
                 onChange={(e) => setSelectedCollege(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-600 focus:outline-none"
+                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All Colleges</option>
                 {filterOptions.colleges.map((col) => (
@@ -305,7 +305,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-600 focus:outline-none"
+                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All States</option>
                 {filterOptions.states.map((st) => (
@@ -325,7 +325,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               </span>
               <button
                 onClick={resetAllFilters}
-                className="inline-flex items-center gap-1 text-emerald-800 dark:text-emerald-400 hover:underline font-semibold cursor-pointer"
+                className="inline-flex items-center gap-1 text-blue-700 dark:text-blue-400 hover:underline font-semibold cursor-pointer"
               >
                 <RotateCcw className="w-3 h-3" />
                 <span>Reset all filters</span>
@@ -338,7 +338,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
       {/* Results Count Banner */}
       <div className="flex items-center justify-between text-xs text-muted-foreground px-1">
         <span className="flex items-center gap-1.5">
-          <Users className="w-3.5 h-3.5 text-emerald-600" />
+          <Users className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
           <span>Showing <strong>{sortedPlayers.length}</strong> player profiles</span>
         </span>
       </div>
@@ -359,7 +359,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
           </p>
           <button
             onClick={resetAllFilters}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-800 dark:bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-900 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-700 dark:bg-blue-600 text-white text-xs font-semibold hover:bg-blue-800 transition-colors cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Clear Filters</span>

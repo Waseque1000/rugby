@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ShoppingBag, ArrowUpRight, Award, ShieldCheck } from "lucide-react";
+import { ShoppingBag, ArrowUpRight, Award } from "lucide-react";
 
 interface GearItem {
   title: string;
@@ -51,11 +51,11 @@ export function AffiliateBox({
 }: AffiliateBoxProps) {
   return (
     <div
-      className={`bg-gradient-to-br from-emerald-950/20 via-card to-amber-950/10 border border-emerald-900/30 dark:border-emerald-700/30 rounded-2xl p-6 shadow-sm ${className}`}
+      className={`bg-gradient-to-br from-blue-950/10 via-card to-slate-950/10 border border-blue-900/30 dark:border-blue-700/30 rounded-2xl p-6 shadow-sm ${className}`}
     >
       <div className="flex items-center justify-between gap-3 mb-4">
         <div className="flex items-center gap-2.5">
-          <div className="p-2 rounded-lg bg-emerald-800 text-white dark:bg-emerald-600">
+          <div className="p-2 rounded-lg bg-blue-700 text-white dark:bg-blue-600">
             <ShoppingBag className="w-5 h-5" />
           </div>
           <div>
@@ -63,7 +63,7 @@ export function AffiliateBox({
             <p className="text-xs text-muted-foreground">Handpicked gear for training, fitness, and game day</p>
           </div>
         </div>
-        <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-medium text-emerald-800 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full">
+        <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-medium text-blue-800 dark:text-blue-300 bg-blue-100 dark:bg-blue-950/60 px-2.5 py-1 rounded-full">
           <Award className="w-3.5 h-3.5" /> Curated
         </span>
       </div>
@@ -72,18 +72,18 @@ export function AffiliateBox({
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col justify-between p-4 rounded-xl bg-card border border-border hover:border-emerald-500/50 hover:shadow-md transition-all group"
+            className="flex flex-col justify-between p-4 rounded-xl bg-card border border-border hover:border-blue-500/50 hover:shadow-md transition-all group"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-2">
-                <span className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">
+                <span className="text-[11px] font-semibold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
                   {item.category}
                 </span>
                 {item.priceEstimate && (
                   <span className="text-xs font-bold text-foreground">{item.priceEstimate}</span>
                 )}
               </div>
-              <h4 className="font-semibold text-sm text-foreground mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h4 className="font-semibold text-sm text-foreground mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {item.title}
               </h4>
               <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
@@ -101,7 +101,7 @@ export function AffiliateBox({
                 href={item.affiliateUrl}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline ml-auto"
+                className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline ml-auto"
               >
                 View Gear <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
@@ -110,11 +110,8 @@ export function AffiliateBox({
         ))}
       </div>
 
-      <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mt-3 pt-2 border-t border-border/40">
-        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-        <span>
-          <strong>Affiliate Disclosure:</strong> As an affiliate partner, we may earn a small commission on qualifying purchases made through gear links at no additional cost to you.
-        </span>
+      <div className="text-[11px] text-muted-foreground text-center pt-2">
+        We may earn a small referral commission at no additional cost to you when purchasing through our curated links.
       </div>
     </div>
   );

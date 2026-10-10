@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Breadcrumbs items={[{ label: "About" }]} />
 
       <div className="space-y-4">
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
           <Shield className="w-3.5 h-3.5" />
           <span>About the Platform</span>
         </div>
@@ -31,7 +31,7 @@ export default function AboutPage() {
       <div className="space-y-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 space-y-4">
           <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            <Target className="w-5 h-5 text-emerald-600" />
+            <Target className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <span>Our Mission</span>
           </h2>
           <p>
@@ -44,7 +44,7 @@ export default function AboutPage() {
 
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-8 space-y-4">
           <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-            <Users className="w-5 h-5 text-emerald-600" />
+            <Users className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <span>Our Zero-Invention Data Pledge</span>
           </h2>
           <p>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <li>We never guess or extrapolate missing dates of birth, caps totals, or hometowns.</li>
             <li>If a data point cannot be confirmed from an official cited source, the field is left blank.</li>
             <li>We do not estimate net worths or publish ungrounded financial claims.</li>
-            <li>Every record links back to verified primary sources on our <Link href="/sources" className="text-emerald-800 dark:text-emerald-400 font-semibold underline">Data Sources</Link> directory.</li>
+            <li>Every record links back to verified primary sources on our <Link href="/sources" className="text-blue-700 dark:text-blue-400 font-semibold underline">Data Sources</Link> directory.</li>
           </ul>
         </div>
 
@@ -70,14 +70,14 @@ export default function AboutPage() {
         <div className="pt-4 flex items-center justify-between">
           <Link
             href="/players"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-semibold text-sm transition-all"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-sm"
           >
             <span>Explore Players Directory</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-semibold text-emerald-800 dark:text-emerald-400 hover:underline"
+            className="text-sm font-semibold text-blue-700 dark:text-blue-400 hover:underline"
           >
             Contact the Editor &rarr;
           </Link>

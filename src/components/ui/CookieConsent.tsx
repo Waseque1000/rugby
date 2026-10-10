@@ -45,7 +45,7 @@ export function CookieConsent() {
     >
       <div className="bg-card/95 backdrop-blur-md border border-border rounded-2xl p-5 shadow-2xl text-foreground">
         <div className="flex items-start gap-3">
-          <div className="p-2 rounded-xl bg-emerald-950/20 text-emerald-800 dark:text-emerald-400 dark:bg-emerald-900/40 flex-shrink-0 mt-0.5">
+          <div className="p-2 rounded-xl bg-blue-950/15 text-blue-700 dark:text-blue-400 dark:bg-blue-900/30 flex-shrink-0 mt-0.5">
             <Cookie className="w-5 h-5" />
           </div>
           <div className="flex-1">
@@ -61,14 +61,14 @@ export function CookieConsent() {
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed mb-4">
               We use essential and analytics cookies to optimize site performance, analyze audience traffic, and deliver a smooth rugby database experience. Read our{" "}
-              <Link href="/privacy" className="text-emerald-800 dark:text-emerald-400 underline font-medium">
+              <Link href="/privacy" className="text-blue-700 dark:text-blue-400 underline font-medium">
                 Privacy Policy
               </Link>.
             </p>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleAccept}
-                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
               >
                 <Check className="w-3.5 h-3.5" /> Accept All
               </button>

@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           listItems = [];
         }
         elements.push(
-          <blockquote key={idx} className="border-l-4 border-emerald-600 pl-4 py-2 italic my-6 text-foreground/95 bg-emerald-950/10 dark:bg-emerald-900/20 rounded-r-xl leading-relaxed">
+          <blockquote key={idx} className="border-l-4 border-blue-600 pl-4 py-2 italic my-6 text-foreground/95 bg-blue-950/10 dark:bg-blue-900/20 rounded-r-xl leading-relaxed">
             {trimmed.replace("> ", "")}
           </blockquote>
         );
@@ -242,7 +242,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Header */}
       <header className="space-y-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
+          <span className="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-700 text-white dark:bg-blue-600">
             {post.category}
           </span>
           {post.tags.map((t) => (
@@ -267,7 +267,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Byline & Meta */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-border text-xs text-muted-foreground">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 font-black text-sm flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-blue-900/15 text-blue-800 dark:text-blue-300 font-black text-sm flex items-center justify-center">
               {post.author.name.slice(0, 2).toUpperCase()}
             </div>
             <div>
@@ -282,12 +282,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+              <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
               <time dateTime={post.date}>{post.date}</time>
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-emerald-600" />
+              <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
               <span>{post.readingTime}</span>
             </span>
           </div>
@@ -326,7 +326,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Cross-Linked Player Dossiers (if article references specific players) */}
       {mentionedPlayers.length > 0 && (
-        <section className="space-y-4 rounded-3xl border border-emerald-900/30 bg-emerald-950/5 dark:bg-emerald-900/10 p-6 sm:p-8">
+        <section className="space-y-4 rounded-3xl border border-blue-900/30 bg-blue-950/5 dark:bg-blue-900/10 p-6 sm:p-8">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-amber-500" />
             <h3 className="font-extrabold text-lg text-foreground">
@@ -346,7 +346,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Author Bio Card */}
       <div className="p-6 rounded-2xl bg-secondary/70 border border-border flex items-start gap-4">
-        <div className="w-12 h-12 rounded-2xl bg-emerald-800 text-white dark:bg-emerald-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
+        <div className="w-12 h-12 rounded-2xl bg-blue-700 text-white dark:bg-blue-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
           <User className="w-6 h-6" />
         </div>
         <div className="space-y-1">
@@ -364,7 +364,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <AffiliateBox title="Recommended Training & Match Gear" />
 
       {/* Newsletter Signup */}
-      <div className="p-8 rounded-3xl bg-gradient-to-br from-emerald-950/20 via-card to-card border border-border text-center space-y-3">
+      <div className="p-8 rounded-3xl bg-gradient-to-br from-blue-950/10 via-card to-card border border-border text-center space-y-3">
         <h3 className="font-bold text-lg text-foreground">
           Enjoyed this analysis? Join The Sevens Dispatch
         </h3>
@@ -380,7 +380,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {otherPosts.length > 0 && (
         <section className="space-y-4 pt-4 border-t border-border">
           <h3 className="font-bold text-lg text-foreground flex items-center gap-2">
-            <BookOpen className="w-4 h-4 text-emerald-600" />
+            <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
             <span>Continue Reading</span>
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -388,19 +388,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <Link
                 key={other.slug}
                 href={`/blog/${other.slug}`}
-                className="p-5 rounded-2xl border border-border bg-card hover:border-emerald-600/50 hover:shadow-md transition-all group flex flex-col justify-between"
+                className="p-5 rounded-2xl border border-border bg-card hover:border-blue-600/50 hover:shadow-md transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[10px] font-bold uppercase text-emerald-700 dark:text-emerald-400">
+                  <span className="text-[10px] font-bold uppercase text-blue-700 dark:text-blue-400">
                     {other.category}
                   </span>
-                  <h4 className="font-bold text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 mt-1 line-clamp-2">
+                  <h4 className="font-bold text-sm text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 mt-1 line-clamp-2">
                     {other.title}
                   </h4>
                 </div>
                 <div className="text-[11px] text-muted-foreground mt-3 flex items-center justify-between">
                   <span>{other.readingTime}</span>
-                  <span className="font-semibold text-emerald-800 dark:text-emerald-400">
+                  <span className="font-semibold text-blue-700 dark:text-blue-400">
                     Read &rarr;
                   </span>
                 </div>
@@ -414,7 +414,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-800 dark:text-emerald-400 hover:underline"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 dark:text-blue-400 hover:underline"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Articles</span>

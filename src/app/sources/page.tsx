@@ -25,7 +25,7 @@ export default function SourcesPage() {
 
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
           <Database className="w-3.5 h-3.5" />
           <span>Transparency & Provenance</span>
         </div>
@@ -40,7 +40,7 @@ export default function SourcesPage() {
       {/* Methodological Standards Card */}
       <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 space-y-4 shadow-xs">
         <div className="flex items-center gap-2 text-foreground font-bold text-base">
-          <ShieldCheck className="w-5 h-5 text-emerald-600" />
+          <ShieldCheck className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           <span>Dataset Verification Standards</span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-muted-foreground">
@@ -71,7 +71,7 @@ export default function SourcesPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl sm:text-2xl font-bold text-foreground flex items-center gap-2">
-            <FileSpreadsheet className="w-5 h-5 text-emerald-600" />
+            <FileSpreadsheet className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <span>Documented Sources Sheet</span>
           </h2>
           <span className="text-xs text-muted-foreground">
@@ -83,14 +83,14 @@ export default function SourcesPage() {
           {sources.map((src, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-border bg-card p-5 space-y-3 hover:border-emerald-600/50 transition-all flex flex-col justify-between"
+              className="rounded-2xl border border-border bg-card p-5 space-y-3 hover:border-blue-600/50 transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1">
                   <h3 className="font-bold text-base text-foreground">
                     {src.source}
                   </h3>
-                  <span className="text-[10px] font-bold text-emerald-800 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full flex items-center gap-1">
+                  <span className="text-[10px] font-bold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900/50 px-2 py-0.5 rounded-full flex items-center gap-1">
                     <CheckCircle2 className="w-3 h-3" /> Verified
                   </span>
                 </div>
@@ -107,7 +107,7 @@ export default function SourcesPage() {
                     href={src.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline break-all"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline break-all"
                   >
                     <span>{src.url}</span>
                     <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />

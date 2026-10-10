@@ -23,9 +23,9 @@ export function AdSlot({
     if (process.env.NODE_ENV === "development") {
       return (
         <div
-          className={`border border-dashed border-emerald-800/30 dark:border-emerald-500/20 rounded-xl p-4 text-center my-6 bg-emerald-950/5 dark:bg-emerald-900/10 ${className}`}
+          className={`border border-dashed border-blue-800/30 dark:border-blue-500/20 rounded-xl p-4 text-center my-6 bg-blue-950/5 dark:bg-blue-900/10 ${className}`}
         >
-          <div className="text-xs uppercase tracking-wider font-semibold text-emerald-800/60 dark:text-emerald-400/60">
+          <div className="text-xs uppercase tracking-wider font-semibold text-blue-800/60 dark:text-blue-400/60">
             {label} ({format}) [Disabled by NEXT_PUBLIC_ENABLE_ADS=false]
           </div>
           <div className="text-xs text-muted-foreground mt-1">

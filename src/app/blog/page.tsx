@@ -31,7 +31,7 @@ export default function BlogIndexPage() {
 
       {/* Hero Header */}
       <div className="space-y-4 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-900/10 text-emerald-800 dark:bg-emerald-600/20 dark:text-emerald-300 border border-emerald-900/20 dark:border-emerald-500/30">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-900/10 text-blue-800 dark:bg-blue-600/20 dark:text-blue-300 border border-blue-900/20 dark:border-blue-500/30">
           <BookOpen className="w-3.5 h-3.5" />
           <span>The American Sevens Dispatch</span>
         </div>
@@ -48,7 +48,7 @@ export default function BlogIndexPage() {
         <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground mr-2">
           Categories:
         </span>
-        <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-800 text-white dark:bg-emerald-600">
+        <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-700 text-white dark:bg-blue-600">
           All Stories ({posts.length})
         </span>
         {categories.map((cat) => {
@@ -66,7 +66,7 @@ export default function BlogIndexPage() {
 
       {/* Lead Feature Story */}
       {featured && (
-        <article className="rounded-3xl border border-border bg-gradient-to-br from-emerald-950/20 via-card to-card p-6 sm:p-10 shadow-md hover:border-emerald-600/50 transition-all group overflow-hidden">
+        <article className="rounded-3xl border border-border bg-gradient-to-br from-blue-950/10 via-card to-card p-6 sm:p-10 shadow-md hover:border-blue-600/50 transition-all group overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Featured Image */}
             {featured.image && (
@@ -90,7 +90,7 @@ export default function BlogIndexPage() {
             {/* Content Details */}
             <div className={featured.image ? "lg:col-span-6 space-y-4" : "lg:col-span-12 space-y-4"}>
               <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-                <span className="font-extrabold text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
+                <span className="font-extrabold text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-700 text-white dark:bg-blue-600">
                   {featured.category}
                 </span>
                 <span className="inline-flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400">
@@ -98,17 +98,17 @@ export default function BlogIndexPage() {
                 </span>
                 <span>•</span>
                 <div className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5" />
+                  <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                   <time dateTime={featured.date}>{featured.date}</time>
                 </div>
                 <span>•</span>
                 <div className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5" />
+                  <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                   <span>{featured.readingTime}</span>
                 </div>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors leading-tight">
                 <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
               </h2>
 
@@ -122,7 +122,7 @@ export default function BlogIndexPage() {
                 </div>
                 <Link
                   href={`/blog/${featured.slug}`}
-                  className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 dark:text-emerald-400 group-hover:translate-x-1 transition-transform"
+                  className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-blue-700 dark:text-blue-400 group-hover:translate-x-1 transition-transform"
                 >
                   <span>Read Full Article</span>
                   <ArrowRight className="w-4 h-4" />
@@ -142,7 +142,7 @@ export default function BlogIndexPage() {
           {remaining.map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:border-emerald-600/60 hover:shadow-lg transition-all group"
+              className="flex flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:border-blue-600/60 hover:shadow-lg transition-all group"
             >
               <div>
                 {/* Article Card Photo from Bing */}
@@ -163,13 +163,13 @@ export default function BlogIndexPage() {
 
                 <div className="p-6">
                   <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                    <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[11px]">
+                    <span className="font-bold text-blue-700 dark:text-blue-400 uppercase text-[11px]">
                       {post.category}
                     </span>
                     <span>{post.readingTime}</span>
                   </div>
 
-                  <h4 className="text-lg font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
+                  <h4 className="text-lg font-bold text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors leading-snug">
                     <Link href={`/blog/${post.slug}`} className="hover:underline">
                       {post.title}
                     </Link>
@@ -183,13 +183,13 @@ export default function BlogIndexPage() {
 
               <div className="px-6 pb-6 pt-3 border-t border-border flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                  <Calendar className="w-3 h-3" />
+                  <Calendar className="w-3 h-3 text-blue-600 dark:text-blue-400" />
                   <time dateTime={post.date}>{post.date}</time>
                 </div>
 
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="font-bold text-emerald-800 dark:text-emerald-400 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                  className="font-bold text-blue-700 dark:text-blue-400 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
                 >
                   <span>Read</span>
                   <ArrowRight className="w-3.5 h-3.5" />

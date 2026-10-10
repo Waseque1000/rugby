@@ -61,7 +61,7 @@ export default async function ListDetailsPage({ params }: ListPageProps) {
       />
 
       {/* Header Banner */}
-      <div className="rounded-3xl border border-border bg-gradient-to-br from-emerald-950/25 via-card to-card p-6 sm:p-10 shadow-sm relative overflow-hidden">
+      <div className="rounded-3xl border border-border bg-gradient-to-br from-blue-950/15 via-card to-card p-6 sm:p-10 shadow-sm relative overflow-hidden">
         <div className="relative z-10 space-y-4 max-w-3xl">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-amber-500/15 text-amber-800 dark:text-amber-300 border border-amber-500/30">

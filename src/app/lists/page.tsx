@@ -27,7 +27,7 @@ export default function ListsIndexPage() {
 
       {/* Header */}
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
           <Layers className="w-3.5 h-3.5" />
           <span>Historical & Squad Records</span>
         </div>
@@ -47,7 +47,7 @@ export default function ListsIndexPage() {
           <Link
             key={list.slug}
             href={`/lists/${list.slug}`}
-            className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 hover:border-emerald-600/60 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 hover:border-blue-600/50 hover:shadow-lg hover:-translate-y-0.5 transition-all"
           >
             <div>
               <div className="flex items-center justify-between mb-3">
@@ -61,7 +61,7 @@ export default function ListsIndexPage() {
                 </span>
               </div>
 
-              <h2 className="text-xl font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+              <h2 className="text-xl font-bold text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                 {list.title}
               </h2>
 
@@ -70,7 +70,7 @@ export default function ListsIndexPage() {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs font-semibold text-emerald-800 dark:text-emerald-400">
+            <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs font-semibold text-blue-700 dark:text-blue-400">
               <span>View Full Roster</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>

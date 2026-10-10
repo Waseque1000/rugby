@@ -40,11 +40,11 @@ export default function HomePage() {
   return (
     <div className="space-y-16 sm:space-y-20 pb-16">
       {/* Magazine Hero Section */}
-      <section className="border-b border-border bg-gradient-to-b from-emerald-950/20 via-background to-background pt-8 pb-12 sm:pt-12 sm:pb-16">
+      <section className="border-b border-border bg-gradient-to-b from-blue-950/10 via-background to-background pt-8 pb-12 sm:pt-12 sm:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Eyebrow & Live Search */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-900/10 text-emerald-800 dark:bg-emerald-600/20 dark:text-emerald-300 border border-emerald-900/20 dark:border-emerald-500/30">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-900/10 text-blue-800 dark:bg-blue-600/20 dark:text-blue-300 border border-blue-900/20 dark:border-blue-500/30">
               <Flame className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
               <span>The Independent Voice of American Rugby Sevens</span>
             </div>
@@ -56,22 +56,22 @@ export default function HomePage() {
           {/* Magazine Lead Story Grid (Main Cover Story + 3 Trending Stories) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Main Lead Cover Story (8 Cols) */}
-            <div className="lg:col-span-8 flex flex-col justify-between rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-md hover:border-emerald-600/50 transition-all group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-700/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="lg:col-span-8 flex flex-col justify-between rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-md hover:border-blue-600/50 transition-all group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-80 h-80 bg-blue-700/10 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative space-y-4">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
+                  <span className="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-700 text-white dark:bg-blue-600">
                     {featuredPost.category}
                   </span>
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 dark:text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full">
                     <Sparkles className="w-3.5 h-3.5" /> Featured Story
                   </span>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground ml-auto">
-                    <Calendar className="w-3.5 h-3.5" />
+                    <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                     <time dateTime={featuredPost.date}>{featuredPost.date}</time>
                     <span>•</span>
-                    <Clock className="w-3.5 h-3.5" />
+                    <Clock className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                     <span>{featuredPost.readingTime}</span>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ export default function HomePage() {
                 {featuredPost.image && (
                   <Link
                     href={`/blog/${featuredPost.slug}`}
-                    className="relative block w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-border/80 group-hover:border-emerald-600/40 transition-all shadow-xs my-2"
+                    className="relative block w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-border/80 group-hover:border-blue-600/40 transition-all shadow-xs my-2 bg-muted"
                   >
                     <Image
                       src={featuredPost.image}
@@ -100,7 +100,7 @@ export default function HomePage() {
                   </Link>
                 )}
 
-                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.15] group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.15] group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                   <Link href={`/blog/${featuredPost.slug}`}>
                     {featuredPost.title}
                   </Link>
@@ -113,7 +113,7 @@ export default function HomePage() {
 
               <div className="relative mt-8 pt-6 border-t border-border/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 font-black text-sm flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-blue-900/15 text-blue-800 dark:text-blue-300 font-black text-sm flex items-center justify-center">
                     {featuredPost.author.name.slice(0, 2).toUpperCase()}
                   </div>
                   <div>
@@ -128,7 +128,7 @@ export default function HomePage() {
 
                 <Link
                   href={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
                 >
                   <span>Read Full Cover Story</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -139,7 +139,7 @@ export default function HomePage() {
             {/* Trending Sidebar Stories (4 Cols) */}
             <div className="lg:col-span-4 flex flex-col justify-between space-y-4">
               <div className="flex items-center gap-2 pb-2 border-b border-border">
-                <TrendingUp className="w-4 h-4 text-emerald-600" />
+                <TrendingUp className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <h2 className="font-black text-sm uppercase tracking-wider text-foreground">
                   Trending Analysis
                 </h2>
@@ -149,13 +149,13 @@ export default function HomePage() {
                 {sideArticles.map((article) => (
                   <article
                     key={article.slug}
-                    className="p-4 sm:p-5 rounded-2xl bg-card border border-border hover:border-emerald-500/50 hover:shadow-md transition-all group flex flex-col justify-between gap-3 flex-1"
+                    className="p-4 sm:p-5 rounded-2xl bg-card border border-border hover:border-blue-500/50 hover:shadow-md transition-all group flex flex-col justify-between gap-3 flex-1"
                   >
                     <div className="flex gap-3 items-start">
                       {article.image && (
                         <Link
                           href={`/blog/${article.slug}`}
-                          className="relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border border-border group-hover:border-emerald-500/50 transition-all bg-muted"
+                          className="relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border border-border group-hover:border-blue-500/50 transition-all bg-muted"
                         >
                           <Image
                             src={article.image}
@@ -168,12 +168,12 @@ export default function HomePage() {
                       )}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1">
-                          <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[10px]">
+                          <span className="font-bold text-blue-700 dark:text-blue-400 uppercase text-[10px]">
                             {article.category}
                           </span>
                           <span className="text-[10px]">{article.readingTime}</span>
                         </div>
-                        <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                        <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
                           <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                         </h3>
                         <p className="text-[11px] text-muted-foreground mt-1 line-clamp-1 leading-relaxed">
@@ -186,7 +186,7 @@ export default function HomePage() {
                       <span className="truncate max-w-[140px]">By {article.author.name}</span>
                       <Link
                         href={`/blog/${article.slug}`}
-                        className="font-bold text-emerald-800 dark:text-emerald-400 group-hover:underline inline-flex items-center gap-0.5 shrink-0"
+                        className="font-bold text-blue-700 dark:text-blue-400 group-hover:underline inline-flex items-center gap-0.5 shrink-0"
                       >
                         Read &rarr;
                       </Link>
@@ -201,7 +201,7 @@ export default function HomePage() {
 
       {/* Upcoming Activities & Tour Calendar Strip */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-card to-emerald-950/10 p-6 sm:p-8 space-y-5">
+        <div className="rounded-3xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-card to-blue-950/10 p-6 sm:p-8 space-y-5">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-border/80">
             <div className="flex items-center gap-2.5">
               <div className="p-2 rounded-xl bg-amber-500/20 text-amber-700 dark:text-amber-400">
@@ -218,7 +218,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/activities"
-              className="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline inline-flex items-center gap-1 self-start sm:self-auto"
+              className="text-xs font-bold text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center gap-1 self-start sm:self-auto"
             >
               <span>View Full 2026 Calendar ({upcomingActivities.length} upcoming)</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -229,7 +229,7 @@ export default function HomePage() {
             {upcomingActivities.map((act) => (
               <div
                 key={act.id}
-                className="p-4 rounded-2xl bg-card border border-border hover:border-emerald-600/50 transition-all flex flex-col justify-between"
+                className="p-4 rounded-2xl bg-card border border-border hover:border-blue-600/50 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between text-[11px] font-bold mb-1.5">
@@ -245,11 +245,11 @@ export default function HomePage() {
                   </h3>
                   <div className="space-y-1 text-xs text-muted-foreground mt-2">
                     <div className="flex items-center gap-1.5 font-medium text-foreground">
-                      <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                      <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                       <span>{act.dates}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                      <MapPin className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                       <span className="line-clamp-1">{act.venue}, {act.location}</span>
                     </div>
                   </div>
@@ -259,7 +259,7 @@ export default function HomePage() {
                   <span className="text-muted-foreground">{act.broadcast || "Peacock"}</span>
                   <Link
                     href="/activities"
-                    className="font-bold text-emerald-800 dark:text-emerald-400 hover:underline"
+                    className="font-bold text-blue-700 dark:text-blue-400 hover:underline"
                   >
                     Event Details &rarr;
                   </Link>
@@ -279,7 +279,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400 mb-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400 mb-1">
               <BookOpen className="w-3.5 h-3.5" />
               <span>In-Depth Features</span>
             </div>
@@ -292,7 +292,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-emerald-800 dark:text-emerald-400 hover:underline self-start sm:self-auto"
+            className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-blue-700 dark:text-blue-400 hover:underline self-start sm:self-auto"
           >
             <span>Browse All {allPosts.length} Articles</span>
             <ArrowRight className="w-4 h-4" />
@@ -306,7 +306,7 @@ export default function HomePage() {
             <Link
               key={cat}
               href={`/blog?category=${encodeURIComponent(cat)}`}
-              className="px-3 py-1 rounded-lg text-xs font-semibold bg-secondary hover:bg-emerald-900/10 hover:text-emerald-800 dark:hover:bg-emerald-600/20 dark:hover:text-emerald-300 text-secondary-foreground transition-all"
+              className="px-3 py-1 rounded-lg text-xs font-semibold bg-secondary hover:bg-blue-900/10 hover:text-blue-800 dark:hover:bg-blue-600/20 dark:hover:text-blue-300 text-secondary-foreground transition-all"
             >
               {cat}
             </Link>
@@ -318,7 +318,7 @@ export default function HomePage() {
           {(secondaryArticles.length > 0 ? secondaryArticles : sideArticles).map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:border-emerald-600/50 hover:shadow-md transition-all group"
+              className="flex flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:border-blue-600/50 hover:shadow-md transition-all group"
             >
               <div>
                 {post.image && (
@@ -337,12 +337,12 @@ export default function HomePage() {
                 )}
                 <div className="p-5">
                   <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-2">
-                    <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[10px]">
+                    <span className="font-bold text-blue-700 dark:text-blue-400 uppercase text-[10px]">
                       {post.category}
                     </span>
                     <span className="text-[10px]">{post.readingTime}</span>
                   </div>
-                  <h3 className="font-extrabold text-base text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                  <h3 className="font-extrabold text-base text-foreground group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
                     <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h3>
                   <p className="text-xs text-muted-foreground mt-2 line-clamp-3 leading-relaxed">
@@ -364,7 +364,7 @@ export default function HomePage() {
                 </div>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="font-bold text-emerald-800 dark:text-emerald-400 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                  className="font-bold text-blue-700 dark:text-blue-400 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
                 >
                   Read &rarr;
                 </Link>
@@ -378,7 +378,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400 mb-1">
+            <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400 mb-1">
               <Trophy className="w-3.5 h-3.5 text-amber-500" />
               <span>Player Data Hub</span>
             </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/players"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-900 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-all shadow-sm"
           >
             <span>Search All 44 Athletes</span>
             <ArrowRight className="w-4 h-4" />
@@ -409,7 +409,7 @@ export default function HomePage() {
 
       {/* Curated Rosters Feature Card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 text-white p-8 sm:p-12 relative overflow-hidden shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 text-white p-8 sm:p-12 relative overflow-hidden shadow-xl border border-blue-900/40">
           <div className="relative z-10 max-w-2xl space-y-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
               <Trophy className="w-3.5 h-3.5" /> Historical Rosters & Lists
@@ -417,7 +417,7 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white leading-tight">
               Historical Olympic Squads & College Directories
             </h2>
-            <p className="text-sm sm:text-base text-emerald-100/80 leading-relaxed">
+            <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed">
               Explore dynamic cohorts: USA Olympians across Rio, Tokyo, and Paris, plus collegiate feeders from Dartmouth, Army West Point, Cal Berkeley, and Wisconsin.
             </p>
             <div className="pt-2 flex flex-wrap gap-3">
@@ -446,8 +446,8 @@ export default function HomePage() {
 
       {/* Editorial Dispatch Newsletter */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-emerald-900/30 dark:border-emerald-600/30 bg-gradient-to-br from-emerald-950/15 via-card to-emerald-950/20 p-8 sm:p-12 text-center max-w-3xl mx-auto shadow-sm space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-800 text-white dark:bg-emerald-600 mx-auto flex items-center justify-center shadow-md">
+        <div className="rounded-3xl border border-blue-900/30 dark:border-blue-600/30 bg-gradient-to-br from-blue-950/10 via-card to-blue-950/15 p-8 sm:p-12 text-center max-w-3xl mx-auto shadow-sm space-y-4">
+          <div className="w-12 h-12 rounded-2xl bg-blue-700 text-white dark:bg-blue-600 mx-auto flex items-center justify-center shadow-md">
             <BookOpen className="w-6 h-6 text-amber-400" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">

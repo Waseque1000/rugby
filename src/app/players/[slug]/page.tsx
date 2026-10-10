@@ -127,9 +127,9 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
       />
 
       {/* Hero Header Card */}
-      <div className="rounded-3xl border border-border bg-gradient-to-br from-emerald-950/20 via-card to-card p-6 sm:p-10 shadow-sm relative overflow-hidden">
+      <div className="rounded-3xl border border-border bg-gradient-to-br from-blue-950/15 via-card to-card p-6 sm:p-10 shadow-sm relative overflow-hidden">
         {/* Decorative corner accent */}
-        <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-7">
@@ -145,7 +145,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
             <div className="space-y-2">
               <div className="flex flex-wrap items-center gap-2">
                 {player.team && (
-                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-900/15 text-emerald-800 dark:text-emerald-300 dark:bg-emerald-600/20">
+                  <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900/50">
                     {player.team}
                   </span>
                 )}
@@ -168,19 +168,19 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
 
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground font-medium">
                 {player.position && (
-                  <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
+                  <span className="text-blue-700 dark:text-blue-400 font-semibold">
                     {player.position}
                   </span>
                 )}
                 {player.hometown && (
                   <span className="inline-flex items-center gap-1">
-                    <MapPin className="w-4 h-4 text-emerald-600/70" />
+                    <MapPin className="w-4 h-4 text-blue-600/70 dark:text-blue-400/70" />
                     {player.hometown}
                   </span>
                 )}
                 {player.college && (
                   <span className="inline-flex items-center gap-1">
-                    <GraduationCap className="w-4 h-4 text-emerald-600/70" />
+                    <GraduationCap className="w-4 h-4 text-blue-600/70 dark:text-blue-400/70" />
                     {player.college}
                   </span>
                 )}
@@ -206,7 +206,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
                   <span className="text-[10px] uppercase font-bold text-muted-foreground block">
                     Sevens Tries
                   </span>
-                  <span className="text-2xl font-black text-emerald-700 dark:text-emerald-400">
+                  <span className="text-2xl font-black text-blue-700 dark:text-blue-400">
                     {player.tries}
                   </span>
                 </div>
@@ -234,7 +234,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
           {player.biography && (
             <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-4">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                <User className="w-5 h-5 text-emerald-600" />
+                <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 <span>Career Overview</span>
               </h2>
               <div className="text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
@@ -303,7 +303,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
           {player.achievements && (
             <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-4">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                <Award className="w-5 h-5 text-emerald-600" />
+                <Award className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 <span>Major Achievements & Honors</span>
               </h2>
               {player.achievements.startsWith("http") ? (
@@ -315,7 +315,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
                     href={player.achievements}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline flex-shrink-0"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline flex-shrink-0"
                   >
                     <span>View Citation</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -347,7 +347,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
                 </div>
                 <Link
                   href="/players"
-                  className="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline inline-flex items-center gap-1"
+                  className="text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
                 >
                   <span>Directory</span>
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -408,7 +408,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
               {player.position && (
                 <div className="flex items-center justify-between py-1 border-b border-border/50">
                   <dt className="text-muted-foreground">Position</dt>
-                  <dd className="font-semibold text-emerald-700 dark:text-emerald-400 text-right">{player.position}</dd>
+                  <dd className="font-semibold text-blue-700 dark:text-blue-400 text-right">{player.position}</dd>
                 </div>
               )}
 
@@ -457,7 +457,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
           {/* Source Verification & Integrity Box */}
           <div className="bg-secondary/70 border border-border rounded-2xl p-6 space-y-4">
             <div className="flex items-center gap-2 text-foreground font-bold text-sm">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <ShieldCheck className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               <span>Data Integrity & Source</span>
             </div>
 
@@ -472,7 +472,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
                 href={player.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline break-all"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline break-all"
               >
                 <span>Official Citation Source</span>
                 <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />

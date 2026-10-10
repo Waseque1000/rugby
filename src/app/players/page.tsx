@@ -28,7 +28,7 @@ export default function PlayersDirectoryPage() {
 
       {/* Header */}
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">
+        <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
           <Shield className="w-3.5 h-3.5" />
           <span>National Player Pool</span>
         </div>
