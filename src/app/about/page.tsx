@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Shield, Target, Users, BookOpen, ArrowRight } from "lucide-react";
+import { Shield, Target, Users, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About USA Sevens Stats | Project Mission & Ethics",

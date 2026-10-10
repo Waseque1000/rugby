@@ -6,7 +6,7 @@ import { PlayerCard } from "@/components/players/PlayerCard";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { AffiliateBox } from "@/components/monetization/AffiliateBox";
-import { Trophy, Users, GraduationCap } from "lucide-react";
+import { Trophy, Users } from "lucide-react";
 
 interface ListPageProps {
   params: Promise<{ slug: string }>;

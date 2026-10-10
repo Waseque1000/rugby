@@ -50,7 +50,7 @@ export function NewsletterForm({ className = "", compact = false }: NewsletterFo
         <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-950/20 border border-emerald-600/40 text-emerald-800 dark:text-emerald-300">
           <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
           <div className="text-sm font-medium">
-            You're in! You'll receive squad updates, Olympic roster news, and tournament recap insights.
+            You&apos;re in! You&apos;ll receive squad updates, Olympic roster news, and tournament recap insights.
           </div>
         </div>
       ) : (

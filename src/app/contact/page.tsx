@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Mail, Send, CheckCircle2, AlertCircle, MessageSquare } from "lucide-react";
+import { Send, CheckCircle2, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });

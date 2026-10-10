@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Shield } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | USA Sevens Stats",

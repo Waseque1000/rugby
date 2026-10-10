@@ -7,7 +7,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { AffiliateBox } from "@/components/monetization/AffiliateBox";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
-import { Calendar, Clock, Tag, ArrowLeft, BookOpen, Share2 } from "lucide-react";
+import { Calendar, Clock, Tag, ArrowLeft } from "lucide-react";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;

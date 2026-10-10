@@ -16,7 +16,6 @@ import {
   Trophy,
   MapPin,
   GraduationCap,
-  Briefcase,
   Calendar,
   ExternalLink,
   ShieldCheck,
