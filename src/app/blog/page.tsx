@@ -1,6 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getAllCategories } from "@/lib/blog";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
@@ -65,45 +66,69 @@ export default function BlogIndexPage() {
 
       {/* Lead Feature Story */}
       {featured && (
-        <article className="rounded-3xl border border-border bg-gradient-to-br from-emerald-950/20 via-card to-card p-6 sm:p-10 shadow-md hover:border-emerald-600/50 transition-all group">
-          <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground mb-3">
-            <span className="font-extrabold text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
-              {featured.category}
-            </span>
-            <span className="inline-flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400">
-              <Flame className="w-3.5 h-3.5" /> Cover Story
-            </span>
-            <span>•</span>
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5" />
-              <time dateTime={featured.date}>{featured.date}</time>
-            </div>
-            <span>•</span>
-            <div className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5" />
-              <span>{featured.readingTime}</span>
-            </div>
-          </div>
+        <article className="rounded-3xl border border-border bg-gradient-to-br from-emerald-950/20 via-card to-card p-6 sm:p-10 shadow-md hover:border-emerald-600/50 transition-all group overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Featured Image */}
+            {featured.image && (
+              <div className="lg:col-span-6 relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-border shadow-xs bg-muted">
+                <Image
+                  src={featured.image}
+                  alt={featured.imageAlt || featured.title}
+                  fill
+                  priority
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 text-[10px] text-white/90 drop-shadow flex items-center justify-between">
+                  <span className="font-semibold uppercase tracking-wider">{featured.category}</span>
+                  <span className="bg-black/50 px-2 py-0.5 rounded backdrop-blur-xs font-mono">Bing Image Sourced</span>
+                </div>
+              </div>
+            )}
 
-          <h2 className="text-2xl sm:text-4xl font-black text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight mb-4">
-            <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
-          </h2>
+            {/* Content Details */}
+            <div className={featured.image ? "lg:col-span-6 space-y-4" : "lg:col-span-12 space-y-4"}>
+              <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                <span className="font-extrabold text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-800 text-white dark:bg-emerald-600">
+                  {featured.category}
+                </span>
+                <span className="inline-flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400">
+                  <Flame className="w-3.5 h-3.5" /> Cover Story
+                </span>
+                <span>•</span>
+                <div className="flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <time dateTime={featured.date}>{featured.date}</time>
+                </div>
+                <span>•</span>
+                <div className="flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5" />
+                  <span>{featured.readingTime}</span>
+                </div>
+              </div>
 
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-4xl mb-6">
-            {featured.description}
-          </p>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-tight">
+                <Link href={`/blog/${featured.slug}`}>{featured.title}</Link>
+              </h2>
 
-          <div className="pt-4 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="text-xs text-muted-foreground">
-              Written by <strong className="text-foreground">{featured.author.name}</strong> • {featured.author.role}
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed line-clamp-3">
+                {featured.description}
+              </p>
+
+              <div className="pt-4 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="text-xs text-muted-foreground">
+                  Written by <strong className="text-foreground">{featured.author.name}</strong> • {featured.author.role}
+                </div>
+                <Link
+                  href={`/blog/${featured.slug}`}
+                  className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 dark:text-emerald-400 group-hover:translate-x-1 transition-transform"
+                >
+                  <span>Read Full Article</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
-            <Link
-              href={`/blog/${featured.slug}`}
-              className="inline-flex items-center gap-1.5 font-bold text-xs sm:text-sm text-emerald-800 dark:text-emerald-400 group-hover:translate-x-1 transition-transform"
-            >
-              <span>Read Full Article</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </article>
       )}
@@ -117,28 +142,46 @@ export default function BlogIndexPage() {
           {remaining.map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col justify-between rounded-2xl border border-border bg-card p-6 hover:border-emerald-600/60 hover:shadow-lg transition-all group"
+              className="flex flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:border-emerald-600/60 hover:shadow-lg transition-all group"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                  <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[11px]">
-                    {post.category}
-                  </span>
-                  <span>{post.readingTime}</span>
-                </div>
-
-                <h4 className="text-lg font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
-                  <Link href={`/blog/${post.slug}`} className="hover:underline">
-                    {post.title}
+                {/* Article Card Photo from Bing */}
+                {post.image && (
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="relative block w-full aspect-[16/10] overflow-hidden bg-muted border-b border-border/60"
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt || post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </Link>
-                </h4>
+                )}
 
-                <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-3 leading-relaxed">
-                  {post.description}
-                </p>
+                <div className="p-6">
+                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                    <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[11px]">
+                      {post.category}
+                    </span>
+                    <span>{post.readingTime}</span>
+                  </div>
+
+                  <h4 className="text-lg font-bold text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors leading-snug">
+                    <Link href={`/blog/${post.slug}`} className="hover:underline">
+                      {post.title}
+                    </Link>
+                  </h4>
+
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-2 line-clamp-3 leading-relaxed">
+                    {post.description}
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs">
+              <div className="px-6 pb-6 pt-3 border-t border-border flex items-center justify-between text-xs">
                 <div className="flex items-center gap-1 text-[11px] text-muted-foreground">
                   <Calendar className="w-3 h-3" />
                   <time dateTime={post.date}>{post.date}</time>

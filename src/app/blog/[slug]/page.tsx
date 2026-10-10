@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { getPlayerBySlug } from "@/lib/players";
 import { PlayerCard } from "@/components/players/PlayerCard";
@@ -42,6 +43,8 @@ export async function generateMetadata({
     };
   }
 
+  const images = post.image ? [{ url: post.image, alt: post.imageAlt }] : [];
+
   return {
     title: `${post.title} | USA Sevens Journal`,
     description: post.description,
@@ -54,11 +57,13 @@ export async function generateMetadata({
       authors: [post.author.name],
       url: `/blog/${post.slug}`,
       siteName: "USA Sevens Stats & Journal",
+      images,
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      images,
     },
   };
 }
@@ -107,6 +112,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         url: "https://usa-sevens-stats.vercel.app/icon",
       },
     },
+    image: post.image ? `https://usa-sevens-stats.vercel.app${post.image}` : undefined,
     keywords: post.tags.join(", "),
     articleSection: post.category,
   };
@@ -287,6 +293,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       </header>
+
+      {/* Featured Article Image */}
+      {post.image && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-border shadow-md my-6">
+          <Image
+            src={post.image}
+            alt={post.imageAlt || post.title}
+            fill
+            priority
+            className="object-cover"
+            sizes="(max-width: 896px) 100vw, 896px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-3 left-4 right-4 text-[11px] text-white/90 drop-shadow flex items-center justify-between">
+            <span>Official Action & Tournament Photography</span>
+            <span className="text-[10px] bg-black/40 px-2 py-0.5 rounded backdrop-blur-xs">Source: Bing Search Archive</span>
+          </div>
+        </div>
+      )}
 
       {/* Top Ad Slot */}
       <AdSlot id="article-top-ad" format="horizontal" label="Article Partner" />

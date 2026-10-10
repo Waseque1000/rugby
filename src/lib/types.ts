@@ -53,6 +53,8 @@ export interface BlogPost {
   author: Author;
   featured?: boolean;
   description: string;
+  image?: string;
+  imageAlt?: string;
   tags: string[];
   readingTime?: string;
   content: string;

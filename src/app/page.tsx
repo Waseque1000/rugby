@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   getAllPosts,
   getFeaturedPost,
@@ -75,6 +76,30 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                {/* Cover Image from Bing */}
+                {featuredPost.image && (
+                  <Link
+                    href={`/blog/${featuredPost.slug}`}
+                    className="relative block w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-border/80 group-hover:border-emerald-600/40 transition-all shadow-xs my-2"
+                  >
+                    <Image
+                      src={featuredPost.image}
+                      alt={featuredPost.imageAlt || featuredPost.title}
+                      fill
+                      priority
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 1024px) 100vw, 750px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] text-white/90 drop-shadow">
+                      <span className="font-semibold">{featuredPost.category}</span>
+                      <span className="text-[10px] bg-black/50 px-2 py-0.5 rounded backdrop-blur-xs font-mono">
+                        Bing Image Sourced
+                      </span>
+                    </div>
+                  </Link>
+                )}
+
                 <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.15] group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                   <Link href={`/blog/${featuredPost.slug}`}>
                     {featuredPost.title}
@@ -124,28 +149,44 @@ export default function HomePage() {
                 {sideArticles.map((article) => (
                   <article
                     key={article.slug}
-                    className="p-4 sm:p-5 rounded-2xl bg-card border border-border hover:border-emerald-500/50 hover:shadow-md transition-all group flex flex-col justify-between flex-1"
+                    className="p-4 sm:p-5 rounded-2xl bg-card border border-border hover:border-emerald-500/50 hover:shadow-md transition-all group flex flex-col justify-between gap-3 flex-1"
                   >
-                    <div>
-                      <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1.5">
-                        <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase">
-                          {article.category}
-                        </span>
-                        <span>{article.readingTime}</span>
+                    <div className="flex gap-3 items-start">
+                      {article.image && (
+                        <Link
+                          href={`/blog/${article.slug}`}
+                          className="relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border border-border group-hover:border-emerald-500/50 transition-all bg-muted"
+                        >
+                          <Image
+                            src={article.image}
+                            alt={article.imageAlt || article.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            sizes="80px"
+                          />
+                        </Link>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1">
+                          <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[10px]">
+                            {article.category}
+                          </span>
+                          <span className="text-[10px]">{article.readingTime}</span>
+                        </div>
+                        <h3 className="font-bold text-xs sm:text-sm text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                          <Link href={`/blog/${article.slug}`}>{article.title}</Link>
+                        </h3>
+                        <p className="text-[11px] text-muted-foreground mt-1 line-clamp-1 leading-relaxed">
+                          {article.description}
+                        </p>
                       </div>
-                      <h3 className="font-bold text-sm sm:text-base text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
-                        <Link href={`/blog/${article.slug}`}>{article.title}</Link>
-                      </h3>
-                      <p className="text-xs text-muted-foreground mt-1 line-clamp-2 leading-relaxed">
-                        {article.description}
-                      </p>
                     </div>
 
-                    <div className="mt-3 pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted-foreground">
-                      <span>By {article.author.name}</span>
+                    <div className="pt-2 border-t border-border/60 flex items-center justify-between text-[11px] text-muted-foreground">
+                      <span className="truncate max-w-[140px]">By {article.author.name}</span>
                       <Link
                         href={`/blog/${article.slug}`}
-                        className="font-bold text-emerald-800 dark:text-emerald-400 group-hover:underline inline-flex items-center gap-0.5"
+                        className="font-bold text-emerald-800 dark:text-emerald-400 group-hover:underline inline-flex items-center gap-0.5 shrink-0"
                       >
                         Read &rarr;
                       </Link>
@@ -277,31 +318,47 @@ export default function HomePage() {
           {(secondaryArticles.length > 0 ? secondaryArticles : sideArticles).map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col justify-between rounded-2xl border border-border bg-card p-5 hover:border-emerald-600/50 hover:shadow-md transition-all group"
+              className="flex flex-col justify-between rounded-2xl border border-border bg-card overflow-hidden hover:border-emerald-600/50 hover:shadow-md transition-all group"
             >
               <div>
-                <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-2">
-                  <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase">
-                    {post.category}
-                  </span>
-                  <span>{post.readingTime}</span>
+                {post.image && (
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="relative block w-full aspect-[16/10] overflow-hidden bg-muted border-b border-border/60"
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt || post.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </Link>
+                )}
+                <div className="p-5">
+                  <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-2">
+                    <span className="font-bold text-emerald-700 dark:text-emerald-400 uppercase text-[10px]">
+                      {post.category}
+                    </span>
+                    <span className="text-[10px]">{post.readingTime}</span>
+                  </div>
+                  <h3 className="font-extrabold text-base text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-2 line-clamp-3 leading-relaxed">
+                    {post.description}
+                  </p>
                 </div>
-                <h3 className="font-extrabold text-base text-foreground group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors line-clamp-2 leading-snug">
-                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-                </h3>
-                <p className="text-xs text-muted-foreground mt-2 line-clamp-3 leading-relaxed">
-                  {post.description}
-                </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-border flex items-center justify-between text-xs">
+              <div className="px-5 pb-5 pt-3 border-t border-border flex items-center justify-between text-xs">
                 <div className="flex flex-wrap gap-1">
                   {post.tags.slice(0, 1).map((t) => (
                     <span
                       key={t}
                       className="px-2 py-0.5 rounded-md bg-secondary text-[10px] font-medium text-secondary-foreground"
                     >
-                      {t}
+                      #{t}
                     </span>
                   ))}
                 </div>

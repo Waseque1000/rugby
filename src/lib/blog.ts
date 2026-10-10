@@ -24,6 +24,18 @@ export function getAllPosts(): BlogPost[] {
     const wordCount = content.split(/\s+/).length;
     const readingTime = `${Math.ceil(wordCount / 200)} min read`;
 
+    const defaultImageMap: Record<string, string> = {
+      "womens-svns-dominance-tapper-kelter": "/images/blog/womens-svns-dominance.jpg",
+      "perry-baker-carlin-isles-speed-dynasty": "/images/blog/perry-baker-carlin-isles.jpg",
+      "rise-of-womens-eagles-sevens": "/images/blog/rise-of-womens-eagles.jpg",
+      "sevens-vs-fifteens-tactical-breakdown": "/images/blog/sevens-vs-fifteens.jpg",
+      "world-rugby-svns-2026-calendar-guide": "/images/blog/world-rugby-svns-guide.jpg",
+      "top-college-rugby-programs-usa": "/images/blog/college-rugby-pathway.jpg",
+      "road-to-la-2028-olympic-rugby": "/images/blog/road-to-la-2028.jpg",
+    };
+
+    const image = data.image || defaultImageMap[slug] || "/images/blog/womens-svns-dominance.jpg";
+
     return {
       slug,
       title: data.title || "Untitled Post",
@@ -36,6 +48,8 @@ export function getAllPosts(): BlogPost[] {
         bio: data.author?.bio,
       },
       description: data.description || "",
+      image,
+      imageAlt: data.imageAlt || data.title || "USA Rugby Sevens action",
       tags: Array.isArray(data.tags) ? data.tags : [],
       readingTime,
       content,
