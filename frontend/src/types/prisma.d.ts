@@ -4,6 +4,7 @@ declare module "@prisma/client" {
     constructor(options?: unknown);
     player: {
       findMany(args?: Record<string, unknown>): Promise<any[]>;
+      findFirst(args?: Record<string, unknown>): Promise<any | null>;
       findUnique(args?: Record<string, unknown>): Promise<any | null>;
       create(args?: Record<string, unknown>): Promise<any>;
       upsert(args?: Record<string, unknown>): Promise<any>;
