@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8faf9;
+  --foreground: #091710;
+  --card: #ffffff;
+  --card-foreground: #091710;
+  --border: #e2e8f0;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
+  --accent: #ecfdf5;
+  --accent-foreground: #064e3b;
+  --secondary: #f1f5f3;
+  --secondary-foreground: #091710;
+}
+
+.dark {
+  --background: #06130b;
+  --foreground: #f1f7f3;
+  --card: #0c2014;
+  --card-foreground: #f1f7f3;
+  --border: #183e28;
+  --muted: #0d2719;
+  --muted-foreground: #94a3b8;
+  --accent: #113622;
+  --accent-foreground: #86efac;
+  --secondary: #0f2b1b;
+  --secondary-foreground: #f1f7f3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
 }
