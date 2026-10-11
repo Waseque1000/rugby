@@ -6,7 +6,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 299550,
+      "htmlSize": 310135,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -187,7 +187,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 106388,
+      "htmlSize": 459302,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -209,6 +209,1230 @@
       "srcRoute": "/blog",
       "dataRoute": "/blog.rsc",
       "prefetchDataRoute": "/blog.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/alafoti-faosiliva-island-heritage-american-rugby": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 97102,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/alafoti-faosiliva-island-heritage-american-rugby.rsc",
+      "prefetchDataRoute": "/blog/alafoti-faosiliva-island-heritage-american-rugby.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/alex-sedrick-spiff-that-legendary-paris-run": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106776,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/alex-sedrick-spiff-that-legendary-paris-run.rsc",
+      "prefetchDataRoute": "/blog/alex-sedrick-spiff-that-legendary-paris-run.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/army-west-point-rugby-military-cadets-to-eagles": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 98072,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/army-west-point-rugby-military-cadets-to-eagles.rsc",
+      "prefetchDataRoute": "/blog/army-west-point-rugby-military-cadets-to-eagles.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/breakdown-mechanics-counter-rucking-in-7s": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 115546,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/breakdown-mechanics-counter-rucking-in-7s.rsc",
+      "prefetchDataRoute": "/blog/breakdown-mechanics-counter-rucking-in-7s.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/cal-golden-bears-the-varsity-rugby-dynasty": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 99670,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/cal-golden-bears-the-varsity-rugby-dynasty.rsc",
+      "prefetchDataRoute": "/blog/cal-golden-bears-the-varsity-rugby-dynasty.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/cape-town-sevens-southern-hemisphere-heat": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106610,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/cape-town-sevens-southern-hemisphere-heat.rsc",
+      "prefetchDataRoute": "/blog/cape-town-sevens-southern-hemisphere-heat.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/cheta-emba-harvard-goalkeeper-to-sevens-forward": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 105262,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/cheta-emba-harvard-goalkeeper-to-sevens-forward.rsc",
+      "prefetchDataRoute": "/blog/cheta-emba-harvard-goalkeeper-to-sevens-forward.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/chula-vista-olympic-training-center-inside-look": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 116756,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/chula-vista-olympic-training-center-inside-look.rsc",
+      "prefetchDataRoute": "/blog/chula-vista-olympic-training-center-inside-look.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/danny-barrett-enforcer-physics-of-the-ruck": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 116584,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/danny-barrett-enforcer-physics-of-the-ruck.rsc",
+      "prefetchDataRoute": "/blog/danny-barrett-enforcer-physics-of-the-ruck.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/defensive-systems-sweeper-vs-drift-defense": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107447,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/defensive-systems-sweeper-vs-drift-defense.rsc",
+      "prefetchDataRoute": "/blog/defensive-systems-sweeper-vs-drift-defense.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/dubai-sevens-desert-showdown-and-tour-opener": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107293,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/dubai-sevens-desert-showdown-and-tour-opener.rsc",
+      "prefetchDataRoute": "/blog/dubai-sevens-desert-showdown-and-tour-opener.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/folau-niua-playmaking-wizard-legacy": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 115118,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/folau-niua-playmaking-wizard-legacy.rsc",
+      "prefetchDataRoute": "/blog/folau-niua-playmaking-wizard-legacy.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/gps-tracking-and-player-load-in-svns": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 105492,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/gps-tracking-and-player-load-in-svns.rsc",
+      "prefetchDataRoute": "/blog/gps-tracking-and-player-load-in-svns.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/high-school-and-youth-rugby-development-pathways": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 99037,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/high-school-and-youth-rugby-development-pathways.rsc",
+      "prefetchDataRoute": "/blog/high-school-and-youth-rugby-development-pathways.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/hong-kong-sevens-the-holy-grail-of-rugby": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 114083,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/hong-kong-sevens-the-holy-grail-of-rugby.rsc",
+      "prefetchDataRoute": "/blog/hong-kong-sevens-the-holy-grail-of-rugby.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/ilona-maher-cultural-icon-powerhouse": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 105996,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/ilona-maher-cultural-icon-powerhouse.rsc",
+      "prefetchDataRoute": "/blog/ilona-maher-cultural-icon-powerhouse.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/kayla-canett-quarterback-vision-on-the-pitch": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107668,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/kayla-canett-quarterback-vision-on-the-pitch.rsc",
+      "prefetchDataRoute": "/blog/kayla-canett-quarterback-vision-on-the-pitch.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/kevon-williams-captaincy-speed-leadership": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 108070,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/kevon-williams-captaincy-speed-leadership.rsc",
+      "prefetchDataRoute": "/blog/kevon-williams-captaincy-speed-leadership.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/kristi-kirshe-soccer-convert-to-world-rugby-elite": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 114442,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/kristi-kirshe-soccer-convert-to-world-rugby-elite.rsc",
+      "prefetchDataRoute": "/blog/kristi-kirshe-soccer-convert-to-world-rugby-elite.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/la-sevens-dignity-health-sports-park-guide": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106675,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/la-sevens-dignity-health-sports-park-guide.rsc",
+      "prefetchDataRoute": "/blog/la-sevens-dignity-health-sports-park-guide.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/lauren-doyle-tenacity-and-olympic-veteran-leadership": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 113687,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/lauren-doyle-tenacity-and-olympic-veteran-leadership.rsc",
+      "prefetchDataRoute": "/blog/lauren-doyle-tenacity-and-olympic-veteran-leadership.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/life-university-running-eagles-rugby-factory": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 87577,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/life-university-running-eagles-rugby-factory.rsc",
+      "prefetchDataRoute": "/blog/life-university-running-eagles-rugby-factory.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/lineout-tactics-with-three-person-pods": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 98824,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/lineout-tactics-with-three-person-pods.rsc",
+      "prefetchDataRoute": "/blog/lineout-tactics-with-three-person-pods.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/maceo-brown-collegiate-crossover-phenom": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 98533,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/maceo-brown-collegiate-crossover-phenom.rsc",
+      "prefetchDataRoute": "/blog/maceo-brown-collegiate-crossover-phenom.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/madison-hughes-tactical-genius-captain": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 115820,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/madison-hughes-tactical-genius-captain.rsc",
+      "prefetchDataRoute": "/blog/madison-hughes-tactical-genius-captain.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/major-league-rugby-mlr-cross-pollination-with-7s": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 87306,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/major-league-rugby-mlr-cross-pollination-with-7s.rsc",
+      "prefetchDataRoute": "/blog/major-league-rugby-mlr-cross-pollination-with-7s.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/malacchi-esdale-aerial-master-and-restart-weapon": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 98688,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/malacchi-esdale-aerial-master-and-restart-weapon.rsc",
+      "prefetchDataRoute": "/blog/malacchi-esdale-aerial-master-and-restart-weapon.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/martin-iosefo-hawaiian-power-dual-code-star": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106351,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/martin-iosefo-hawaiian-power-dual-code-star.rsc",
+      "prefetchDataRoute": "/blog/martin-iosefo-hawaiian-power-dual-code-star.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/mental-resilience-handling-heartbreak-in-extra-time": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 98731,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/mental-resilience-handling-heartbreak-in-extra-time.rsc",
+      "prefetchDataRoute": "/blog/mental-resilience-handling-heartbreak-in-extra-time.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/nate-ebner-super-bowl-to-olympic-sevens": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 116578,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/nate-ebner-super-bowl-to-olympic-sevens.rsc",
+      "prefetchDataRoute": "/blog/nate-ebner-super-bowl-to-olympic-sevens.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/nicole-heavirland-relentless-fitness-and-playmaking": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107392,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/nicole-heavirland-relentless-fitness-and-playmaking.rsc",
+      "prefetchDataRoute": "/blog/nicole-heavirland-relentless-fitness-and-playmaking.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/nutrition-and-recovery-in-multi-game-tournaments": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 109194,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/nutrition-and-recovery-in-multi-game-tournaments.rsc",
+      "prefetchDataRoute": "/blog/nutrition-and-recovery-in-multi-game-tournaments.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/olympic-rugby-rules-beginners-complete-guide": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 108642,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/olympic-rugby-rules-beginners-complete-guide.rsc",
+      "prefetchDataRoute": "/blog/olympic-rugby-rules-beginners-complete-guide.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/paris-2024-bronze-medal-historic-run": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 116269,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/paris-2024-bronze-medal-historic-run.rsc",
+      "prefetchDataRoute": "/blog/paris-2024-bronze-medal-historic-run.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -326,6 +1550,78 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/sammy-sullivan-army-officer-olympic-force": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 114421,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/sammy-sullivan-army-officer-olympic-force.rsc",
+      "prefetchDataRoute": "/blog/sammy-sullivan-army-officer-olympic-force.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/scrummaging-tactics-and-referee-interpretations": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107082,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/scrummaging-tactics-and-referee-interpretations.rsc",
+      "prefetchDataRoute": "/blog/scrummaging-tactics-and-referee-interpretations.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/sevens-vs-fifteens-tactical-breakdown": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
@@ -362,6 +1658,294 @@
         "x-next-revalidate-tag-token"
       ]
     },
+    "/blog/speed-training-for-rugby-sevens": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107902,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/speed-training-for-rugby-sevens.rsc",
+      "prefetchDataRoute": "/blog/speed-training-for-rugby-sevens.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/stephen-tomasin-heart-and-soul-veteran": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 116251,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/stephen-tomasin-heart-and-soul-veteran.rsc",
+      "prefetchDataRoute": "/blog/stephen-tomasin-heart-and-soul-veteran.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/the-anatomy-of-a-sevens-tackle": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 116169,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/the-anatomy-of-a-sevens-tackle.rsc",
+      "prefetchDataRoute": "/blog/the-anatomy-of-a-sevens-tackle.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/the-art-of-the-drop-kick-restart": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 115528,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/the-art-of-the-drop-kick-restart.rsc",
+      "prefetchDataRoute": "/blog/the-art-of-the-drop-kick-restart.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/the-evolution-of-the-sevens-scrum": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 107114,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/the-evolution-of-the-sevens-scrum.rsc",
+      "prefetchDataRoute": "/blog/the-evolution-of-the-sevens-scrum.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/the-future-of-american-rugby-looking-ahead-to-la-2028": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106621,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/the-future-of-american-rugby-looking-ahead-to-la-2028.rsc",
+      "prefetchDataRoute": "/blog/the-future-of-american-rugby-looking-ahead-to-la-2028.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/the-psychology-of-the-walk-off-try": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 97791,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/the-psychology-of-the-walk-off-try.rsc",
+      "prefetchDataRoute": "/blog/the-psychology-of-the-walk-off-try.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/the-svns-world-championship-madrid-grand-final": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106214,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/the-svns-world-championship-madrid-grand-final.rsc",
+      "prefetchDataRoute": "/blog/the-svns-world-championship-madrid-grand-final.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
     "/blog/top-college-rugby-programs-usa": {
       "renderingMode": "PARTIALLY_STATIC",
       "routeType": "page",
@@ -389,6 +1973,78 @@
       "srcRoute": "/blog/[slug]",
       "dataRoute": "/blog/top-college-rugby-programs-usa.rsc",
       "prefetchDataRoute": "/blog/top-college-rugby-programs-usa.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/vancouver-sevens-bc-place-indoor-electric-atmosphere": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 106440,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/vancouver-sevens-bc-place-indoor-electric-atmosphere.rsc",
+      "prefetchDataRoute": "/blog/vancouver-sevens-bc-place-indoor-electric-atmosphere.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/blog/women-in-rugby-the-exponential-growth-of-ncaa-programs": {
+      "renderingMode": "PARTIALLY_STATIC",
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 95820,
+      "experimentalPPR": true,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        },
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(?:[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight).*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/blog/[slug]",
+      "dataRoute": "/blog/women-in-rugby-the-exponential-growth-of-ncaa-programs.rsc",
+      "prefetchDataRoute": "/blog/women-in-rugby-the-exponential-growth-of-ncaa-programs.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",

@@ -18,7 +18,7 @@ b:[["children",{"s":"__PAGE__","h":49314,"d":{"r":["$","$2","c",{"children":["$L
 1:[["children",{"s":"players","h":49218,"d":{"r":["$","$2","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@6","v":"$7","s":"$8"},"c":"$Q9"}]]
 18:X
 1b:X
-0:{"t":{"t":{"s":"","h":49170,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$e",null,{"name":"Next.Metadata","children":"$L16"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":"$18","s":"$8"}},"a":"$@19","u":"$@1a","b":"k9_CHFMs-Y927tEs2AbYE","r":"$1b"}
+0:{"t":{"t":{"s":"","h":49170,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$e",null,{"name":"Next.Metadata","children":"$L16"}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":"$18","s":"$8"}},"a":"$@19","u":"$@1a","b":"GOq8YVLlIHiFsCYHVGmhq","r":"$1b"}
 1c:"/_next/static/chunks/1_jtpjnbyseht.js"
 1d:"/_next/static/chunks/0810et2phgpoz.js"
 1e:I[16506,["$1c","$1d"],""]
