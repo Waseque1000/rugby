@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 
 interface PlayerAvatarProps {
   name: string;
   team?: string | null;
-  imageUrl?: string | null;
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
   isOlympian?: boolean;
@@ -15,13 +13,10 @@ interface PlayerAvatarProps {
 export function PlayerAvatar({
   name,
   team,
-  imageUrl,
   size = "md",
   className = "",
   isOlympian = false,
 }: PlayerAvatarProps) {
-  const [imageError, setImageError] = useState(false);
-
   // Extract initials
   const initials = name
     .split(" ")
@@ -45,27 +40,14 @@ export function PlayerAvatar({
     ? "from-rose-700 via-red-800 to-slate-950"
     : "from-blue-700 via-blue-900 to-slate-950";
 
-  const showImage = Boolean(imageUrl) && !imageError;
-
   return (
     <div
       className={`relative inline-flex items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white font-extrabold shadow-md border-2 overflow-hidden flex-shrink-0 ${
         isOlympian ? "border-amber-400/90 shadow-amber-500/10" : "border-blue-600/30"
       } ${sizeDimensions.classes} ${className}`}
-      aria-label={`Player photo for ${name}`}
+      aria-label={`Player initials for ${name}`}
     >
-      {showImage && imageUrl ? (
-        <Image
-          src={imageUrl}
-          alt={`${name} - USA Rugby Sevens`}
-          width={sizeDimensions.px}
-          height={sizeDimensions.px}
-          className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-105"
-          onError={() => setImageError(true)}
-          unoptimized
-        />
-      ) : (
-        <>
+      <>
           {/* Background stylized rugby seam pattern */}
           <div className="absolute inset-0 rounded-2xl opacity-15 overflow-hidden pointer-events-none flex items-center justify-center">
             <div className="w-full h-0.5 bg-white -rotate-45" />
@@ -73,8 +55,7 @@ export function PlayerAvatar({
           </div>
 
           <span className="relative tracking-wider drop-shadow-sm">{initials || "USA"}</span>
-        </>
-      )}
+      </>
 
       {isOlympian && (
         <span

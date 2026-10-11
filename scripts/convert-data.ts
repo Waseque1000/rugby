@@ -57,31 +57,19 @@ export interface Player {
   tries: number | null;
   points: number | null;
   fifteensCaps: number | null;
-  olympicGames: string | null;
   isOlympian: boolean;
   olympicEditions: string[];
   worldCupSevens: string | null;
-  achievements: string | null;
-  biography: string | null;
-  imageUrl?: string | null;
-  imageAlt?: string | null;
-  sourceUrl: string | null;
-  sourceNotes: string | null;
+  honours: string | null;
+  sources: string[];
   dataStatus: string | null;
   lastChecked: string | null;
-  raw: Record<string, unknown>;
 }
 
 export interface SourceItem {
   source: string;
   url: string | null;
   notes: string | null;
-}
-
-function generateBingImageUrl(name: string, team: string | null): string {
-  const isWomen = team?.toLowerCase().includes("women");
-  const query = encodeURIComponent(`${name} USA ${isWomen ? "Womens" : "Mens"} Rugby Sevens`);
-  return `https://tse1.mm.bing.net/th?q=${query}&w=600&h=600&c=7&rs=1&p=0`;
 }
 
 function cleanValue<T>(val: T): T | null {
@@ -149,11 +137,6 @@ function convertDatabase() {
   console.log(`Read ${rawRows.length} player rows from "Players" sheet.`);
 
   const players: Player[] = rawRows.map((row) => {
-    const rawClean: Record<string, unknown> = {};
-    for (const [k, v] of Object.entries(row)) {
-      rawClean[k] = cleanValue(v);
-    }
-
     const playerId = cleanValue(row["Player ID"]) as string || `player-${Math.random().toString(36).substring(7)}`;
     const name = cleanValue(row["Full Name"]) as string || "Unknown Player";
     const hometown = cleanValue(row["Hometown / Birthplace"]) as string | null;
@@ -163,12 +146,23 @@ function convertDatabase() {
     const team = cleanValue(row["Team"]) as string | null;
 
     const { isOlympian, editions } = extractOlympics(debut, olympicsField, achievements);
+    const clubValue = cleanValue(row["Current / Known Club"]) as string | null;
+    const club = clubValue && !/^(?:\d{4}|.*\bseries\b|.*\bselection\b)/i.test(clubValue)
+      ? clubValue
+      : null;
+    const honours = [olympicsField, achievements]
+      .filter((value): value is string => Boolean(value && !/^https?:\/\//i.test(value)))
+      .filter((value, index, values) => values.indexOf(value) === index)
+      .join("; ") || null;
+    const sources = [
+      cleanValue(row["Source URL"]) as string | null,
+      ...(achievements && /^https?:\/\//i.test(achievements) ? [achievements] : []),
+    ].filter((value): value is string => Boolean(value));
 
     return {
       id: playerId,
       slug: playerId, // "Use the Player ID column as the slug"
       name: name,
-      age: parseNumber(row["Age (as of 2026-10-10)"]),
       dob: cleanValue(row["Date of Birth"]) as string | null,
       team: team,
       format: cleanValue(row["Format"]) as string | null,
@@ -178,7 +172,7 @@ function convertDatabase() {
       nationality: cleanValue(row["Nationality"]) as string | null,
       height: cleanValue(row["Height"]) as string | null,
       weight: cleanValue(row["Weight"]) as string | null,
-      club: cleanValue(row["Current / Known Club"]) as string | null,
+      club,
       college: cleanValue(row["College / School"]) as string | null,
       debut: debut,
       nationalYears: cleanValue(row["National Team Years"]) as string | null,
@@ -186,19 +180,13 @@ function convertDatabase() {
       tries: parseNumber(row["Sevens Tries"]),
       points: parseNumber(row["Sevens Points"]),
       fifteensCaps: parseNumber(row["Fifteens Caps (if known)"]),
-      olympicGames: olympicsField,
       isOlympian: isOlympian,
       olympicEditions: editions,
       worldCupSevens: cleanValue(row["Rugby World Cup Sevens"]) as string | null,
-      achievements: achievements,
-      biography: cleanValue(row["Career Timeline / Biography"]) as string | null,
-      imageUrl: generateBingImageUrl(name, team),
-      imageAlt: `${name} - USA Rugby Sevens Player`,
-      sourceUrl: cleanValue(row["Source URL"]) as string | null,
-      sourceNotes: cleanValue(row["Primary Source / Notes"]) as string | null,
+      honours,
+      sources: [...new Set(sources)],
       dataStatus: cleanValue(row["Data Status"]) as string | null,
       lastChecked: cleanValue(row["Last Checked"]) as string | null,
-      raw: rawClean
     };
   });
 

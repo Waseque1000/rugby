@@ -5,6 +5,7 @@ import { getAllLists } from "@/lib/players";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { Trophy, ArrowRight, Layers, Users } from "lucide-react";
+import { serializeJsonLd, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Curated Rosters & Lists | USA Rugby Sevens",
@@ -20,9 +21,21 @@ export const metadata: Metadata = {
 
 export default function ListsIndexPage() {
   const lists = getAllLists();
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "USA Rugby Sevens team and Olympic rosters",
+    itemListElement: lists.map((list, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: list.title,
+      url: `${SITE_URL}/lists/${list.slug}`,
+    })),
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }} />
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Curated Lists" }]} />
 

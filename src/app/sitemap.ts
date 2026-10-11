@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getAllPlayers, getAllLists } from "@/lib/players";
+import { getAllPlayerHubs, getAllPlayers, getAllLists } from "@/lib/players";
 import { getAllPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/site";
 
@@ -71,12 +71,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Player profiles
-  const playerRoutes: MetadataRoute.Sitemap = getAllPlayers().map((player) => ({
+  const playerRoutes: MetadataRoute.Sitemap = getAllPlayers().filter((player) => player.indexable).map((player) => ({
     url: `${SITE_URL}/players/${player.slug}`,
     lastModified: player.lastChecked ? new Date(player.lastChecked) : now,
     changeFrequency: "monthly",
     priority: 0.8,
   }));
+
+  const playerHubs: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/players/hubs`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...getAllPlayerHubs().map((hub) => ({
+      url: `${SITE_URL}/players/hubs/${hub.dimension}/${hub.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
 
   // Curated lists
   const listRoutes: MetadataRoute.Sitemap = getAllLists().map((list) => ({
@@ -94,5 +109,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...playerRoutes, ...listRoutes, ...blogRoutes];
+  return [...staticRoutes, ...playerRoutes, ...playerHubs, ...listRoutes, ...blogRoutes];
 }

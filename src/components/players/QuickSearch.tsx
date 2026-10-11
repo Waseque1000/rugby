@@ -18,6 +18,7 @@ export function QuickSearch({ players }: QuickSearchProps) {
 
   const results = query.trim()
     ? players
+        .filter((p) => p.indexable)
         .filter((p) => {
           const q = query.toLowerCase();
           return (
@@ -94,7 +95,6 @@ export function QuickSearch({ players }: QuickSearchProps) {
                   <PlayerAvatar
                     name={player.name}
                     team={player.team}
-                    imageUrl={player.imageUrl}
                     size="sm"
                     isOlympian={false}
                   />

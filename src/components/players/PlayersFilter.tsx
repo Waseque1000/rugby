@@ -47,7 +47,12 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
 
       // 2. Team Filter
       if (selectedTeam !== "all") {
-        if (!player.team || !player.team.toLowerCase().includes(selectedTeam.toLowerCase())) {
+        const team = player.team?.toLowerCase() || "";
+        const selected = selectedTeam.toLowerCase();
+        const matchesTeam = selected.includes("women")
+          ? team.includes("women")
+          : team.includes("men") && !team.includes("women");
+        if (!matchesTeam) {
           return false;
         }
       }
@@ -79,9 +84,8 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
           if (!player.isOlympian) return false;
         } else {
           const matchEdition = player.olympicEditions.includes(selectedOlympics);
-          const rawMatch = player.olympicGames?.toLowerCase().includes(selectedOlympics.toLowerCase()) ?? false;
           const debutMatch = player.debut?.toLowerCase().includes(selectedOlympics.toLowerCase()) ?? false;
-          if (!matchEdition && !rawMatch && !debutMatch) return false;
+          if (!matchEdition && !debutMatch) return false;
         }
       }
 

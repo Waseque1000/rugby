@@ -29,23 +29,10 @@ export function getAllPosts(): BlogPost[] {
     const wordCount = content.split(/\s+/).length;
     const readingTime = `${Math.ceil(wordCount / 200)} min read`;
 
-    const defaultBingMap: Record<string, string> = {
-      "womens-svns-dominance-tapper-kelter": "https://tse1.mm.bing.net/th?q=USA%20Womens%20Rugby%20Sevens%20Alev%20Kelter&w=800&h=500&c=7&rs=1&p=0",
-      "perry-baker-carlin-isles-speed-dynasty": "https://tse1.mm.bing.net/th?q=Perry%20Baker%20Carlin%20Isles%20USA%20Rugby&w=800&h=500&c=7&rs=1&p=0",
-      "rise-of-womens-eagles-sevens": "https://tse1.mm.bing.net/th?q=USA%20Womens%20Eagles%20Sevens%20Rugby&w=800&h=500&c=7&rs=1&p=0",
-      "sevens-vs-fifteens-tactical-breakdown": "https://tse1.mm.bing.net/th?q=Rugby%20Sevens%20vs%20Fifteens%20Match&w=800&h=500&c=7&rs=1&p=0",
-      "world-rugby-svns-2026-calendar-guide": "https://tse1.mm.bing.net/th?q=World%20Rugby%20SVNS%20Series%20Tournament&w=800&h=500&c=7&rs=1&p=0",
-      "top-college-rugby-programs-usa": "https://tse1.mm.bing.net/th?q=College%20Rugby%20Championship%20USA&w=800&h=500&c=7&rs=1&p=0",
-      "road-to-la-2028-olympic-rugby": "https://tse1.mm.bing.net/th?q=USA%20Rugby%20Sevens%20Olympic%20Team&w=800&h=500&c=7&rs=1&p=0",
-    };
-
-    const cleanTitle = (data.title || slug).replace(/[^\w\s]/gi, "").trim();
-    const dynamicBingUrl = `https://tse1.mm.bing.net/th?q=${encodeURIComponent(cleanTitle + " USA Rugby")}&w=800&h=500&c=7&rs=1&p=0`;
-
     const image =
-      data.image && (data.image.startsWith("http://") || data.image.startsWith("https://"))
+      typeof data.image === "string" && data.image.startsWith("/images/")
         ? data.image
-        : defaultBingMap[slug] || dynamicBingUrl;
+        : undefined;
 
     return {
       slug,

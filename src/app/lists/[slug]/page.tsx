@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { AffiliateBox } from "@/components/monetization/AffiliateBox";
 import { Trophy, Users } from "lucide-react";
+import { SITE_URL, serializeJsonLd } from "@/lib/site";
 
 interface ListPageProps {
   params: Promise<{ slug: string }>;
@@ -51,8 +52,23 @@ export default async function ListDetailsPage({ params }: ListPageProps) {
     notFound();
   }
 
+  const indexablePlayers = list.players.filter((player) => player.indexable);
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: list.title,
+    numberOfItems: indexablePlayers.length,
+    itemListElement: indexablePlayers.map((player, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: player.name,
+      url: `${SITE_URL}/players/${player.slug}`,
+    })),
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }} />
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

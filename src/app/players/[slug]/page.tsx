@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import {
   getAllPlayers,
+  getPlayerIntro,
   getPlayerBySlug,
   getRelatedPlayers,
 } from "@/lib/players";
@@ -12,7 +13,7 @@ import { PlayerCard } from "@/components/players/PlayerCard";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { AffiliateBox } from "@/components/monetization/AffiliateBox";
-import { serializeJsonLd } from "@/lib/site";
+import { serializeJsonLd, SITE_URL } from "@/lib/site";
 import {
   Trophy,
   MapPin,
@@ -23,7 +24,6 @@ import {
   Award,
   Sparkles,
   ChevronRight,
-  User,
 } from "lucide-react";
 
 interface PlayerPageProps {
@@ -49,12 +49,23 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${player.name} | Rugby Sevens Profile & Stats`;
-  const description = `${player.name} USA Rugby Sevens player profile. ${
-    player.position ? `Position: ${player.position}. ` : ""
-  }${player.team ? `Team: ${player.team}. ` : ""}${
-    player.isOlympian ? "USA Sevens Olympian. " : ""
-  }Collegiate background, caps, achievements, and career history.`;
+  const role = player.position || "Player";
+  const titleDetails = [
+    player.age !== null ? `Age ${player.age}` : null,
+    player.olympicEditions.length ? "Olympics" : null,
+    "Profile",
+  ].filter(Boolean).join(", ");
+  const title = `${player.name} – USA Rugby Sevens ${role} | ${titleDetails}`;
+  const gender = player.team?.toLowerCase().includes("women") ? "women's" : "men's";
+  const descriptionParts = [
+    `${player.name}${player.age !== null ? `, ${player.age},` : ","} USA ${gender} rugby sevens ${role.toLowerCase()}`,
+  ];
+  if (player.hometown) descriptionParts.push(`from ${player.hometown}`);
+  let description = `${descriptionParts.join(" ")}.`;
+  if (player.olympicEditions.length) {
+    description += ` Olympic appearances: ${player.olympicEditions.join(", ")}.`;
+  }
+  description = description.slice(0, 160);
 
   return {
     title,
@@ -71,6 +82,7 @@ export async function generateMetadata({
       title,
       description,
     },
+    robots: player.indexable ? undefined : { index: false, follow: true },
   };
 }
 
@@ -83,34 +95,34 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
   }
 
   const related = getRelatedPlayers(player, 4);
+  const intro = getPlayerIntro(player);
 
   // Schema.org Person JSON-LD
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: player.name,
-    jobTitle: player.position || "Rugby Sevens Player",
-    affiliation: {
-      "@type": "SportsTeam",
-      name: player.team || "USA Rugby Sevens",
-    },
-    birthDate: player.dob || undefined,
-    homeLocation: player.hometown
+    ...(player.position ? { jobTitle: player.position } : {}),
+    ...(player.team
       ? {
-          "@type": "Place",
-          name: player.hometown,
+          memberOf: {
+            "@type": "SportsTeam",
+            name: `USA ${player.team}`,
+            sport: "Rugby sevens",
+          },
         }
-      : undefined,
-    alumniOf: player.college
-      ? {
-          "@type": "EducationalOrganization",
-          name: player.college,
-        }
-      : undefined,
-    nationality: player.nationality || "United States",
-    image: player.imageUrl || undefined,
-    description: player.biography || undefined,
-    url: player.sourceUrl || undefined,
+      : {}),
+    ...(player.dob ? { birthDate: player.dob } : {}),
+    ...(player.hometown
+      ? { birthPlace: { "@type": "Place", name: player.hometown } }
+      : {}),
+    ...(player.college
+      ? { alumniOf: { "@type": "EducationalOrganization", name: player.college } }
+      : {}),
+    ...(player.nationality ? { nationality: player.nationality } : {}),
+    ...(player.sources.length ? { sameAs: player.sources } : {}),
+    description: intro,
+    url: `${SITE_URL}/players/${player.slug}`,
   };
 
   return (
@@ -140,7 +152,6 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
             <PlayerAvatar
               name={player.name}
               team={player.team}
-              imageUrl={player.imageUrl}
               size="xl"
               isOlympian={player.isOlympian}
               className="flex-shrink-0 shadow-lg"
@@ -230,25 +241,23 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
         </div>
       </div>
 
+      {!player.indexable && (
+        <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+          This roster record stays available, but its profile is not included in search indexing until more verified details are available.
+        </p>
+      )}
+
       {/* Main Content Layout with Sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
         {/* Left 2 Cols: Detailed Bio & Tournament Records */}
         <div className="lg:col-span-2 space-y-8">
-          {/* Biography / Career Overview */}
-          {player.biography && (
-            <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-4">
-              <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                <span>Career Overview</span>
-              </h2>
-              <div className="text-sm sm:text-base text-muted-foreground leading-relaxed whitespace-pre-line">
-                {player.biography}
-              </div>
-            </section>
-          )}
+          <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-4">
+            <h2 className="text-xl font-bold text-foreground">Player Profile</h2>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{intro}</p>
+          </section>
 
           {/* Olympic & International Milestones */}
-          {(player.olympicGames || player.debut || player.worldCupSevens) && (
+          {(player.olympicEditions.length > 0 || player.debut || player.worldCupSevens) && (
             <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-5">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                 <Trophy className="w-5 h-5 text-amber-500" />
@@ -267,13 +276,13 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
                   </div>
                 )}
 
-                {player.olympicGames && (
+                {player.olympicEditions.length > 0 && (
                   <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/25">
                     <span className="text-xs uppercase font-bold text-amber-800 dark:text-amber-300 block mb-1">
                       Olympic Games History
                     </span>
                     <span className="font-semibold text-foreground">
-                      {player.olympicGames}
+                      {player.olympicEditions.join(", ")}
                     </span>
                   </div>
                 )}
@@ -304,32 +313,13 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
           )}
 
           {/* Major Achievements (only shown if present) */}
-          {player.achievements && (
+          {player.honours && (
             <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-4">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                 <Award className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 <span>Major Achievements & Honors</span>
               </h2>
-              {player.achievements.startsWith("http") ? (
-                <div className="p-4 rounded-xl bg-secondary/60 border border-border flex items-center justify-between gap-4">
-                  <span className="text-sm text-muted-foreground">
-                    Documented in official USA Rugby achievements archive
-                  </span>
-                  <a
-                    href={player.achievements}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline flex-shrink-0"
-                  >
-                    <span>View Citation</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              ) : (
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  {player.achievements}
-                </p>
-              )}
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{player.honours}</p>
             </section>
           )}
 
@@ -462,32 +452,34 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
           <div className="bg-secondary/70 border border-border rounded-2xl p-6 space-y-4">
             <div className="flex items-center gap-2 text-foreground font-bold text-sm">
               <ShieldCheck className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span>Data Integrity & Source</span>
+              <span>Sources</span>
             </div>
 
-            {player.sourceNotes && (
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                {player.sourceNotes}
-              </p>
+            {player.sources.length > 0 ? (
+              <ul className="space-y-2">
+                {player.sources.map((source) => (
+                  <li key={source}>
+                    <a
+                      href={source}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-start gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline break-all"
+                    >
+                      <span>{new URL(source).hostname.replace(/^www\./, "")}</span>
+                      <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-xs text-muted-foreground">No source link is available for this record.</p>
             )}
 
-            {player.sourceUrl && (
-              <a
-                href={player.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-700 dark:text-blue-400 hover:underline break-all"
-              >
-                <span>Official Citation Source</span>
-                <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
-              </a>
-            )}
-
-            {/* Last verified date */}
+            {/* Source verification date */}
             {player.lastChecked && (
               <div className="pt-3 border-t border-border/70 flex items-center justify-between text-[11px] text-muted-foreground">
                 <span className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5" /> Last verified
+                  <Calendar className="w-3.5 h-3.5" /> Last updated
                 </span>
                 <span className="font-semibold text-foreground">{player.lastChecked}</span>
               </div>

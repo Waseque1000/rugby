@@ -5,6 +5,8 @@ import { PlayersFilter } from "@/components/players/PlayersFilter";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
 import { Shield } from "lucide-react";
+import Link from "next/link";
+import { SITE_URL, serializeJsonLd } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "USA Rugby Sevens Players Directory | Roster & Stats",
@@ -21,9 +23,22 @@ export const metadata: Metadata = {
 export default function PlayersDirectoryPage() {
   const players = getAllPlayers();
   const filterOptions = getUniqueFilterOptions();
+  const directoryJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "USA Rugby Sevens player profiles",
+    numberOfItems: players.filter((player) => player.indexable).length,
+    itemListElement: players.filter((player) => player.indexable).map((player, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: player.name,
+      url: `${SITE_URL}/players/${player.slug}`,
+    })),
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(directoryJsonLd) }} />
       {/* Breadcrumbs */}
       <Breadcrumbs items={[{ label: "Players Directory" }]} />
 
@@ -37,9 +52,13 @@ export default function PlayersDirectoryPage() {
           USA Rugby Sevens Players Directory
         </h1>
         <p className="text-sm sm:text-base text-muted-foreground max-w-3xl leading-relaxed">
-          Filter and sort through official USA Men&apos;s and Women&apos;s Sevens athletes. Every record reflects verified documentation from Olympic rosters, official team profiles, and World Rugby tournament summaries.
+          Search the USA Men&apos;s and Women&apos;s Sevens roster by position, college, hometown state, and Olympic appearance. Player profile links are shown when the record has enough verified details; other roster entries remain listed.
         </p>
       </div>
+
+      <Link href="/players/hubs" className="inline-flex rounded-xl border border-blue-200 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-800 hover:bg-blue-100">
+        Browse player hubs by Olympics, college, state, and position
+      </Link>
 
       {/* Ad slot */}
       <AdSlot id="players-dir-top" format="horizontal" label="Directory Partner" />
