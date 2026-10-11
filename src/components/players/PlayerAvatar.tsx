@@ -9,7 +9,7 @@ interface PlayerAvatarProps {
   imageUrl?: string | null;
   imageAlt?: string | null;
   team?: string | null;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl";
   className?: string;
   isOlympian?: boolean;
 }
@@ -40,6 +40,7 @@ export function PlayerAvatar({
     md: { px: 56, classes: "w-14 h-14 text-base" },
     lg: { px: 80, classes: "w-20 h-20 text-xl" },
     xl: { px: 112, classes: "w-28 h-28 text-3xl" },
+    "2xl": { px: 144, classes: "w-36 h-36 text-4xl" },
   }[size];
 
   // Distinct athletic USA gradient

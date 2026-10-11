@@ -145,8 +145,10 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
   return (
     <div className="space-y-6">
       {/* Search Bar & Quick Controls */}
-      <div className="bg-card border border-border rounded-2xl p-4 sm:p-5 shadow-sm space-y-4">
-        <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+      <div className="relative isolate space-y-4 overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-4 shadow-[0_8px_24px_rgba(30,64,175,0.07)] sm:p-5">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-800 via-blue-500 to-indigo-300" />
+        <div className="pointer-events-none absolute -right-16 -top-24 -z-10 h-64 w-64 rounded-full bg-gradient-to-br from-blue-100/70 to-indigo-100/20 blur-2xl" />
+        <div className="relative z-10 flex flex-col items-stretch justify-between gap-3 md:flex-row md:items-center">
           {/* Main search input */}
           <div className="relative flex-1">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -155,7 +157,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by player name, college, hometown, position..."
-              className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all placeholder:text-muted-foreground"
+              className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-blue-100 bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all placeholder:text-muted-foreground"
               aria-label="Search players"
             />
             {search && (
@@ -170,12 +172,12 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
           </div>
 
           {/* Quick Team Filter Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-secondary rounded-xl self-start md:self-auto">
+          <div className="flex items-center gap-1.5 rounded-xl bg-white/80 p-1 ring-1 ring-blue-100 self-start md:self-auto">
             <button
               onClick={() => setSelectedTeam("all")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTeam === "all"
-                  ? "bg-card text-foreground shadow-xs font-bold"
+                  ? "bg-white text-foreground shadow-sm font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -185,7 +187,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               onClick={() => setSelectedTeam("men")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTeam === "men"
-                  ? "bg-card text-blue-800 dark:text-blue-300 shadow-xs font-bold"
+                  ? "bg-white text-blue-800 dark:text-blue-300 shadow-sm font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -195,7 +197,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               onClick={() => setSelectedTeam("women")}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedTeam === "women"
-                  ? "bg-card text-rose-800 dark:text-rose-300 shadow-xs font-bold"
+                  ? "bg-white text-rose-800 dark:text-rose-300 shadow-sm font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -204,10 +206,10 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
           </div>
 
           {/* Mobile Filter Toggle & Sort selector */}
-          <div className="flex items-center gap-2">
+          <div className="relative z-10 flex items-center gap-2">
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="inline-flex md:hidden items-center gap-1.5 px-3 py-2 rounded-xl border border-border bg-background text-xs font-semibold text-foreground cursor-pointer"
+              className="inline-flex md:hidden items-center gap-1.5 px-3 py-2 rounded-xl border border-blue-100 bg-white text-xs font-semibold text-foreground cursor-pointer"
             >
               <Filter className="w-3.5 h-3.5" />
               <span>Filters ({activeFilterCount})</span>
@@ -228,7 +230,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
                   setSortBy(field);
                   setSortOrder(order);
                 }}
-                className="bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none cursor-pointer"
+                className="bg-white border border-blue-100 text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none cursor-pointer"
               >
                 <option value="name-asc">Name (A-Z)</option>
                 <option value="name-desc">Name (Z-A)</option>
@@ -241,7 +243,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
         </div>
 
         {/* Detailed Filter Grid (always visible on desktop, toggleable on mobile) */}
-        <div className={`pt-3 border-t border-border/70 ${showFilters ? "block" : "hidden md:block"}`}>
+        <div className={`relative z-10 pt-3 border-t border-blue-100/80 ${showFilters ? "block" : "hidden md:block"}`}>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
             {/* Position Filter */}
             <div>
@@ -251,7 +253,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedPosition}
                 onChange={(e) => setSelectedPosition(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                className="w-full bg-white border border-blue-100 text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All Positions</option>
                 {filterOptions.positions.map((pos) => (
@@ -270,7 +272,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedOlympics}
                 onChange={(e) => setSelectedOlympics(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                className="w-full bg-white border border-blue-100 text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All Athletes</option>
                 <option value="any">Any Olympic Selection</option>
@@ -290,7 +292,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedCollege}
                 onChange={(e) => setSelectedCollege(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                className="w-full bg-white border border-blue-100 text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All Colleges</option>
                 {filterOptions.colleges.map((col) => (
@@ -309,7 +311,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               <select
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                className="w-full bg-white border border-blue-100 text-foreground rounded-xl px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
               >
                 <option value="all">All States</option>
                 {filterOptions.states.map((st) => (
