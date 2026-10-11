@@ -1,70 +1,17 @@
-version: '3.8'
-
 services:
-  # 1. PostgreSQL Database Service
-  postgres:
-    image: postgres:16-alpine
-    container_name: rugby_postgres
-    restart: unless-stopped
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: rugby_db
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d rugby_db"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    networks:
-      - rugby_network
-
-  # 2. Express TypeScript Backend API Service
-  backend:
+  web:
     build:
-      context: ./backend
+      context: .
       dockerfile: Dockerfile
-    container_name: rugby_backend
-    restart: unless-stopped
-    environment:
-      PORT: 8000
-      DATABASE_URL: postgresql://postgres:postgrespassword@postgres:5432/rugby_db?schema=public
-    ports:
-      - "8000:8000"
-    depends_on:
-      postgres:
-        condition: service_healthy
-    networks:
-      - rugby_network
-
-  # 3. Next.js Frontend Web Application
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: rugby_frontend
     restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
-      NEXT_PUBLIC_BACKEND_URL: http://localhost:8000
-      DATABASE_URL: postgresql://postgres:postgrespassword@postgres:5432/rugby_db?schema=public
+      JSON_STORAGE_DIR: /app/storage
     ports:
       - "3000:3000"
-    depends_on:
-      - backend
-      - postgres
-    networks:
-      - rugby_network
+    volumes:
+      - rugby_storage:/app/storage
 
 volumes:
-  pgdata:
-    driver: local
-
-networks:
-  rugby_network:
-    driver: bridge
+  rugby_storage:

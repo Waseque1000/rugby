@@ -4,6 +4,7 @@
 node_modules/
 **/node_modules/
 backend/dist/
+storage/
 /.pnp
 .pnp.*
 .yarn/*
