@@ -6,7 +6,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 310135,
+      "htmlSize": 328116,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -187,7 +187,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 459302,
+      "htmlSize": 476408,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -1447,7 +1447,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 87131,
+      "htmlSize": 91251,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -1483,7 +1483,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 87546,
+      "htmlSize": 91677,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -1519,7 +1519,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 83506,
+      "htmlSize": 87174,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -1627,7 +1627,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 89534,
+      "htmlSize": 93904,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -1951,7 +1951,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 132179,
+      "htmlSize": 135825,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -2059,7 +2059,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 117253,
+      "htmlSize": 121671,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
@@ -2095,7 +2095,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 86914,
+      "htmlSize": 91140,
       "experimentalPPR": true,
       "experimentalBypassFor": [
         {
