@@ -65,39 +65,45 @@ export default async function BlogIndexPage({
       {/* Category Pills Bar */}
       <nav
         aria-label="Filter articles by category"
-        className="flex flex-wrap items-center gap-2 pb-2 border-b border-border"
+        className="border-b border-border pb-2"
       >
-        <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground mr-2">
-          Categories:
-        </span>
-        <Link
-          href="/blog"
-          aria-current={!selectedCategory ? "page" : undefined}
-          className={`px-3 py-1 rounded-full text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
-            !selectedCategory
-              ? "bg-blue-700 text-white dark:bg-blue-600"
-              : "bg-secondary text-secondary-foreground hover:bg-accent"
-          }`}
-        >
-          All Stories ({posts.length})
-        </Link>
-        {categories.map((cat) => {
-          const count = posts.filter((p) => p.category === cat).length;
-          return (
-            <Link
-              key={cat}
-              href={`/blog?category=${encodeURIComponent(cat)}`}
-              aria-current={selectedCategory === cat ? "page" : undefined}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
-                selectedCategory === cat
-                  ? "bg-blue-700 text-white dark:bg-blue-600"
-                  : "bg-secondary text-secondary-foreground hover:bg-accent"
-              }`}
-            >
-              {cat} ({count})
-            </Link>
-          );
-        })}
+        <div className="mb-2 flex items-center justify-between sm:hidden">
+          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Categories</span>
+          <span className="text-[11px] font-medium text-muted-foreground">Swipe to browse →</span>
+        </div>
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-visible sm:pb-0">
+          <span className="mr-1 hidden shrink-0 text-xs font-bold uppercase tracking-wider text-muted-foreground sm:block">
+            Categories:
+          </span>
+          <Link
+            href="/blog"
+            aria-current={!selectedCategory ? "page" : undefined}
+            className={`shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+              !selectedCategory
+                ? "bg-blue-700 text-white dark:bg-blue-600"
+                : "bg-secondary text-secondary-foreground hover:bg-accent"
+            }`}
+          >
+            All Stories ({posts.length})
+          </Link>
+          {categories.map((cat) => {
+            const count = posts.filter((p) => p.category === cat).length;
+            return (
+              <Link
+                key={cat}
+                href={`/blog?category=${encodeURIComponent(cat)}`}
+                aria-current={selectedCategory === cat ? "page" : undefined}
+                className={`shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
+                  selectedCategory === cat
+                    ? "bg-blue-700 text-white dark:bg-blue-600"
+                    : "bg-secondary text-secondary-foreground hover:bg-accent"
+                }`}
+              >
+                {cat} ({count})
+              </Link>
+            );
+          })}
+        </div>
       </nav>
 
       {/* Lead Feature Story */}

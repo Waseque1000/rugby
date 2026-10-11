@@ -68,7 +68,7 @@ export function QuickSearch({ players }: QuickSearchProps) {
               setIsOpen(true);
             }}
             onFocus={() => setIsOpen(true)}
-            placeholder="Search USA Sevens players (e.g., Perry Baker, Alev Kelter, Cal, Wing)..."
+            placeholder="Search players..."
             className="w-full pl-12 pr-28 py-3.5 sm:py-4 rounded-2xl border-2 border-blue-900/20 dark:border-blue-600/30 bg-background/95 backdrop-blur-md text-foreground text-sm sm:text-base focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 shadow-xl transition-all placeholder:text-muted-foreground"
             aria-label="Search players by name, college, or position"
           />

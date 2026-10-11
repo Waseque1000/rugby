@@ -145,9 +145,9 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
   return (
     <div className="space-y-6">
       {/* Search Bar & Quick Controls */}
-      <div className="relative isolate space-y-4 overflow-hidden rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-4 shadow-[0_8px_24px_rgba(30,64,175,0.07)] sm:p-5">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-800 via-blue-500 to-indigo-300" />
-        <div className="pointer-events-none absolute -right-16 -top-24 -z-10 h-64 w-64 rounded-full bg-gradient-to-br from-blue-100/70 to-indigo-100/20 blur-2xl" />
+      <div className="relative isolate space-y-4 overflow-hidden rounded-2xl border border-blue-200 bg-gradient-to-br from-[#dbeafe] via-[#eff6ff] to-[#e0e7ff] p-4 shadow-[0_12px_30px_rgba(37,99,235,0.12)] sm:p-5">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-800 via-blue-500 to-violet-400" />
+        <div className="pointer-events-none absolute -right-16 -top-24 -z-10 h-64 w-64 rounded-full bg-gradient-to-br from-blue-200/80 to-violet-200/50 blur-2xl" />
         <div className="relative z-10 flex flex-col items-stretch justify-between gap-3 md:flex-row md:items-center">
           {/* Main search input */}
           <div className="relative flex-1">
@@ -156,7 +156,7 @@ export function PlayersFilter({ initialPlayers, filterOptions }: PlayersFilterPr
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by player name, college, hometown, position..."
+              placeholder="Search name, college, hometown, or position..."
               className="w-full pl-10 pr-9 py-2.5 rounded-xl border border-blue-100 bg-white text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all placeholder:text-muted-foreground"
               aria-label="Search players"
             />
