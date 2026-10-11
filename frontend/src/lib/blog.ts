@@ -3,9 +3,16 @@ import path from "path";
 import matter from "gray-matter";
 import { BlogPost } from "./types";
 
-const BLOG_DIR = path.join(process.cwd(), "content", "blog");
+function getBlogDir(): string {
+  const directPath = path.join(process.cwd(), "content", "blog");
+  if (fs.existsSync(directPath)) return directPath;
+  const frontendPath = path.join(process.cwd(), "frontend", "content", "blog");
+  if (fs.existsSync(frontendPath)) return frontendPath;
+  return path.join(__dirname, "..", "..", "content", "blog");
+}
 
 export function getAllPosts(): BlogPost[] {
+  const BLOG_DIR = getBlogDir();
   if (!fs.existsSync(BLOG_DIR)) {
     return [];
   }
