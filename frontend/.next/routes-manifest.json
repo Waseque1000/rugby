@@ -28,16 +28,7 @@
       "routeKeys": {
         "nxtPslug": "nxtPslug"
       },
-      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$",
-      "prefetchSegmentDataRoutes": [
-        {
-          "destination": "/blog/[slug].segments/blog/$d$slug$segment",
-          "source": "^/blog/(?<nxtPslug>[^/]+?)\\.segments/blog/\\$d\\$slug(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
-          "routeKeys": {
-            "nxtPslug": "nxtPslug"
-          }
-        }
-      ]
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
     },
     {
       "page": "/lists/[slug]",
@@ -45,16 +36,7 @@
       "routeKeys": {
         "nxtPslug": "nxtPslug"
       },
-      "namedRegex": "^/lists/(?<nxtPslug>[^/]+?)(?:/)?$",
-      "prefetchSegmentDataRoutes": [
-        {
-          "destination": "/lists/[slug].segments/lists/$d$slug$segment",
-          "source": "^/lists/(?<nxtPslug>[^/]+?)\\.segments/lists/\\$d\\$slug(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
-          "routeKeys": {
-            "nxtPslug": "nxtPslug"
-          }
-        }
-      ]
+      "namedRegex": "^/lists/(?<nxtPslug>[^/]+?)(?:/)?$"
     },
     {
       "page": "/players/[slug]",
@@ -62,16 +44,7 @@
       "routeKeys": {
         "nxtPslug": "nxtPslug"
       },
-      "namedRegex": "^/players/(?<nxtPslug>[^/]+?)(?:/)?$",
-      "prefetchSegmentDataRoutes": [
-        {
-          "destination": "/players/[slug].segments/players/$d$slug$segment",
-          "source": "^/players/(?<nxtPslug>[^/]+?)\\.segments/players/\\$d\\$slug(?<segment>/__PAGE__\\.segment\\.rsc|\\.segment\\.rsc)(?:/)?$",
-          "routeKeys": {
-            "nxtPslug": "nxtPslug"
-          }
-        }
-      ]
+      "namedRegex": "^/players/(?<nxtPslug>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -195,18 +168,11 @@
     "prefetchSegmentHeader": "next-router-segment-prefetch",
     "prefetchSegmentSuffix": ".segment.rsc",
     "prefetchSegmentDirSuffix": ".segments",
-    "clientParamParsing": true,
-    "dynamicRSCPrerender": true
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
   },
   "rewriteHeaders": {
     "pathHeader": "x-nextjs-rewritten-path",
     "queryHeader": "x-nextjs-rewritten-query"
-  },
-  "ppr": {
-    "chain": {
-      "headers": {
-        "next-resume": "1"
-      }
-    }
   }
 }

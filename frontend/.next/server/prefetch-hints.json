@@ -1,21 +1,21 @@
 {
   "/_global-error": {
-    "hints": 49216,
+    "hints": 64,
     "slots": {
       "children": {
-        "hints": 49312,
+        "hints": 160,
         "slots": null
       }
     }
   },
   "/_not-found": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -23,13 +23,13 @@
     }
   },
   "/about": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -37,13 +37,13 @@
     }
   },
   "/activities": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -51,16 +51,16 @@
     }
   },
   "/blog/[slug]": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49248,
+            "hints": 96,
             "slots": {
               "children": {
-                "hints": 49312,
+                "hints": 160,
                 "slots": null
               }
             }
@@ -70,13 +70,13 @@
     }
   },
   "/blog": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -84,13 +84,13 @@
     }
   },
   "/contact": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -98,16 +98,16 @@
     }
   },
   "/lists/[slug]": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49248,
+            "hints": 96,
             "slots": {
               "children": {
-                "hints": 49312,
+                "hints": 160,
                 "slots": null
               }
             }
@@ -117,13 +117,13 @@
     }
   },
   "/lists": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -131,25 +131,25 @@
     }
   },
   "/": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49280,
+        "hints": 128,
         "slots": null
       }
     }
   },
   "/players/[slug]": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49248,
+            "hints": 96,
             "slots": {
               "children": {
-                "hints": 49312,
+                "hints": 160,
                 "slots": null
               }
             }
@@ -159,13 +159,13 @@
     }
   },
   "/players": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -173,13 +173,13 @@
     }
   },
   "/privacy": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -187,13 +187,13 @@
     }
   },
   "/sources": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
@@ -201,13 +201,13 @@
     }
   },
   "/terms": {
-    "hints": 49152,
+    "hints": 0,
     "slots": {
       "children": {
-        "hints": 49216,
+        "hints": 64,
         "slots": {
           "children": {
-            "hints": 49312,
+            "hints": 160,
             "slots": null
           }
         }
