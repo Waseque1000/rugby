@@ -2,6 +2,8 @@ export interface Player {
   id: string;
   slug: string;
   name: string;
+  imageUrl: string;
+  imageAlt: string;
   age: number | null;
   dob: string | null;
   team: string | null;

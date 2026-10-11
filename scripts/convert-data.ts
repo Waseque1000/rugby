@@ -38,6 +38,8 @@ export interface Player {
   id: string;
   slug: string;
   name: string;
+  imageUrl: string;
+  imageAlt: string;
   dob: string | null;
   team: string | null;
   format: string | null;
@@ -101,6 +103,12 @@ function extractState(hometown: string | null): string | null {
   return null;
 }
 
+function generateBingImageUrl(name: string, team: string | null): string {
+  const isWomen = team?.toLowerCase().includes("women");
+  const query = encodeURIComponent(`${name} USA ${isWomen ? "Womens" : "Mens"} Rugby Sevens`);
+  return `https://tse1.mm.bing.net/th?q=${query}&w=600&h=600&c=7&rs=1&p=0`;
+}
+
 function extractOlympics(debut: string | null, olympics: string | null, achievements: string | null): { isOlympian: boolean; editions: string[] } {
   const combined = `${debut || ""} ${olympics || ""} ${achievements || ""}`;
   const editions: string[] = [];
@@ -161,6 +169,8 @@ function convertDatabase() {
       id: playerId,
       slug: playerId, // "Use the Player ID column as the slug"
       name: name,
+      imageUrl: generateBingImageUrl(name, team),
+      imageAlt: `${name} - USA Rugby Sevens Player`,
       dob: cleanValue(row["Date of Birth"]) as string | null,
       team: team,
       format: cleanValue(row["Format"]) as string | null,

@@ -1,9 +1,13 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { useState } from "react";
 
 interface PlayerAvatarProps {
   name: string;
+  imageUrl?: string | null;
+  imageAlt?: string | null;
   team?: string | null;
   size?: "sm" | "md" | "lg" | "xl";
   className?: string;
@@ -12,11 +16,14 @@ interface PlayerAvatarProps {
 
 export function PlayerAvatar({
   name,
+  imageUrl,
+  imageAlt,
   team,
   size = "md",
   className = "",
   isOlympian = false,
 }: PlayerAvatarProps) {
+  const [imageFailed, setImageFailed] = useState(false);
   // Extract initials
   const initials = name
     .split(" ")
@@ -54,7 +61,21 @@ export function PlayerAvatar({
             <div className="w-0.5 h-full bg-white -rotate-45" />
           </div>
 
-          <span className="relative tracking-wider drop-shadow-sm">{initials || "USA"}</span>
+          {imageUrl && !imageFailed && (
+            <Image
+              src={imageUrl}
+              alt={imageAlt || `${name} - USA Rugby Sevens Player`}
+              width={sizeDimensions.px}
+              height={sizeDimensions.px}
+              unoptimized
+              preload={size === "xl"}
+              onError={() => setImageFailed(true)}
+              className="absolute inset-0 z-[1] h-full w-full object-cover"
+            />
+          )}
+          <span className="relative z-[2] tracking-wider drop-shadow-sm">
+            {imageFailed || !imageUrl ? initials || "USA" : null}
+          </span>
       </>
 
       {isOlympian && (

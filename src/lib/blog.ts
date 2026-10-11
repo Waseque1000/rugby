@@ -29,10 +29,11 @@ export function getAllPosts(): BlogPost[] {
     const wordCount = content.split(/\s+/).length;
     const readingTime = `${Math.ceil(wordCount / 200)} min read`;
 
-    const image =
-      typeof data.image === "string" && data.image.startsWith("/images/")
-        ? data.image
-        : undefined;
+    const image = typeof data.image === "string" && (
+      data.image.startsWith("/images/") || data.image.startsWith("https://tse1.mm.bing.net/th?")
+    )
+      ? data.image
+      : undefined;
 
     return {
       slug,

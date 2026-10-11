@@ -15,7 +15,7 @@ export function PlayerCard({ player }: PlayerCardProps) {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-800 via-blue-600 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity" />
       <div>
         <div className="flex items-start justify-between gap-3 mb-4">
-          <PlayerAvatar name={player.name} team={player.team} size="md" isOlympian={player.isOlympian} />
+          <PlayerAvatar name={player.name} team={player.team} imageUrl={player.imageUrl} imageAlt={player.imageAlt} size="md" isOlympian={player.isOlympian} />
           <div className="flex flex-col items-end gap-1">
             {player.team && (
               <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${isWomen ? "bg-rose-950/15 text-rose-700 dark:text-rose-300 dark:bg-rose-900/40" : "bg-blue-950/15 text-blue-800 dark:text-blue-300 dark:bg-blue-900/40"}`}>

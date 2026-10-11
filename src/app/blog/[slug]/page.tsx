@@ -329,6 +329,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <Image
             src={post.image}
             alt={post.imageAlt || post.title}
+            unoptimized
             fill
             preload
             className="object-cover"

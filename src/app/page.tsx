@@ -91,6 +91,7 @@ export default function HomePage() {
                     <Image
                       src={featuredPost.image}
                       alt={featuredPost.imageAlt || featuredPost.title}
+                      unoptimized
                       fill
                       preload
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -163,6 +164,7 @@ export default function HomePage() {
                           <Image
                             src={article.image}
                             alt={article.imageAlt || article.title}
+                            unoptimized
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                             sizes="80px"
@@ -334,6 +336,7 @@ export default function HomePage() {
                     <Image
                       src={post.image}
                       alt={post.imageAlt || post.title}
+                      unoptimized
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

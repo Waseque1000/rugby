@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tse1.mm.bing.net",
+        pathname: "/th",
+      },
+    ],
+  },
   turbopack: {
     root: process.cwd(),
     rules: {

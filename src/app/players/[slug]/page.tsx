@@ -71,13 +71,13 @@ export async function generateMetadata({
       description,
       type: "profile",
       url: `/players/${player.slug}`,
-      images: ["/opengraph-image"],
+      images: [player.imageUrl || "/opengraph-image"],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/opengraph-image"],
+      images: [player.imageUrl || "/opengraph-image"],
     },
     robots: player.indexable ? undefined : { index: false, follow: true },
   };
@@ -117,6 +117,7 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
       ? { alumniOf: { "@type": "EducationalOrganization", name: player.college } }
       : {}),
     ...(player.nationality ? { nationality: player.nationality } : {}),
+    ...(player.imageUrl ? { image: player.imageUrl } : {}),
     ...(player.sources.length ? { sameAs: player.sources } : {}),
     description: intro,
     url: `${SITE_URL}/players/${player.slug}`,
@@ -149,6 +150,8 @@ export default async function PlayerProfilePage({ params }: PlayerPageProps) {
             <PlayerAvatar
               name={player.name}
               team={player.team}
+              imageUrl={player.imageUrl}
+              imageAlt={player.imageAlt}
               size="xl"
               isOlympian={player.isOlympian}
               className="flex-shrink-0 shadow-lg"

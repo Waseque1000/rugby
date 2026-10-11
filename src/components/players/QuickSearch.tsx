@@ -95,6 +95,8 @@ export function QuickSearch({ players }: QuickSearchProps) {
                   <PlayerAvatar
                     name={player.name}
                     team={player.team}
+                    imageUrl={player.imageUrl}
+                    imageAlt={player.imageAlt}
                     size="sm"
                     isOlympian={false}
                   />

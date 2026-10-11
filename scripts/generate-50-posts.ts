@@ -18,6 +18,8 @@ interface PostDef {
   tags: string[];
   relatedPlayerSlugs: string[];
   description: string;
+  image: string;
+  imageAlt: string;
   content: string;
 }
 
@@ -33,6 +35,8 @@ const newPosts: PostDef[] = [
     tags: ["Paris 2024", "Olympic Medal", "Women's Sevens", "Alex Sedrick", "Alev Kelter"],
     relatedPlayerSlugs: ["usa-alev-kelter", "usa-sammy-sullivan", "usa-kristi-kirshe"],
     description: "The unforgettable story of the Stade de France showdown where Alex Sedrick's 90-meter breakaway sealed the first-ever Olympic rugby medal for the United States.",
+    image: "https://tse1.mm.bing.net/th?q=USA%20Womens%20Rugby%20Sevens%20Paris%202024%20Bronze&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "USA Women's Rugby Sevens celebrating Olympic Bronze at Paris 2024",
     content: `# How USA Women's Rugby Sevens Won Historic Olympic Bronze in Paris 2024
 
 On July 30, 2024, in front of 69,000 roaring spectators at the Stade de France, the United States women's national rugby sevens team accomplished what no American rugby squad had achieved in modern Olympic history: capturing an Olympic medal.
@@ -67,6 +71,8 @@ The Paris bronze medal catalyzed massive nationwide attention for rugby sevens i
     tags: ["Madison Hughes", "Men's Sevens", "Captaincy", "Dartmouth", "Playmaking"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-perry-baker", "usa-folau-niua"],
     description: "An analytical study of Madison Hughes' peerless game management, kicking precision, and leadership through multiple Olympic cycles.",
+    image: "https://tse1.mm.bing.net/th?q=Madison%20Hughes%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Madison Hughes directing play for USA Eagles Sevens",
     content: `# Madison Hughes: The Field General Behind American Sevens
 
 In international rugby sevens, where games are decided across fourteen frantic minutes, raw athleticism without tactical composure is useless. For over a decade, Madison Hughes provided the poise, strategic vision, and calculating intelligence that propelled the USA Men's Eagles into global contenders.
@@ -96,6 +102,8 @@ Guiding the USA to multiple tournament titles and the world number two ranking i
     tags: ["Ilona Maher", "Women's Sevens", "Culture", "Quinnipiac", "Olympics"],
     relatedPlayerSlugs: ["usa-ilona-maher", "usa-alev-kelter", "usa-kristi-kirshe"],
     description: "How Ilona Maher combined punishing contact rugby with unprecedented social media storytelling to introduce millions of new fans to the sport.",
+    image: "https://tse1.mm.bing.net/th?q=Ilona%20Maher%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Ilona Maher breaking tackles for Team USA",
     content: `# Ilona Maher: The Stiff-Arm Queen and Cultural Ambassador
 
 No individual athlete has done more to broaden rugby's demographic appeal in North America than Vermont native Ilona Maher. Combining elite physical power with charismatic, authentic digital storytelling, Maher transformed rugby sevens into a mainstream cultural conversation.
@@ -126,6 +134,8 @@ With millions of followers across global platforms, Maher championed body positi
     tags: ["Folau Niua", "Men's Sevens", "Caps Record", "Playmaking", "History"],
     relatedPlayerSlugs: ["usa-folau-niua", "usa-perry-baker", "usa-danny-barrett"],
     description: "Celebrating the career of Folau Niua, whose unselfish offloading magic and record-shattering tournament appearances anchored USA rugby for two decades.",
+    image: "https://tse1.mm.bing.net/th?q=Folau%20Niua%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Folau Niua delivering an offload for USA Sevens",
     content: `# Folau Niua: The King of the No-Look Pass
 
 When rugby purists reflect on the greatest playmakers in World Rugby Sevens history, Folau Niua's name is universally revered. The East Palo Alto native played with an effortless rhythm that made chaotic defenses appear motionless.
@@ -156,6 +166,8 @@ Beyond his statistics, Niua's greatest gift was elevating those around him. Wing
     tags: ["Danny Barrett", "Men's Sevens", "Breakdown", "California", "Physicality"],
     relatedPlayerSlugs: ["usa-danny-barrett", "usa-stephen-tomasin", "usa-perry-baker"],
     description: "An in-depth look at Danny Barrett's thunderous carrying style, turnover dominance, and how he redefined the forward role in modern sevens.",
+    image: "https://tse1.mm.bing.net/th?q=Danny%20Barrett%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Danny Barrett smashing through defensive lines for Team USA",
     content: `# Danny Barrett: The Demolition Man of American Sevens
 
 There are rugby players who avoid contact, and then there is Danny Barrett. During his peak on the World Rugby Sevens circuit, the Cal Berkeley product was the most feared physical ball carrier on Earth.
@@ -185,6 +197,8 @@ From thunderous stiff-arms in Hong Kong to dominating forward exchanges in Las V
     tags: ["Sammy Sullivan", "Army West Point", "Military", "Paris 2024", "Women's Sevens"],
     relatedPlayerSlugs: ["usa-sammy-sullivan", "usa-alev-kelter", "usa-kristi-kirshe"],
     description: "How Captain Sammy Sullivan balances active military service in the U.S. Army with world-class rugby dominance and Olympic glory.",
+    image: "https://tse1.mm.bing.net/th?q=Sammy%20Sullivan%20USA%20Rugby%20West%20Point&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Sammy Sullivan in action for USA Rugby Women's Sevens",
     content: `# Captain Sammy Sullivan: West Point Officer and Olympic Medalist
 
 Few athletic stories in world sports compare to that of Captain Sammy Sullivan. An active-duty Captain in the United States Army and an Olympic bronze medalist, Sullivan embodies tactical discipline, physical courage, and unyielding team commitment.
@@ -214,6 +228,8 @@ Through the U.S. Army World Class Athlete Program (WCAP), Sullivan trains full-t
     tags: ["Stephen Tomasin", "Men's Sevens", "San Diego State", "Olympics", "Workrate"],
     relatedPlayerSlugs: ["usa-stephen-tomasin", "usa-madison-hughes", "usa-perry-baker"],
     description: "Tracking Stephen Tomasin's rise from San Diego club rugby to becoming one of the most reliable, durable forwards in World Rugby history.",
+    image: "https://tse1.mm.bing.net/th?q=Stephen%20Tomasin%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Stephen Tomasin contesting possession for USA Sevens",
     content: `# Stephen Tomasin: The Engine Room of USA Sevens
 
 Every championship rugby side relies on an unsung hero who does the exhausting, painful work that never makes the highlight reel. For the USA Men's Eagles Sevens, that man is Stephen Tomasin.
@@ -243,6 +259,8 @@ Having represented the United States in both Tokyo 2020 and Paris 2024, Tomasin 
     tags: ["Kristi Kirshe", "Williams College", "NCAA", "Women's Sevens", "Agility"],
     relatedPlayerSlugs: ["usa-kristi-kirshe", "usa-alev-kelter", "usa-sammy-sullivan"],
     description: "The incredible journey of Kristi Kirshe from Division III collegiate soccer at Williams College to World Rugby Dream Team selection and Olympic bronze.",
+    image: "https://tse1.mm.bing.net/th?q=Kristi%20Kirshe%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Kristi Kirshe evading tackles for the USA Women's Eagles",
     content: `# Kristi Kirshe: From Division III Soccer to World Rugby Elite
 
 The story of Kristi Kirshe is one of the most remarkable crossover journeys in modern sports history. Having never touched a rugby ball through her high school or college years, she became one of the planet's premier rugby sevens players within 18 months of picking up the sport.
@@ -274,6 +292,8 @@ Her ascent culminated in winning the Paris 2024 Olympic Bronze Medal and securin
     tags: ["Nate Ebner", "NFL", "New England Patriots", "Rio 2016", "Olympics"],
     relatedPlayerSlugs: ["usa-nate-ebner", "usa-perry-baker", "usa-madison-hughes"],
     description: "How New England Patriots special teams star Nate Ebner took a leave of absence from the NFL to chase Olympic glory with USA Rugby at Rio 2016.",
+    image: "https://tse1.mm.bing.net/th?q=Nate%20Ebner%20USA%20Rugby%20Rio%202016&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Nate Ebner competing for USA Rugby Sevens at the Olympics",
     content: `# Nate Ebner: NFL Super Bowl Champion and Olympian
 
 In 2016, Nate Ebner pulled off a feat that remains unprecedented in modern American athletics: taking an official sabbatical from the NFL's New England Patriots to represent the United States in rugby sevens at the Rio Olympic Games.
@@ -303,6 +323,8 @@ In Rio, Ebner scored tries against top-tier opposition including Brazil and Fiji
     tags: ["Kevon Williams", "Men's Sevens", "Leadership", "Captaincy", "Olympics"],
     relatedPlayerSlugs: ["usa-kevon-williams", "usa-perry-baker", "usa-madison-hughes"],
     description: "The tactical evolution of Kevon Williams from collegiate athlete to two-time Olympian and national team captain leading USA Rugby toward LA 2028.",
+    image: "https://tse1.mm.bing.net/th?q=Kevon%20Williams%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Kevon Williams captaining the USA Men's Sevens squad",
     content: `# Kevon Williams: Quiet Storm and Eagles Captain
 
 Leadership in rugby sevens requires a rare blend of emotional calm and unrelenting physical intensity. As captain of the USA Men's National Sevens team across two Olympic cycles, Kevon Williams has provided that steady hand on the rudder.
@@ -332,6 +354,8 @@ As the veteran leader guiding an influx of young American talent, Williams plays
     tags: ["Alex Sedrick", "Paris 2024", "Bronze Medal", "Life University", "Women's Sevens"],
     relatedPlayerSlugs: ["usa-spiff-sedrick", "usa-alev-kelter", "usa-kristi-kirshe"],
     description: "Deconstructing the physical mechanics, poise, and heroic grit behind Alex Sedrick's historic buzzer-beating sprint in the Paris 2024 Bronze Medal match.",
+    image: "https://tse1.mm.bing.net/th?q=Alex%20Sedrick%20USA%20Rugby%20Paris%202024&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Alex 'Spiff' Sedrick sprinting down the touchline in Paris",
     content: `# Alex 'Spiff' Sedrick: The 90-Meter Miracle in Paris
 
 Every Olympic Games creates one immortal moment that transcends the sport itself. For American rugby, that moment belongs forever to Alex "Spiff" Sedrick.
@@ -362,6 +386,8 @@ Sedrick's try didn't just win a medal; it introduced rugby to millions of Americ
     tags: ["Lauren Doyle", "Women's Sevens", "Eastern Illinois", "Olympics", "Captaincy"],
     relatedPlayerSlugs: ["usa-lauren-doyle", "usa-alev-kelter", "usa-kristi-kirshe"],
     description: "Exploring the legendary career of three-time Olympian and co-captain Lauren Doyle, who helped build the USA Women's Sevens program from the ground up.",
+    image: "https://tse1.mm.bing.net/th?q=Lauren%20Doyle%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Lauren Doyle playing for the USA Women's Sevens team",
     content: `# Lauren Doyle: A Decade of Tenacity
 
 To survive one Olympic cycle in international rugby sevens is a triumph of endurance. To compete across three Olympic Games—Rio 2016, Tokyo 2020, and Paris 2024—while captaining the squad is the definition of sporting greatness. That is the career of Lauren Doyle.
@@ -391,6 +417,8 @@ As co-captain alongside Naya Tapper and Alev Kelter, Doyle fostered an environme
     tags: ["Cheta Emba", "Harvard", "Ivy League", "Women's Sevens", "Crossover Athlete"],
     relatedPlayerSlugs: ["usa-cheta-emba", "usa-alev-kelter", "usa-kristi-kirshe"],
     description: "How Ivy League soccer goalkeeper Cheta Emba transformed her explosive hand-eye coordination into world-class rugby restart dominance.",
+    image: "https://tse1.mm.bing.net/th?q=Cheta%20Emba%20USA%20Rugby%20Harvard&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Cheta Emba competing for USA Rugby Sevens",
     content: `# Cheta Emba: Harvard Goalkeeper to Rugby Powerhouse
 
 The modern rugby sevens forward must be tall, physically imposing, and possess the aerial reflexes of an elite basketball player. Cheta Emba embodies this exact athletic profile.
@@ -420,6 +448,8 @@ Emba is also an outspoken champion for STEM education and youth rugby developmen
     tags: ["Kayla Canett", "Penn State", "Playmaking", "Women's Sevens", "Dual Olympian"],
     relatedPlayerSlugs: ["usa-kayla-canett", "usa-alev-kelter", "usa-sammy-sullivan"],
     description: "An analytical breakdown of Kayla Canett's playmaking wizardry, tactical kicking, and defensive poise for the USA Women's Eagles.",
+    image: "https://tse1.mm.bing.net/th?q=Kayla%20Canett%20USA%20Rugby%20Penn%20State&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Kayla Canett directing attack for USA Rugby Sevens",
     content: `# Kayla Canett: The Quarterback of American Sevens
 
 In American sports culture, the quarterback is responsible for surveying the entire defense, making split-second reads, and delivering the ball with pin-point precision. On the rugby pitch, Kayla Canett fills that exact role for the USA Women's Eagles Sevens.
@@ -447,6 +477,8 @@ Her tactical maturity ensures that the Eagles consistently generate scoring oppo
     tags: ["Tactics", "Tackling", "Biomechanics", "Defense", "Player Safety"],
     relatedPlayerSlugs: ["usa-danny-barrett", "usa-stephen-tomasin", "usa-alev-kelter"],
     description: "A technical breakdown of tackling in rugby sevens: why missed tackles are catastrophic, and how elite players execute legal, high-percentage takedowns.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Sevens%20Tackle%20Technique%20USA&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Technically perfect tackle executed in Rugby Sevens",
     content: `# The Anatomy of a Sevens Tackle
 
 In 15-a-side rugby, a missed tackle often means the attacking team gains five meters before meeting secondary cover defense. In Rugby Sevens, with only seven defenders covering a standard 70-meter-wide pitch, a single missed tackle almost invariably results in a converted try.
@@ -475,6 +507,8 @@ The instant the ball carrier touches the turf, the tackler must release and boun
     tags: ["Speed", "Sprint Training", "Perry Baker", "Carlin Isles", "Strength & Conditioning"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-carlin-isles"],
     description: "The sprint mechanics, plyometric routines, and deceleration drills that turned American sevens players into the fastest athletes in World Rugby history.",
+    image: "https://tse1.mm.bing.net/th?q=Sprint%20Training%20Rugby%20Sevens%20Speed&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Rugby sevens sprinters training on the track",
     content: `# Speed Development for Rugby Sevens
 
 Rugby Sevens is an open-field sprint competition disguised as a contact sport. With world-class speedsters like Perry Baker and Carlin Isles (who clocked an Olympic-caliber 10.13 seconds in the 100 meters), the United States revolutionized how speed is trained and deployed in world rugby.
@@ -502,6 +536,8 @@ American rugby training regimens heavily feature trap-bar deadlifts, power clean
     tags: ["Nutrition", "Recovery", "Hydration", "Performance", "Tournament"],
     relatedPlayerSlugs: ["usa-stephen-tomasin", "usa-alev-kelter"],
     description: "Inside the precision nutrition protocol that keeps World Rugby SVNS athletes fueled across brutal multi-day tournaments in Dubai, Hong Kong, and Vancouver.",
+    image: "https://tse1.mm.bing.net/th?q=Sports%20Nutrition%20Hydration%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Nutrition and hydration replenishment setup for rugby athletes",
     content: `# Fuelling for Six Matches in Three Days
 
 A World Rugby SVNS tournament is an extreme physiological challenge. Athletes play up to three 14-minute matches per day across two or three days, burning thousands of calories in short, ultra-intense intervals with only 2-3 hours of recovery between kickoff whistles.
@@ -534,6 +570,8 @@ During high-intensity sprinting and contact, muscle glycogen is rapidly depleted
     tags: ["GPS", "Sports Science", "Analytics", "Performance", "Player Load"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-kristi-kirshe"],
     description: "How wearable Catapult GPS units and micro-sensor telemetry monitor fatigue, prevent soft tissue injuries, and dictate tactical substitutions.",
+    image: "https://tse1.mm.bing.net/th?q=GPS%20Tracking%20Catapult%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Rugby player wearing wearable GPS tracker vest",
     content: `# GPS Analytics in Rugby Sevens
 
 Tucked into a small pouch between the shoulder blades of every international rugby player sits a miniature GPS tracking unit. These matchbox-sized devices record hundreds of data points every second, revolutionizing how coaches manage fatigue and tactical substitutions.
@@ -562,6 +600,8 @@ When live GPS telemetry reveals that a forward's acceleration output drops by mo
     tags: ["Restarts", "Tactics", "Drop Kick", "Madison Hughes", "Alev Kelter"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-alev-kelter", "usa-sammy-sullivan"],
     description: "Why the restart drop kick is statistically the most decisive set piece in modern sevens, and how precision hang-time wins championships.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Sevens%20Restart%20Kick%20Technique&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Player executing a drop kick restart in Rugby Sevens",
     content: `# The Art of the Drop Kick Restart
 
 In rugby sevens, the team that just scored a try must immediately restart play by kicking off from the center of the pitch. This rule creates a unique dynamic: if a team can consistently win back its own kickoffs, it can control the ball for the entire half without the opposition ever touching it.
@@ -588,6 +628,8 @@ Teams that win 60% or more of their own restarts achieve a match winning percent
     tags: ["Breakdown", "Rucking", "Tactics", "Jackal", "Danny Barrett"],
     relatedPlayerSlugs: ["usa-danny-barrett", "usa-alev-kelter", "usa-stephen-tomasin"],
     description: "Mastering the rules, body angles, and tactical timing of rucking in open field sevens where commit-or-fan decisions dictate defense.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Ruck%20Counter%20Rucking%20Technique&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Intense breakdown battle at a rugby sevens ruck",
     content: `# Breakdown Mechanics and Counter-Rucking
 
 The tackle and resulting ruck in rugby sevens is a game of high-stakes poker. Committing two defenders to a breakdown might win a turnover, but it leaves only five defenders to cover the entire width of the field if the ball is cleared quickly.
@@ -613,6 +655,8 @@ When an attacking team arrives slowly to their own breakdown, a well-timed two-p
     tags: ["Dubai 7s", "SVNS", "World Rugby", "Tournament Guide", "Dubai"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-alev-kelter"],
     description: "An insider look at the world's favorite rugby festival: desert heat, 100,000 costumed fans, and high-octane season-opening rugby drama.",
+    image: "https://tse1.mm.bing.net/th?q=Dubai%20Sevens%20Stadium%20Rugby%20Crowd&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Dubai Sevens stadium packed with fans under desert lights",
     content: `# Dubai Sevens: The Desert Showdown
 
 Every December, the international rugby calendar bursts to life at The Sevens Stadium in Dubai. Surrounded by rolling desert dunes, this premier destination hosts the opening leg of the World Rugby SVNS circuit.
@@ -639,6 +683,8 @@ The USA national teams have historically excelled in the desert, often securing 
     tags: ["Hong Kong 7s", "History", "South Stand", "Tradition", "World Rugby"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-madison-hughes", "usa-folau-niua"],
     description: "Why winning at Hong Kong Stadium is the ultimate badge of honor in rugby sevens, and how the South Stand created a global sporting phenomenon.",
+    image: "https://tse1.mm.bing.net/th?q=Hong%20Kong%20Sevens%20South%20Stand%20Rugby&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "The electrifying Hong Kong Sevens crowd in fancy dress",
     content: `# Hong Kong Sevens: The Holy Grail of Rugby
 
 There is no sporting event on earth quite like the Hong Kong Sevens. Founded in 1976, it took a modest Scottish seven-a-side game and transformed it into a world-famous international sports spectacle.
@@ -663,6 +709,8 @@ For American rugby, hoisting trophies at Hong Kong cemented USA Sevens as legiti
     tags: ["Cal Rugby", "Jack Clark", "Collegiate", "National Championships", "Danny Barrett"],
     relatedPlayerSlugs: ["usa-danny-barrett", "usa-colin-hawley"],
     description: "Inside the culture, military-grade preparation, and championship pedigree of the California Golden Bears rugby program in Berkeley.",
+    image: "https://tse1.mm.bing.net/th?q=Cal%20Golden%20Bears%20Rugby%20Championship&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Cal Golden Bears Rugby competing on Witter Rugby Field",
     content: `# Jack Clark and Cal Rugby: The Gold Standard
 
 When discussing collegiate athletic dynasties in the United States, casual observers mention UCLA basketball under John Wooden or Alabama football under Nick Saban. Yet no collegiate team has dominated its sport quite like the University of California, Berkeley rugby program under head coach Jack Clark.
@@ -692,6 +740,8 @@ Clark's coaching philosophy centers on leadership accountability, team cohesion,
     tags: ["Army West Point", "Military", "WCAP", "Collegiate", "Sammy Sullivan"],
     relatedPlayerSlugs: ["usa-sammy-sullivan"],
     description: "How the United States Military Academy at West Point built a premier collegiate rugby engine and feeds Olympic national teams.",
+    image: "https://tse1.mm.bing.net/th?q=Army%20West%20Point%20Rugby%20Cadets&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Army West Point Cadets competing in rugby sevens",
     content: `# Duty, Honor, Country, Rugby: Army West Point
 
 Rugby and military service share foundational DNA: teamwork under duress, selfless sacrifice for the unit, physical courage, and split-second strategic communication. At the United States Military Academy at West Point, rugby is more than a sport—it is a crucible for leadership.
@@ -716,6 +766,8 @@ The mental toughness forged on the West Point parade field translates seamlessly
     tags: ["Life University", "Collegiate", "Championships", "Spiff Sedrick", "Development"],
     relatedPlayerSlugs: ["usa-spiff-sedrick"],
     description: "How a specialized chiropractic university in Marietta, Georgia became the most lethal rugby development powerhouse in the Western Hemisphere.",
+    image: "https://tse1.mm.bing.net/th?q=Life%20University%20Running%20Eagles%20Rugby&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Life University Running Eagles celebrating a rugby victory",
     content: `# The Rugby Factory: Inside Life University
 
 Tucked away in Marietta, Georgia, Life University may not possess the sprawling campus of a Big Ten institution, but on the rugby pitch, the Running Eagles are an unstoppable juggernaut.
@@ -742,6 +794,8 @@ Their high-tempo, continuity-driven playing style prepares young athletes for th
     tags: ["Beginner Guide", "Rules", "Scoring", "How to Play", "Olympics"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-alev-kelter"],
     description: "Everything new fans need to know about rugby sevens: match duration, try scoring, conversions, scrums, lineouts, and yellow cards.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Sevens%20Ball%20Pitch%20Goalposts&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Rugby ball on the pitch in front of goalposts",
     content: `# Rugby Sevens Explained: The Complete Beginner's Guide
 
 For sports fans tuned into the Olympic Games or World Rugby SVNS circuit for the first time, rugby sevens is an adrenaline rush: fast, brutal, and simple to follow once you understand the basic mechanics.
@@ -774,6 +828,8 @@ For sports fans tuned into the Olympic Games or World Rugby SVNS circuit for the
     tags: ["Chula Vista", "Olympics", "Residency", "Training", "High Performance"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-alev-kelter", "usa-sammy-sullivan"],
     description: "Behind the gates of the Olympic training center near the Otay Reservoir where USA rugby athletes train, eat, and prepare year-round.",
+    image: "https://tse1.mm.bing.net/th?q=Chula%20Vista%20Elite%20Athlete%20Training%20Center%20Rugby&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Chula Vista training facility rugby pitch under blue California skies",
     content: `# Inside the Fortress: Chula Vista Training Center
 
 Situated in Southern California against the foothills of the Otay Mountain Wilderness, the Chula Vista Elite Athlete Training Center is the high-performance laboratory of USA Rugby.
@@ -802,6 +858,8 @@ This dedicated training environment is the single biggest reason American rugby 
     tags: ["MLR", "Professional Rugby", "Major League Rugby", "Development", "Domestic"],
     relatedPlayerSlugs: ["usa-martin-iosefo", "usa-maceo-brown"],
     description: "How the growth of Major League Rugby (MLR) provides professional salaries and high-level match sharpness for American rugby sevens stars.",
+    image: "https://tse1.mm.bing.net/th?q=Major%20League%20Rugby%20MLR%20Match%20Action&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Major League Rugby match action in the United States",
     content: `# Major League Rugby and Sevens: A Symbiotic Rise
 
 Launched in 2018, Major League Rugby (MLR) established a domestic professional 15-a-side competition spanning coast-to-coast American markets. Rather than competing with rugby sevens, MLR has forged a mutually beneficial relationship with the national sevens program.
@@ -825,6 +883,8 @@ Stars like Martin Iosefo, Matai Leuta, and Maceo Brown have showcased how fluid 
     tags: ["NCAA", "Title IX", "Collegiate", "Women's Sports", "Development"],
     relatedPlayerSlugs: ["usa-ilona-maher", "usa-kristi-kirshe"],
     description: "The rapid expansion of varsity collegiate rugby programs across the United States and how NCAA backing is transforming Olympic medal potential.",
+    image: "https://tse1.mm.bing.net/th?q=NCAA%20Womens%20Rugby%20Collegiate%20Team&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Collegiate women's rugby team huddle on the field",
     content: `# The Title IX Boom: NCAA Women's Rugby
 
 While men's rugby in the United States primarily operates under club status at major universities, women's rugby has benefited immensely from NCAA Emerging Sport status and Title IX equity legislation.
@@ -850,6 +910,8 @@ Nearly 80% of the USA Women's Sevens Olympic Bronze Medal roster in Paris develo
     tags: ["Vancouver 7s", "BC Place", "SVNS", "Canada", "North America"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-alev-kelter"],
     description: "Why Vancouver's domed BC Place creates the fastest, loudest, and most fan-friendly stop on the entire World Rugby SVNS circuit.",
+    image: "https://tse1.mm.bing.net/th?q=Vancouver%20Sevens%20BC%20Place%20Stadium&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "BC Place stadium illuminated for the Vancouver Sevens",
     content: `# Vancouver Sevens at BC Place
 
 Held every spring under the retractable roof of BC Place in downtown Vancouver, the Canada Sevens is widely celebrated as the best indoor sporting party in North America.
@@ -873,6 +935,8 @@ For thousands of traveling American fans from Seattle, California, and across th
     tags: ["LA Sevens", "Los Angeles", "Carson", "SVNS", "LA 2028"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-stephen-tomasin"],
     description: "The home tournament advantage: Dignity Health Sports Park in Carson as the testing ground for international squads eyeing the LA 2028 Olympics.",
+    image: "https://tse1.mm.bing.net/th?q=Los%20Angeles%20Sevens%20Rugby%20Dignity%20Health&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Dignity Health Sports Park hosting the Los Angeles Sevens",
     content: `# Los Angeles Sevens: Southern California Rugby Glory
 
 Nestled in Carson, California, Dignity Health Sports Park is the permanent home of the United States leg of the World Rugby SVNS circuit. With sunny California weather and a soccer-specific stadium design that puts fans within arm's reach of the sideline, the LA Sevens is an unmissable showcase.
@@ -895,6 +959,8 @@ As the official venue for rugby at the upcoming Los Angeles 2028 Olympic Games, 
     tags: ["Cape Town 7s", "South Africa", "Blitzboks", "SVNS", "World Stage"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-madison-hughes"],
     description: "Cape Town Stadium's thunderous atmosphere, ferocious Blitzbok pride, and why South Africa is the most hostile stop on the international tour.",
+    image: "https://tse1.mm.bing.net/th?q=Cape%20Town%20Sevens%20Stadium%20Rugby&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Cape Town Stadium packed with rugby fans under Table Mountain",
     content: `# Cape Town Sevens: Drama Under Table Mountain
 
 Set between the Atlantic Ocean and the majestic backdrop of Table Mountain, Cape Town Stadium hosts one of the most culturally passionate stops on the world rugby circuit.
@@ -919,6 +985,8 @@ The USA national squads have enjoyed memorable victories in Cape Town, cementing
     tags: ["Tactics", "Defense", "Sweeper", "Strategy", "Coaching"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-alev-kelter"],
     description: "A masterclass in sevens defensive theory: how six front-line defenders coordinate with one sweeper to prevent edge overlaps.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Defense%20Line%20Strategy%20Tactics&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Rugby sevens defensive wall holding structure",
     content: `# Defensive Schemes in 7s: Drift vs. Blitz
 
 With only seven players on the pitch, defensive organization in rugby sevens is a delicate geometric balance. A single miscommunicated step opens a highway directly to the try line.
@@ -945,6 +1013,8 @@ Elite sides like the USA dynamically toggle between these two systems based on f
     tags: ["Scrum", "Set Piece", "Tactics", "Forwards", "Technique"],
     relatedPlayerSlugs: ["usa-danny-barrett", "usa-stephen-tomasin"],
     description: "Why the three-man sevens scrum is not just a ceremonial restart, but a deadly launchpad for structured backline strikes.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Sevens%20Scrum%20Technique%20Three%20Player&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Three player scrum engaged during a rugby sevens match",
     content: `# The Evolution of the Sevens Scrum
 
 In 15-a-side rugby, scrums are brutal 16-man pushing contests that eat up minutes of game time. In Rugby Sevens, scrums consist of only three forwards per side—two props and one hooker—locked head-to-head.
@@ -970,6 +1040,8 @@ Because six forwards are bound in the scrum, there is massive open green space b
     tags: ["Lineouts", "Set Piece", "Tactics", "Sammy Sullivan", "Cheta Emba"],
     relatedPlayerSlugs: ["usa-sammy-sullivan", "usa-cheta-emba"],
     description: "How modern sevens teams utilize two lifters, one jumper, and deceptive dummy movements to secure flawless lineout possession.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Lineout%20Jump%20Sevens%20Aerial&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "High-flying lineout jumper securing the ball in rugby sevens",
     content: `# Three-Man Lineouts in Sevens
 
 Lineouts in Rugby Sevens are rare, high-leverage moments. Unlike 15s where seven or eight players line up, a sevens lineout typically features only two or three players, leaving the rest of the pitch completely open.
@@ -996,6 +1068,8 @@ If the ball crosses into touch and is not touched by any spectator, an alert win
     tags: ["Sports Psychology", "Mental Toughness", "Extra Time", "Resilience", "Leadership"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-spiff-sedrick"],
     description: "The cognitive science of decision-making when your heart rate is 190 BPM and a single error ends your Olympic dreams.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Team%20Huddle%20Mental%20Toughness%20Focus&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Rugby team in focused huddle during tense sudden-death match",
     content: `# Sudden Death Mentality: Poise Under Pressure
 
 In knockout rugby sevens, ties are decided by sudden-death extra time. The first team to score any points—a try, penalty, or drop goal—instantly wins the match.
@@ -1019,6 +1093,8 @@ At the end of fourteen minutes of full-pitch sprinting, an athlete's body is flo
     tags: ["Youth Rugby", "High School", "Grassroots", "Development", "USA Rugby"],
     relatedPlayerSlugs: ["usa-aaron-cummings", "usa-maceo-brown"],
     description: "Examining high school rugby leagues, single-school state championships, and youth academies cultivating the next generation of American Olympians.",
+    image: "https://tse1.mm.bing.net/th?q=Youth%20Rugby%20High%20School%20USA%20Match&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "High school rugby players competing in a youth state championship",
     content: `# Grassroots to Green & Gold: Youth Rugby in America
 
 For decades, the standard path into American rugby began in college when former football or soccer players discovered the sport as freshmen. Today, that paradigm has shifted completely. Thousands of boys and girls across the country are playing organized tackle rugby before entering middle school.
@@ -1044,6 +1120,8 @@ USA Rugby's "Rookie Rugby" non-contact programs introduce spatial awareness and 
     tags: ["Madrid Grand Final", "SVNS", "World Rugby", "Tournament Format", "Championship"],
     relatedPlayerSlugs: ["usa-perry-baker", "usa-alev-kelter"],
     description: "Analyzing World Rugby's high-stakes SVNS revamp: seven regular season stops culminating in a winner-take-all championship showdown in Madrid.",
+    image: "https://tse1.mm.bing.net/th?q=World%20Rugby%20SVNS%20Trophy%20Celebration&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "World Rugby SVNS Championship trophy on display",
     content: `# The Madrid Grand Final: A New Era for Sevens
 
 In 2024, World Rugby unveiled the most radical structural overhaul in sevens history: replacing the traditional cumulative points system with a high-stakes, winner-take-all Grand Final championship weekend in Madrid.
@@ -1066,6 +1144,8 @@ This format eliminated meaningless late-season dead rubbers. Every pool match in
     tags: ["Martin Iosefo", "Hawaii", "Montana", "Dual Code", "Men's Sevens"],
     relatedPlayerSlugs: ["usa-martin-iosefo", "usa-folau-niua", "usa-danny-barrett"],
     description: "From the beaches of Oahu and University of Montana to Rugby World Cups and the Rio 2016 Olympics: the storied career of Martin Iosefo.",
+    image: "https://tse1.mm.bing.net/th?q=Martin%20Iosefo%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Martin Iosefo charging forward for USA Eagles Sevens",
     content: `# Martin Iosefo: Hawaiian Power and Dual-Code Star
 
 In modern international rugby, specializing in either 15-a-side rugby or Rugby Sevens is standard practice; the conditioning and tactical requirements are vastly different. Martin Iosefo is one of the rare American athletes who starred at the highest international level in both codes.
@@ -1093,6 +1173,8 @@ His leadership and calm demeanor under fire established him as a cornerstone of 
     tags: ["Malacchi Esdale", "Men's Sevens", "Restarts", "Olympics", "Aerial Skills"],
     relatedPlayerSlugs: ["usa-malacchi-esdale", "usa-stephen-tomasin"],
     description: "An analytical study of Malacchi Esdale's extraordinary vertical leap, aerial contest skills, and clutch try-scoring for Team USA.",
+    image: "https://tse1.mm.bing.net/th?q=Malacchi%20Esdale%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Malacchi Esdale contesting a kickoff catch for USA Sevens",
     content: `# Malacchi Esdale: Aerial Master of the Eagles
 
 When opponents game-plan against the USA Men's Sevens team, the first bullet point in their scouting report is simple: *Do not kick anywhere near Malacchi Esdale*.
@@ -1118,6 +1200,8 @@ Representing the USA in Olympic competition and across dozens of World Rugby sto
     tags: ["Nicole Heavirland", "Montana", "Army West Point", "Women's Sevens", "Cross Training"],
     relatedPlayerSlugs: ["usa-nicole-heavirland", "usa-alev-kelter", "usa-lauren-doyle"],
     description: "How Montana native Nicole Heavirland built one of the highest aerobic work engines in world rugby through mountain endurance and relentless discipline.",
+    image: "https://tse1.mm.bing.net/th?q=Nicole%20Heavirland%20USA%20Rugby%20Sevens&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Nicole Heavirland distributing the ball for Team USA",
     content: `# Nicole Heavirland: Montana Grit and Playmaking Precision
 
 Growing up in Whitefish, Montana, Nicole Heavirland developed an endurance engine running mountain trails, skiing backcountry slopes, and playing basketball. That boundless stamina became her signature trademark on the international rugby circuit.
@@ -1143,6 +1227,8 @@ Heavirland demonstrated that raw American outdoor athleticism, paired with disci
     tags: ["Maceo Brown", "Grand Canyon University", "Olympics", "Men's Sevens", "Crossover"],
     relatedPlayerSlugs: ["usa-maceo-brown", "usa-perry-baker"],
     description: "The meteoric rise of Maceo Brown from collegiate football prospect at Grand Canyon University to Tokyo 2020 Olympian.",
+    image: "https://tse1.mm.bing.net/th?q=Maceo%20Brown%20USA%20Rugby%20Tokyo%20Olympics&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Maceo Brown sprinting in open play for USA Rugby",
     content: `# Maceo Brown: The Gridiron to Sevens Blueprint
 
 American sports produces thousands of incredible football athletes whose collegiate or professional gridiron journeys conclude early. Maceo Brown represents the gold standard of what happens when that explosive athletic pedigree transitions into international rugby.
@@ -1168,6 +1254,8 @@ Brown's journey serves as a beacon for athletic departments nationwide seeking t
     tags: ["Pacific Heritage", "Culture", "Samoa", "Tonga", "American Rugby"],
     relatedPlayerSlugs: ["usa-folau-niua", "usa-martin-iosefo"],
     description: "Honoring the profound cultural impact, innate rugby wisdom, and passionate community support of Pacific Islander families in USA Rugby history.",
+    image: "https://tse1.mm.bing.net/th?q=Pacific%20Island%20Rugby%20Culture%20Heritage&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Pacific cultural celebration and rugby community gathering",
     content: `# Pacific Heritage: The Heartbeat of American Rugby
 
 You cannot write the history of rugby in the United States without honoring the Pacific Islander community. From American Samoa, Tonga, Fiji, and Hawaii to vibrant diaspora communities in Northern California, Utah, and Washington, Pacific athletes have shaped American rugby's identity.
@@ -1191,6 +1279,8 @@ Icons like Folau Niua, Martin Iosefo, and Andrew Durutalo paved the way for gene
     tags: ["Refereeing", "Rules", "Breakdown", "Penalties", "Analysis"],
     relatedPlayerSlugs: ["usa-madison-hughes", "usa-alev-kelter"],
     description: "An insider look into World Rugby refereeing guidelines: holding on, failing to release, offsides, and how elite captains manage officials.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Referee%20Whistle%20Match%20Official&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Match official signaling a penalty in international rugby",
     content: `# Decoding the Whistle: Referees and the Breakdown
 
 In a 14-minute game of rugby sevens, referee interpretations can decide an Olympic medal. With the game moving at breakneck speed, understanding how officials evaluate breakdowns, offsides, and dangerous tackles is critical.
@@ -1215,6 +1305,8 @@ Veteran leaders like Madison Hughes and Alev Kelter excel at communicating polit
     tags: ["Walk-Off Try", "Psychology", "Clutch", "Paris 2024", "Highlights"],
     relatedPlayerSlugs: ["usa-spiff-sedrick", "usa-perry-baker"],
     description: "Exploring the emotional thunder and tactical composure required to execute walk-off winning tries after the final siren sounds.",
+    image: "https://tse1.mm.bing.net/th?q=Rugby%20Try%20Celebration%20Winning%20Moment&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Rugby team celebrating an emotional last-second try",
     content: `# Buzzer Beaters: The Psychology of the Walk-Off Try
 
 In rugby, the game does not end when the match clock strikes 0:00. The game only concludes when the ball goes out of play or a penalty occurs. This unique rule makes rugby sevens the home of the ultimate sporting buzzer-beaters.
@@ -1238,6 +1330,8 @@ Alex Sedrick's Paris 2024 buzzer-beating try stands as the crowning achievement 
     tags: ["LA 2028", "Olympics", "Future", "USA Rugby", "High Performance"],
     relatedPlayerSlugs: ["usa-sammy-sullivan", "usa-spiff-sedrick", "usa-aaron-cummings"],
     description: "An investigative overview of funding, talent development camps, and corporate sponsorships preparing American sevens squads for their home Olympics.",
+    image: "https://tse1.mm.bing.net/th?q=Los%20Angeles%202028%20Olympics%20Rugby%20USA&w=800&h=500&c=7&rs=1&p=0",
+    imageAlt: "Los Angeles 2028 Olympic stadium conceptual artwork",
     content: `# The Golden Runway: Preparing for LA 2028
 
 The Los Angeles 2028 Olympic Games represent the single greatest growth opportunity in the history of American rugby. Competing on home soil in front of domestic crowds, the USA Men's and Women's Eagles Sevens aim to stand atop the podium.
@@ -1267,6 +1361,8 @@ author:
 tags: [${p.tags.map((t) => `"${t}"`).join(", ")}]
 relatedPlayerSlugs: [${p.relatedPlayerSlugs.map((s) => `"${s}"`).join(", ")}]
 description: "${p.description.replace(/"/g, '\\"')}"
+image: "${p.image}"
+imageAlt: "${p.imageAlt.replace(/"/g, '\\"')}"
 ---
 
 ${p.content.trim()}
