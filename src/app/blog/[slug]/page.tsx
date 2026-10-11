@@ -107,9 +107,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .filter(Boolean);
 
   // Other related posts
-  const otherPosts = getAllPosts()
-    .filter((p) => p.slug !== post.slug)
-    .slice(0, 2);
+  const allPosts = getAllPosts();
+  const relatedBySlug = (post.relatedPostSlugs || [])
+    .map((relatedSlug) => allPosts.find((candidate) => candidate.slug === relatedSlug))
+    .filter((candidate): candidate is NonNullable<typeof candidate> => Boolean(candidate));
+  const otherPosts = (relatedBySlug.length
+    ? relatedBySlug
+    : allPosts.filter((candidate) => candidate.slug !== post.slug && candidate.category === post.category).slice(0, 2)
+  ).slice(0, 3);
 
   // Schema.org BlogPosting JSON-LD
   const blogPostingJsonLd = {
@@ -144,6 +149,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       : undefined,
     keywords: post.tags.join(", "),
     articleSection: post.category,
+    citation: post.sources.map((source) => source.url),
   };
 
   // Convert markdown content to styled semantic HTML elements
@@ -345,6 +351,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <article className="bg-card border border-border rounded-3xl p-6 sm:p-12 shadow-xs prose dark:prose-invert max-w-none">
         {renderMarkdownContent(post.content)}
       </article>
+
+      {post.sources.length > 0 && (
+        <section aria-labelledby="article-sources-heading" className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <h2 id="article-sources-heading" className="text-lg font-bold text-foreground">Sources & Further Reading</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+            {post.sources.map((source) => (
+              <li key={source.url}>
+                <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-900">
+                  {source.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* In-content Mid Ad slot */}
       <AdSlot id="article-mid-ad" format="in-feed" label="Sponsored Resource" />

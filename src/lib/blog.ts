@@ -50,6 +50,14 @@ export function getAllPosts(): BlogPost[] {
       image,
       imageAlt: data.imageAlt || data.title || "USA Rugby Sevens action",
       tags: Array.isArray(data.tags) ? data.tags : [],
+      sources: Array.isArray(data.sources)
+        ? data.sources.filter((source: unknown): source is { title: string; url: string } =>
+            Boolean(source && typeof source === "object" && "title" in source && "url" in source &&
+              typeof source.title === "string" && typeof source.url === "string" &&
+              source.url.startsWith("https://")),
+          )
+        : [],
+      relatedPostSlugs: Array.isArray(data.relatedPostSlugs) ? data.relatedPostSlugs : [],
       readingTime,
       content,
       relatedPlayerSlugs: Array.isArray(data.relatedPlayerSlugs)

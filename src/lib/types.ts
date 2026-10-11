@@ -45,6 +45,11 @@ export interface Author {
   bio?: string;
 }
 
+export interface BlogSource {
+  title: string;
+  url: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -56,6 +61,8 @@ export interface BlogPost {
   image?: string;
   imageAlt?: string;
   tags: string[];
+  sources: BlogSource[];
+  relatedPostSlugs?: string[];
   readingTime?: string;
   content: string;
   relatedPlayerSlugs?: string[];
