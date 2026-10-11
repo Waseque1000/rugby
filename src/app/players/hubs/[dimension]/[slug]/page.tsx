@@ -25,7 +25,8 @@ export async function generateMetadata({ params }: PlayerHubPageProps): Promise<
     title,
     description,
     alternates: { canonical: `/players/hubs/${hub.dimension}/${hub.slug}` },
-    openGraph: { title, description, url: `/players/hubs/${hub.dimension}/${hub.slug}` },
+    openGraph: { title, description, url: `/players/hubs/${hub.dimension}/${hub.slug}`, images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
   };
 }
 

@@ -12,14 +12,14 @@ export async function appendJsonRecord<T extends object>(
   record: T,
   uniqueBy?: keyof T
 ): Promise<void> {
-  const filePath = path.join(storageDirectory, fileName);
+  const filePath = path.join(/*turbopackIgnore: true*/ storageDirectory, fileName);
   const previousWrite = pendingWrites.get(filePath) || Promise.resolve();
   const nextWrite = previousWrite.then(async () => {
     await mkdir(storageDirectory, { recursive: true });
 
     let records: T[] = [];
     try {
-      const contents = await readFile(filePath, "utf8");
+      const contents = await readFile(/*turbopackIgnore: true*/ filePath, "utf8");
       const parsed: unknown = JSON.parse(contents);
       if (!Array.isArray(parsed)) throw new Error(`${fileName} must contain a JSON array`);
       records = parsed as T[];

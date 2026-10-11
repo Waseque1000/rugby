@@ -67,7 +67,7 @@ export async function generateMetadata({
     };
   }
 
-  const images = post.image ? [{ url: post.image, alt: post.imageAlt }] : [];
+  const images = post.image ? [{ url: post.image, alt: post.imageAlt }] : ["/opengraph-image"];
 
   return {
     title: post.title,

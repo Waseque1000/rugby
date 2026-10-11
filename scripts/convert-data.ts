@@ -5,7 +5,6 @@ import * as fs from "fs";
 interface RawPlayerRecord {
   "Player ID"?: string | null;
   "Full Name"?: string | null;
-  "Age (as of 2026-10-10)"?: number | string | null;
   "Date of Birth"?: string | null;
   "Team"?: string | null;
   "Format"?: string | null;
@@ -39,7 +38,6 @@ export interface Player {
   id: string;
   slug: string;
   name: string;
-  age: number | null;
   dob: string | null;
   team: string | null;
   format: string | null;

@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     title: "Curated Rosters & Lists | USA Rugby Sevens Stats",
     description:
       "Explore official lists: USA Sevens Olympians, collegiate pathways, and national tournament rosters.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Curated Rosters & Lists | USA Rugby Sevens",
+    description: "Explore USA Sevens Olympians, collegiate pathways, and national tournament rosters.",
+    images: ["/opengraph-image"],
   },
 };
 

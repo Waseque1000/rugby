@@ -40,6 +40,13 @@ export async function generateMetadata({
       title: `${list.title} | USA Rugby Sevens Roster`,
       description: list.description,
       url: `/lists/${list.slug}`,
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: list.title,
+      description: list.description,
+      images: ["/opengraph-image"],
     },
   };
 }
@@ -65,10 +72,34 @@ export default async function ListDetailsPage({ params }: ListPageProps) {
       url: `${SITE_URL}/players/${player.slug}`,
     })),
   };
+  const teamName = list.slug === "womens-eagles-sevens-roster"
+    ? "USA Women's Eagles Sevens"
+    : list.slug === "mens-eagles-sevens-roster"
+      ? "USA Men's Eagles Sevens"
+      : null;
+  const structuredData = teamName
+    ? {
+        "@context": "https://schema.org",
+        "@graph": [
+          itemListJsonLd,
+          {
+            "@type": "SportsTeam",
+            name: teamName,
+            sport: "Rugby sevens",
+            url: `${SITE_URL}/lists/${list.slug}`,
+            athlete: indexablePlayers.map((player) => ({
+              "@type": "Person",
+              name: player.name,
+              url: `${SITE_URL}/players/${player.slug}`,
+            })),
+          },
+        ],
+      }
+    : itemListJsonLd;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-10">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(structuredData) }} />
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

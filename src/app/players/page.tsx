@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     title: "USA Rugby Sevens Players Directory",
     description:
       "Explore verified profiles of USA Men's and Women's Rugby Sevens players, Olympians, and collegiate standouts.",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "USA Rugby Sevens Players Directory",
+    description: "Explore verified profiles of USA men's and women's rugby sevens players, Olympians, and collegiate standouts.",
+    images: ["/opengraph-image"],
   },
 };
 

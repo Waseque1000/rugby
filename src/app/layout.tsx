@@ -46,12 +46,21 @@ export const metadata: Metadata = {
     title: "USA Sevens Stats | National Sevens Players Hub",
     description:
       "Profiles, caps, Olympic rosters, and collegiate pathways for USA men's and women's rugby sevens stars.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "USA Sevens Stats — USA Rugby Sevens profiles, records, and stories",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "USA Sevens Stats | USA Rugby Sevens Database",
     description:
       "Profiles, caps, Olympic rosters, and collegiate pathways for USA men's and women's rugby sevens stars.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

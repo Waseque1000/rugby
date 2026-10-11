@@ -50,12 +50,7 @@ export async function generateMetadata({
   }
 
   const role = player.position || "Player";
-  const titleDetails = [
-    player.age !== null ? `Age ${player.age}` : null,
-    player.olympicEditions.length ? "Olympics" : null,
-    "Profile",
-  ].filter(Boolean).join(", ");
-  const title = `${player.name} – USA Rugby Sevens ${role} | ${titleDetails}`;
+  const title = `${player.name} – USA Sevens ${role}`;
   const gender = player.team?.toLowerCase().includes("women") ? "women's" : "men's";
   const descriptionParts = [
     `${player.name}${player.age !== null ? `, ${player.age},` : ","} USA ${gender} rugby sevens ${role.toLowerCase()}`,
@@ -76,11 +71,13 @@ export async function generateMetadata({
       description,
       type: "profile",
       url: `/players/${player.slug}`,
+      images: ["/opengraph-image"],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/opengraph-image"],
     },
     robots: player.indexable ? undefined : { index: false, follow: true },
   };
