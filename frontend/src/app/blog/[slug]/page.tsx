@@ -112,7 +112,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         url: "https://usa-sevens-stats.vercel.app/icon",
       },
     },
-    image: post.image ? `https://usa-sevens-stats.vercel.app${post.image}` : undefined,
+    image: post.image?.startsWith("http")
+      ? post.image
+      : post.image
+      ? `https://usa-sevens-stats.vercel.app${post.image}`
+      : undefined,
     keywords: post.tags.join(", "),
     articleSection: post.category,
   };
