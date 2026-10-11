@@ -24,14 +24,6 @@ The JSON and MDX content is version controlled, so updates are reviewable and re
 
 The Next.js API routes save form submissions as JSON under `storage/`. This directory is ignored by Git because it contains private contact details. Set `JSON_STORAGE_DIR` to choose another location. Back up this folder if you need to retain submissions.
 
-## Run with Docker
-
-```bash
-docker compose up --build
-```
-
-This starts one web container on port 3000. Docker Compose mounts a persistent volume at `/app/storage` for form submissions. There is no database service.
-
 ## Build
 
 ```bash
