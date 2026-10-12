@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+import { BlogImage } from "@/components/blog/BlogImage";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { getPlayerBySlug } from "@/lib/players";
 import { PlayerCard } from "@/components/players/PlayerCard";
@@ -332,10 +332,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Featured Article Image */}
       {post.image && (
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-border shadow-md my-6">
-          <Image
+          <BlogImage
             src={post.image}
             alt={post.imageAlt || post.title}
-            unoptimized
             fill
             preload
             className="object-cover"

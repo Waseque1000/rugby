@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { BlogImage } from "@/components/blog/BlogImage";
 import { getAllPosts, getAllCategories } from "@/lib/blog";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { AdSlot } from "@/components/monetization/AdSlot";
@@ -113,10 +113,9 @@ export default async function BlogIndexPage({
             {/* Featured Image */}
             {featured.image && (
               <div className="lg:col-span-6 relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-border shadow-xs bg-muted">
-                <Image
+                <BlogImage
                   src={featured.image}
                   alt={featured.imageAlt || featured.title}
-                  unoptimized
                   fill
                   preload
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -197,10 +196,9 @@ export default async function BlogIndexPage({
                       href={`/blog/${post.slug}`}
                       className="relative block w-full aspect-[16/10] overflow-hidden bg-muted border-b border-border/60"
                     >
-                      <Image
+                      <BlogImage
                         src={post.image}
                         alt={post.imageAlt || post.title}
-                        unoptimized
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

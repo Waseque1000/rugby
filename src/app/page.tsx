@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { BlogImage } from "@/components/blog/BlogImage";
 import {
   getAllPosts,
   getFeaturedPost,
@@ -88,10 +88,9 @@ export default function HomePage() {
                     href={`/blog/${featuredPost.slug}`}
                     className="relative block w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-border/80 group-hover:border-blue-600/40 transition-all shadow-xs my-2 bg-muted"
                   >
-                    <Image
+                    <BlogImage
                       src={featuredPost.image}
                       alt={featuredPost.imageAlt || featuredPost.title}
-                      unoptimized
                       fill
                       preload
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -161,10 +160,9 @@ export default function HomePage() {
                           href={`/blog/${article.slug}`}
                           className="relative shrink-0 w-20 h-20 rounded-xl overflow-hidden border border-border group-hover:border-blue-500/50 transition-all bg-muted"
                         >
-                          <Image
+                          <BlogImage
                             src={article.image}
                             alt={article.imageAlt || article.title}
-                            unoptimized
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                             sizes="80px"
@@ -333,10 +331,9 @@ export default function HomePage() {
                     href={`/blog/${post.slug}`}
                     className="relative block w-full aspect-[16/10] overflow-hidden bg-muted border-b border-border/60"
                   >
-                    <Image
+                    <BlogImage
                       src={post.image}
                       alt={post.imageAlt || post.title}
-                      unoptimized
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
